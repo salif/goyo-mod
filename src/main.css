@@ -1,0 +1,186 @@
+@import "tailwindcss" source(none);
+@source "../templates/**/*.{html,md}";
+@source "../content/**/*.{html,md}";
+@plugin "./daisyui.js" {
+    themes: night --default;
+}
+
+/* Optional for custom themes – Docs: https://daisyui.com/docs/themes/#how-to-add-a-new-custom-theme */
+@plugin "./daisyui-theme.js" {
+}
+
+@layer base {
+    /* Article base styling */
+
+    html {
+        scroll-padding-top: 130px;
+    }
+
+    body {
+        line-height: 30.6px;
+        color: hsla(0, 0%, 100%, 0.6);
+        font-size: 18px;
+    }
+
+    h1 {
+        @apply text-3xl font-bold mb-4 text-white;
+    }
+
+    h2 {
+        @apply text-2xl font-bold mt-10 mb-4 text-white;
+    }
+
+    h3 {
+        @apply text-xl font-bold mt-10 mb-4 text-white;
+    }
+
+    h4 {
+        @apply text-lg font-bold mt-10 mb-4 text-white;
+    }
+
+    p {
+        @apply my-4;
+    }
+
+    main ul {
+        @apply list-disc list-inside;
+        @apply mb-4;
+    }
+
+    main ol {
+        @apply list-decimal list-inside;
+        @apply mb-4;
+    }
+
+    main ul ul,
+    main ol ol {
+        @apply ml-6;
+        @apply mb-0;
+    }
+
+    a {
+        @apply text-gray-300;
+        @apply hover:link;
+    }
+
+    img {
+        @apply w-full h-auto rounded-lg;
+    }
+
+    pre {
+        @apply overflow-x-auto bg-gray-800 text-white p-4 rounded-lg my-4 whitespace-pre;
+        @apply @max-2xl:w-full;
+    }
+
+    pre code {
+        @apply text-sm;
+        @apply whitespace-pre-wrap;
+    }
+
+    :not(pre) > code {
+        @apply kbd kbd-sm;
+    }
+
+    blockquote {
+        @apply text-gray-300;
+        @apply italic;
+        @apply border-l-2;
+        @apply border-neutral-500;
+        @apply pl-4;
+        @apply mb-4;
+    }
+
+    blockquote p {
+        @apply py-0;
+    }
+
+    blockquote cite {
+        @apply block mt-2 text-right text-sm text-gray-300;
+    }
+
+    table {
+        @apply table;
+        @apply w-full my-4;
+        @apply table-zebra;
+        @apply mb-4;
+    }
+
+    th,
+    td {
+        @apply border border-gray-800 px-4 py-2;
+    }
+
+    em {
+        @apply italic text-sm mt-2 flex justify-center gap-1;
+        @apply text-gray-600;
+    }
+
+    /* Color definitions for the syntax highlighting */
+    .z-code {
+        @apply text-base-content;
+        @apply bg-base-200;
+    }
+}
+
+.nav-menu {
+    @apply text-gray-400 hover:text-white transition-colors duration-200 no-underline hover:no-underline;
+}
+.gallery-box {
+    margin-bottom: 30px;
+}
+.gallery-box em {
+    display: inline-block;
+    width: 100%;
+    padding: 13px;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8); /* Assuming $text-color is white */
+    background-color: #333; /* Assuming $dark is dark grey */
+}
+.gallery-box em a {
+    text-decoration: underline;
+    border-bottom: none;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    align-content: center;
+    grid-gap: 10px;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+blockquote {
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    font-style: italic;
+    font-size: 21px;
+    line-height: 37px;
+    font-weight: 700;
+}
+
+blockquote cite {
+    font-size: 16px;
+    font-style: normal;
+}
+
+blockquote cite:before {
+    content: "- ";
+}
+
+@media only screen and (max-width: 768px) {
+    /* Assuming $mobile is 768px */
+    blockquote {
+        padding: 20px 20px 20px 35px;
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+
+@import "./syntax-highlight.css";
