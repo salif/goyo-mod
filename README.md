@@ -6,7 +6,7 @@
 * [x] Search support.
 * [ ] Multi-language support.
 * [ ] PWA support.
-* [ ] SEO support.
+* [x] SEO support.
 * [x] Table of Contents support.
 * [x] Responsive design.
 * Shortcodes
@@ -43,10 +43,12 @@ git clone https://github.com/hahwul/goyo themes/goyo
 Add extra field in config.toml
 
 ```toml
-[extra]
 logo_text = "Goyo"
 logo_image_path = "images/goyo.png"
 footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://github.com/hahwul/goyo'>Goyo</a>"
+default_thumbnail = "images/default_thumbnail.jpg"
+twitter_site = "@hahwul"
+twitter_creator = "@hahwul"
 nav = [
     { name = "Home", url = "/" },
     { name = "GitHub", url = "https://github.com/hahwul/goyo" },
