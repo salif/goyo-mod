@@ -2,7 +2,9 @@
 @source "../templates/**/*.{html,md}";
 @source "../content/**/*.{html,md}";
 @plugin "./daisyui.js" {
-    themes: night --default;
+    themes:
+        night --default,
+        lofi;
 }
 
 /* Optional for custom themes – Docs: https://daisyui.com/docs/themes/#how-to-add-a-new-custom-theme */
@@ -18,24 +20,24 @@
 
     body {
         line-height: 30.6px;
-        color: hsla(0, 0%, 100%, 0.6);
+        color: var(--color-base-content);
         font-size: 18px;
     }
 
     h1 {
-        @apply text-3xl font-bold mb-4 text-white;
+        @apply text-3xl font-bold mb-4 text-base-content;
     }
 
     h2 {
-        @apply text-2xl font-bold mt-10 mb-4 text-white;
+        @apply text-2xl font-bold mt-10 mb-4 text-base-content;
     }
 
     h3 {
-        @apply text-xl font-bold mt-10 mb-4 text-white;
+        @apply text-xl font-bold mt-10 mb-4 text-base-content;
     }
 
     h4 {
-        @apply text-lg font-bold mt-10 mb-4 text-white;
+        @apply text-lg font-bold mt-10 mb-4 text-base-content;
     }
 
     p {
@@ -59,7 +61,7 @@
     }
 
     a {
-        @apply text-gray-300;
+        @apply text-base-content;
         @apply hover:link;
     }
 
@@ -68,7 +70,7 @@
     }
 
     pre {
-        @apply overflow-x-auto bg-gray-800 text-white p-4 rounded-lg my-4 whitespace-pre;
+        @apply overflow-x-auto bg-base-200 text-base-content p-4 rounded-lg my-4 whitespace-pre;
         @apply @max-2xl:w-full;
     }
 
@@ -82,10 +84,10 @@
     }
 
     blockquote {
-        @apply text-gray-300;
+        @apply text-base-content;
         @apply italic;
         @apply border-l-2;
-        @apply border-neutral-500;
+        @apply border-base-300;
         @apply pl-4;
         @apply mb-4;
     }
@@ -95,7 +97,7 @@
     }
 
     blockquote cite {
-        @apply block mt-2 text-right text-sm text-gray-300;
+        @apply block mt-2 text-right text-sm text-base-content;
     }
 
     table {
@@ -107,12 +109,12 @@
 
     th,
     td {
-        @apply border border-gray-800 px-4 py-2;
+        @apply border border-base-300 px-4 py-2;
     }
 
     em {
         @apply italic text-sm mt-2 flex justify-center gap-1;
-        @apply text-gray-600;
+        @apply text-base-content;
     }
 
     /* Color definitions for the syntax highlighting */
@@ -123,7 +125,7 @@
 }
 
 .nav-menu {
-    @apply text-gray-400 hover:text-white transition-colors duration-200 no-underline hover:no-underline;
+    @apply text-base-content hover:text-primary transition-colors duration-200 no-underline hover:no-underline;
 }
 .gallery-box {
     margin-bottom: 30px;
