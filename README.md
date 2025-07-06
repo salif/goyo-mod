@@ -1,2 +1,1 @@
-# goyo# goyo
-# goyo
+# goyo (고요)
