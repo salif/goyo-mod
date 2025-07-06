@@ -207,7 +207,7 @@
                 <div class="mb-4">
                     <a href="/" class="text-2xl font-bold">{{ config.title }}</a>
                 </div>
-                <ul class="menu">
+                <ul class="menu w-full">
                     {% block menu %}
                         {% set index = get_section(path="_index.md") %}
                         {% for s in index.subsections %}
