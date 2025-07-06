@@ -150,7 +150,9 @@
             </footer>
 
         </div>
-        <div class="drawer-side fixed top-0 pt-12 bottom-0 z-40 border-r border-gray-500/15">
+        {% if section and section.path == "/" %}
+        {% else %}
+        <div id="sidebar" class="drawer-side fixed top-0 pt-12 bottom-0 z-40 border-r border-gray-500/15">
             <label for="my-drawer-2" class="drawer-overlay"></label>
             <div class="p-4 w-80 min-h-full text-base-content overflow-y-auto">
                 <div class="mb-4">
@@ -183,6 +185,7 @@
                 </ul>
             </div>
         </div>
+        {% endif %}
     </div>
 
     {% if config.build_search_index %}
