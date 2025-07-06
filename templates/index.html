@@ -214,11 +214,12 @@
                             {% set subsection = get_section(path=s) %}
                             {% set is_active = current_path is starting_with(subsection.path) %}
                             <li>
+                                {% if subsection.pages %}
                                 <details {% if is_active %}open{% endif %}>
                                     <summary>
                                         <a href="{{ get_url(path=subsection.path, lang=lang) | safe }}">{{ subsection.title }}</a>
                                     </summary>
-                                    {% if subsection.pages %}
+
                                     <ul>
                                         {% for page in subsection.pages %}
                                             <li {% if current_path == page.path %}class="active"{% endif %}>
@@ -226,8 +227,10 @@
                                             </li>
                                         {% endfor %}
                                     </ul>
-                                    {% endif %}
                                 </details>
+                                {% else %}
+                                    <a href="{{ get_url(path=subsection.path, lang=lang) | safe }}">{{ subsection.title }}</a>
+                                {% endif %}
                             </li>
                         {% endfor %}
                     {% endblock menu %}
