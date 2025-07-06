@@ -26,33 +26,46 @@
     <div class="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content flex flex-col">
-            <!-- Page content here -->
-            <div class="navbar bg-base-100 lg:hidden">
-                <div class="flex-none">
+            <!-- Top Navbar -->
+            <div class="navbar bg-base-100">
+                <!-- Mobile hamburger -->
+                <div class="flex-none lg:hidden">
                     <label for="my-drawer-2" class="btn btn-square btn-ghost">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </label>
                 </div>
+                <!-- Logo -->
                 <div class="flex-1">
                     <a href="/" class="btn btn-ghost normal-case text-xl">{{ config.extra.logo_text | default(value=config.title) }}</a>
                 </div>
-            </div>
-            <div class="hidden lg:flex navbar bg-base-100">
-                <div class="flex-1">
-                    <a href="/" class="btn btn-ghost normal-case text-xl">{{ config.extra.logo_text | default(value=config.title) }}</a>
-                </div>
-                <div class="flex-none">
+                <!-- Desktop Menu -->
+                <div class="flex-none hidden lg:flex">
                     <ul class="menu menu-horizontal px-1">
                         {% if config.extra.nav %}
                             {% for item in config.extra.nav %}
                                 <li><a href="{{ item.url | safe }}">{{ item.name }}</a></li>
                             {% endfor %}
                         {% endif %}
+                        {% if config.build_search_index %}
+                        <li>
+                            <label for="search-modal" class="btn btn-ghost">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                            </label>
+                        </li>
+                        {% endif %}
                     </ul>
                 </div>
+                 <!-- Mobile search icon -->
+                {% if config.build_search_index %}
+                <div class="flex-none lg:hidden">
+                     <label for="search-modal" class="btn btn-square btn-ghost">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                    </label>
+                </div>
+                {% endif %}
             </div>
 
-            <main class="p-8 w-full max-w-4xl">
+            <main class="p-8 w-full max-w-4xl mx-auto">
                 <div class="prose">
                     {% block content %}{% endblock content %}
                 </div>
@@ -74,15 +87,6 @@
                 <div class="mb-4">
                     <a href="/" class="text-2xl font-bold">{{ config.title }}</a>
                 </div>
-                {% if config.build_search_index %}
-                <div class="search-container p-2">
-                    <input id="search" type="search" placeholder="Search.." class="input input-bordered w-full">
-                    <div class="search-results" style="display: none;">
-                        <div class="search-results__header"></div>
-                        <ul class="search-results__items menu"></ul>
-                    </div>
-                </div>
-                {% endif %}
                 <ul class="menu">
                     {% block menu %}
                         {% set index = get_section(path="_index.md") %}
@@ -111,6 +115,24 @@
             </div>
         </div>
     </div>
+
+    {% if config.build_search_index %}
+    <!-- Search Modal -->
+    <input type="checkbox" id="search-modal" class="modal-toggle" />
+    <div class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box relative bg-opacity-90 backdrop-blur-sm glass">
+            <label for="search-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+            <h3 class="text-lg font-bold">Search</h3>
+            <div class="search-container py-4">
+                <input id="search" type="search" placeholder="Search.." class="input input-bordered w-full bg-transparent">
+                <div class="search-results mt-4" style="display: none;">
+                    <div class="search-results__header"></div>
+                    <ul class="search-results__items menu"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
 
     {% block js_body %}
         {% if config.build_search_index %}

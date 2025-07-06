@@ -151,12 +151,12 @@ function initSearch() {
         });
 
         if (results.length === 0) {
-            $searchResultsHeader.innerText = `No search results for '${term}'.`;
+            $searchResultsHeader.innerText = `No results for '${term}'`;
             return;
         }
 
         currentTerm = term;
-        $searchResultsHeader.innerText = `${results.length} search results for '${term}':`;
+        $searchResultsHeader.innerText = `${results.length} results for '${term}':`;
         for (var i = 0; i < Math.min(results.length, MAX_ITEMS); i++) {
             if (!results[i].doc.body) {
                 continue;
@@ -165,20 +165,14 @@ function initSearch() {
         }
     }, 150));
 
-    // Mobile search toggle
-    var $searchIcon = document.querySelector('.navbar .btn-ghost svg');
-    var $drawerContent = document.querySelector('.drawer-content');
-    var $searchContainer = document.querySelector('.search-container');
-
-    if ($searchIcon) {
-        $searchIcon.parentElement.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (window.innerWidth < 1024) {
-                $drawerContent.classList.toggle('hidden');
-                $searchContainer.classList.toggle('hidden');
-                if (!$searchContainer.classList.contains('hidden')) {
+    // Focus search input when modal is opened
+    var searchModal = document.getElementById('search-modal');
+    if (searchModal) {
+        searchModal.addEventListener('change', function() {
+            if (this.checked) {
+                setTimeout(function() {
                     $searchInput.focus();
-                }
+                }, 100);
             }
         });
     }
