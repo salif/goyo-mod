@@ -3,7 +3,7 @@ title = "Badge"
 weight = 2
 +++
 
-Add badges to your content to indicate status, category, or highlight keywords.
+뱃지를 사용하여 상태, 카테고리, 키워드 등을 강조할 수 있습니다. Badge Shortcode를 활용해 중요한 정보나 분류를 한눈에 알아볼 수 있도록 표시하세요.
 
 ## Info
 

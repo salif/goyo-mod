@@ -3,7 +3,7 @@ title = "Mermaid Chart"
 weight = 3
 +++
 
-Embed [Mermaid](https://mermaid-js.github.io/) diagrams directly in your content for visualizing flows, charts, and more.
+Use the [Mermaid](https://mermaid-js.github.io/) shortcode to easily add flowcharts, sequence diagrams, and other visualizations to your documentation.
 
 ## Example
 

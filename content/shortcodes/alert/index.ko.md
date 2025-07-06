@@ -3,7 +3,7 @@ title = "Alert Box"
 weight = 1
 +++
 
-여러 정보를 표기하기 위해 Alert Box Shortcode가 제공됩니다.
+다양한 유형의 알림 메시지를 강조하여 중요한 정보, 상태, 경고 등을 효과적으로 전달할 수 있습니다. Info, Success, Warning, Error 등 상황에 맞는 알림 박스를 쉽게 추가하세요.
 
 ## Info
 
