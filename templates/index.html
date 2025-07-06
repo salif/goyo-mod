@@ -36,7 +36,7 @@
                 </div>
                 <!-- Logo -->
                 <div class="flex-1">
-                    <a href="/" class="btn btn-ghost normal-case text-xl">
+                    <a href="/" class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl">
                         {% if config.extra.logo_image_path %}
                             <img src="{{ get_url(path=config.extra.logo_image_path) | safe }}" alt="{{ config.extra.logo_text | default(value=config.title) }}" class="h-18 w-auto"/>
                         {% else %}
@@ -122,6 +122,12 @@
                 </div>
                 {% endif %}
             </div>
+
+            <footer class="footer text-xs p-4 text-base-content border-t border-base-300">
+                <aside>
+                    <p>{{ config.extra.footer_html | safe }}</p>
+                </aside>
+            </footer>
 
         </div>
         <div class="drawer-side fixed top-0 pt-12 bottom-0 z-40 border-r border-base-300">
