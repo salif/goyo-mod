@@ -2,6 +2,7 @@
 base_url = "https://goyo.hahwul.com"
 
 build_search_index = true
+default_language = "en"
 
 [markdown]
 highlight_code = true
