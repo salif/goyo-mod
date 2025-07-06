@@ -2,7 +2,8 @@
 title = "Introduction"
 weight = 1
 sort_by = "weight"
-insert_anchor_links = "right"
+
+[extra]
 +++
 
 A theme based on [Gitbook](https://www.gitbook.com/), to write documentation or books.
