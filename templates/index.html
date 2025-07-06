@@ -20,6 +20,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="{{ get_url(path="css/main.css") | safe }}">
 
+    <script src="/js/mermaid.min.js"></script>
+
     {% block extra_head %}{% endblock extra_head %}
 </head>
 <body>
@@ -122,6 +124,24 @@
                 </div>
                 {% endif %}
             </div>
+
+            <script>
+              var currentTheme = localStorage.getItem('theme') || 'night';
+              var mermaidTheme = "dark"
+              if(currentTheme == "lofi") {
+                mermaidTheme = "light"
+              }
+              mermaid.initialize({ startOnLoad: false, theme: mermaidTheme });
+              document.addEventListener('DOMContentLoaded', async () => {
+                const mermaidElements = document.querySelectorAll('.mermaid');
+
+                if (mermaidElements.length > 0) {
+                    await mermaid.run({
+                        nodes: mermaidElements
+                    });
+                }
+              });
+            </script>
 
             <footer class="footer text-xs p-4 text-base-content border-t border-gray-500/15">
                 <aside>
