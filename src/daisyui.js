@@ -44,7 +44,7 @@ __export(exports_daisyui, {
 module.exports = __toCommonJS(exports_daisyui);
 
 // packages/daisyui/functions/themeOrder.js
-var themeOrder_default = ["night"];
+var themeOrder_default = ["night", "lofi"];
 
 // packages/daisyui/functions/pluginOptionsHandler.js
 var pluginOptionsHandler = (() => {
