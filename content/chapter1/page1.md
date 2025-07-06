@@ -12,6 +12,7 @@ or will render the built-in template: a blank page.
 Whichever template you decide to render, you will get a `page` variable in your template
 with the following fields:
 
+### Example
 
 ```ts
 content: String;
