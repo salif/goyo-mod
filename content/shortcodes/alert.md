@@ -3,6 +3,10 @@ title = "Alert"
 weight = 1
 +++
 
+Display different types of alert messages to highlight important information.
+
+## Usage Examples
+
 {% alert_info() %}
   Info alert
 {% end %}

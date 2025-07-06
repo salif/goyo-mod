@@ -3,6 +3,10 @@ title = "Mermaid Chart"
 weight = 3
 +++
 
+Embed [Mermaid](https://mermaid-js.github.io/) diagrams directly in your content for visualizing flows, charts, and more.
+
+## Example
+
 {% mermaid() %}
 quadrantChart
     title Reach and engagement of campaigns

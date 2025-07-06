@@ -3,6 +3,10 @@ title = "Badge"
 weight = 2
 +++
 
+Add badges to your content to indicate status, category, or highlight keywords.
+
+## Usage Examples
+
 {% badge_info() %}
   Info badge
 {% end %}
