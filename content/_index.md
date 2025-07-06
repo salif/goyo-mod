@@ -2,4 +2,4 @@
 template = "landing.html"
 +++
 
-Main
+This is landing page
