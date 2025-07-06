@@ -4,7 +4,7 @@
 
 * [x] Dark, Light Themes.
 * [x] Search support.
-* [ ] Multi-language support.
+* [x] Multi-language support.
 * [ ] PWA support.
 * [x] SEO support.
 * [x] Table of Contents support.

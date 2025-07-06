@@ -195,13 +195,13 @@
                             <li>
                                 <details {% if is_active %}open{% endif %}>
                                     <summary>
-                                        <a href="{{ subsection.permalink | safe }}">{{ subsection.title }}</a>
+                                        <a href="{{ get_url(path=subsection.path, lang=lang) | safe }}">{{ subsection.title }}</a>
                                     </summary>
                                     {% if subsection.pages %}
                                     <ul>
                                         {% for page in subsection.pages %}
                                             <li {% if current_path == page.path %}class="active"{% endif %}>
-                                                <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+                                                <a href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a>
                                             </li>
                                         {% endfor %}
                                     </ul>

@@ -6,6 +6,10 @@ build_search_index = true
 [markdown]
 highlight_code = true
 
+[languages.ko]
+generate_feeds = true
+build_search_index = false
+
 [extra]
 logo_text = "Goyo"
 logo_image_path = "images/goyo.png"
