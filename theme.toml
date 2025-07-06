@@ -1,7 +1,6 @@
 name = "Goyo"
 description = "A classic blog theme"
-# An optional tags to allow quick search
-tags = []
+tags = ["documentation", "Multilingual", "Responsive", "SEO", "Search"]
 license = "MIT"
 homepage = "https://github.com/hahwul/goyo"
 # The minimum version of Zola required
