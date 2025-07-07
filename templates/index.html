@@ -223,10 +223,7 @@
         {% endif %}
             <label for="my-drawer-2" class="drawer-overlay"></label>
             <div class="p-4 w-80 min-h-full text-base-content overflow-y-auto">
-                <div class="mb-4">
-                    <a href="/" class="text-2xl font-bold">{{ config.title }}</a>
-                </div>
-                <ul class="menu w-full">
+                <ul class="menu w-full mt-4">
                     {% block menu %}
                         {% set index = get_section(path="_index.md") %}
                         {% for s in index.subsections %}

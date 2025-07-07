@@ -1,5 +1,7 @@
 # The URL the site will be built for
 base_url = "https://goyo.hahwul.com"
+title = "Goyo"
+description = "Goyo is Theme"
 
 build_search_index = true
 default_language = "en"
