@@ -9,6 +9,11 @@
 * [x] SEO support.
 * [x] Table of Contents support.
 * [x] Responsive design.
+* [ ] GTag
+* [ ] Comments
+  * [ ] Giscus
+  * [ ] Utterances
+  * [ ] Disqus
 * Shortcodes
   * [x] Mermaid chart
   * [x] 4 alert boxes
