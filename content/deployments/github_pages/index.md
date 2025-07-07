@@ -29,7 +29,7 @@ jobs:
           TOKEN: ${{ secrets.TOKEN }}
 ```
 
-However, since the Goyo theme uses Tailwind CSS, it's recommended to optimize by minifying the CSS before deployment. Below is the GitHub Workflow I use to deploy this documentation page.
+Below is the GitHub Workflow I use to deploy this documentation page.
 
 ```yaml
 name: Zola on GitHub Pages
@@ -46,9 +46,6 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
-
-      - name: Minify tailwindcss
-        run: src/tailwindcss -i src/main.css -o static/css/main.css --minify
 
       - name: Add CNAME file
         run: echo "goyo.hahwul.com" > static/CNAME

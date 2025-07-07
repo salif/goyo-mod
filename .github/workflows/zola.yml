@@ -13,9 +13,6 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v4
 
-      - name: Minify tailwindcss
-        run: src/tailwindcss -i src/main.css -o static/css/main.css --minify
-
       - name: Add CNAME file
         run: echo "goyo.hahwul.com" > static/CNAME
 

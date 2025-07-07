@@ -29,7 +29,7 @@ jobs:
           TOKEN: ${{ secrets.TOKEN }}
 ```
 
-다만 Goyo 테마는 tailwindcss를 사용하기 떄문에 배포 전 tailwindcss minify를 통해 최적화하는 것이 좋습니다. 아래는 제가 이 문서 페이지를 배포하는데 사용한 Github Workflow입니다.
+아래는 제가 이 문서 페이지를 배포하는데 사용한 Github Workflow입니다.
 
 ```yaml
 name: Zola on GitHub Pages
@@ -46,9 +46,6 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
-
-      - name: Minify tailwindcss
-        run: src/tailwindcss -i src/main.css -o static/css/main.css --minify
 
       - name: Add CNAME file
         run: echo "goyo.hahwul.com" > static/CNAME
