@@ -222,14 +222,14 @@
 
                                     <ul>
                                         {% for page in subsection.pages %}
-                                            <li {% if current_path == page.path %}class="border-r rounded border-gray-500/55"{% endif %}>
+                                            <li {% if current_path == page.path %}class="border-r border-gray-500/15"{% endif %}>
                                                 <a href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a>
                                             </li>
                                         {% endfor %}
                                     </ul>
                                 </details>
                                 {% else %}
-                                    <a {% if current_path == subsection.path %}class="border-r rounded border-gray-500/55"{% endif %} href="{{ get_url(path=subsection.path, lang=lang) | safe }}">{{ subsection.title }}</a>
+                                    <a {% if current_path == subsection.path %}class="border-r border-gray-500/15"{% endif %} href="{{ get_url(path=subsection.path, lang=lang) | safe }}">{{ subsection.title }}</a>
                                 {% endif %}
                             </li>
                         {% endfor %}
