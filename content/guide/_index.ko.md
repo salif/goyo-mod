@@ -1,6 +1,6 @@
 +++
-title = "Deployments"
-weight = 5
+title = "Guide"
+weight = 3
 sort_by = "weight"
 
 [extra]

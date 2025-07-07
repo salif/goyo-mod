@@ -1,6 +1,6 @@
 +++
 title = "Deployments"
-weight = 4
+weight = 5
 sort_by = "weight"
 
 [extra]
