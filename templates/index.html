@@ -77,11 +77,29 @@
                     <ul class="menu menu-horizontal px-1 items-center">
                         {% if config.extra.nav %}
                             {% for item in config.extra.nav %}
-                                <li><a class="btn btn-ghost" href="{{ item.url | safe }}">{{ item.name }}</a></li>
+                                {% if item.type == "dropdown" %}
+                                    <li class="dropdown dropdown-end">
+                                        <div tabindex="0" role="button" class="btn btn-ghost">
+                                            {{ item.name }}
+                                            <svg class="inline w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </div>
+                                        <ul tabindex="0" class="dropdown-content menu bg-base-100 border border-gray-500/15 rounded-box z-1 w-52 p-2 shadow-sm">
+                                            {% for member in item.members %}
+                                                <li>
+                                                    <a class="btn btn-ghost" href="{{ member.url | safe }}">{{ member.name }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a class="btn btn-ghost" href="{{ item.url | safe }}">{{ item.name }}</a>
+                                    </li>
+                                {% endif %}
                             {% endfor %}
                         {% endif %}
                         <li>
-                            <div class="dropdown dropdown-left p-0">
+                            <div class="dropdown dropdown-end p-0">
                                 <div tabindex="0" role="button" class="btn btn-ghost px-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -92,7 +110,7 @@
                                         <path d="M19.1 18h-6.2"></path>
                                     </svg>
                                 </div>
-                                <ul tabindex="0" class="dropdown-content menu glass rounded-box z-1 w-52 p-2 shadow-sm">
+                                <ul tabindex="0" class="dropdown-content menu bg-base-100 border border-gray-500/15 rounded-box z-1 w-52 p-2 shadow-lg">
                                     {% for lang_code, lang_config in config.languages %}
                                         {% if lang_code != lang %}
                                             <li><a href="{{ get_url(path="/", lang=lang_code) | safe }}">{{ lang_config.name | default(value=lang_code) }}</a></li>
