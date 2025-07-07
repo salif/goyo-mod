@@ -222,7 +222,7 @@
 
                                     <ul>
                                         {% for page in subsection.pages %}
-                                            <li {% if current_path == page.path %}class="active"{% endif %}>
+                                            <li {% if current_path == page.path %}class="border-r rounded border-gray-500/55"{% endif %}>
                                                 <a href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a>
                                             </li>
                                         {% endfor %}
