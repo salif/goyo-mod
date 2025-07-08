@@ -301,8 +301,8 @@
                             <li>
                                 {% if subsection.subsections %}
                                     <details {% if is_active %}open{% endif %}>
-                                        <summary>
-                                            <a href="{{ get_url(path=subsection.path, lang=lang) | safe }}">{{ subsection.title }}</a>
+                                        <summary {% if current_path == subsection.path %}class="rounded bg-gray-500/15"{% endif %}>
+                                            <a class="hover:no-underline" href="{{ get_url(path=subsection.path, lang=lang) | safe }}">{{ subsection.title }}</a>
                                         </summary>
                                         <ul>
                                             {% for subs in subsection.subsections %}
@@ -311,19 +311,19 @@
                                                 <li>
                                                     {% if subsubsection.pages %}
                                                         <details {% if is_sub_active %}open{% endif %}>
-                                                            <summary>
+                                                            <summary {% if current_path == subsubsection.path %}class="rounded bg-gray-500/15"{% endif %}>
                                                                 <a href="{{ get_url(path=subsubsection.path, lang=lang) | safe }}">{{ subsubsection.title }}</a>
                                                             </summary>
                                                             <ul>
                                                                 {% for page in subsubsection.pages %}
-                                                                    <li {% if current_path == page.path %}class="border-r rounded border-gray-500/15"{% endif %}>
-                                                                        <a href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a>
+                                                                    <li {% if current_path == page.path %}class="rounded bg-gray-500/15"{% endif %}>
+                                                                        <a class="hover:no-underline" href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a>
                                                                     </li>
                                                                 {% endfor %}
                                                             </ul>
                                                         </details>
                                                     {% else %}
-                                                        <a {% if current_path == subsubsection.path %}class="border-r rounded border-gray-500/15"{% endif %} href="{{ get_url(path=subsubsection.path, lang=lang) | safe }}">{{ subsubsection.title }}</a>
+                                                        <a class="hover:no-underline" {% if current_path == subsubsection.path %}class="rounded bg-gray-500/15"{% endif %} href="{{ get_url(path=subsubsection.path, lang=lang) | safe }}">{{ subsubsection.title }}</a>
                                                     {% endif %}
                                                 </li>
                                             {% endfor %}
@@ -331,19 +331,19 @@
                                     </details>
                                 {% elif subsection.pages %}
                                     <details {% if is_active %}open{% endif %}>
-                                        <summary>
+                                        <summary {% if current_path == subsection.path %}class="rounded bg-gray-500/15"{% endif %}>
                                             <a href="{{ get_url(path=subsection.path, lang=lang) | safe }}">{{ subsection.title }}</a>
                                         </summary>
                                         <ul>
                                             {% for page in subsection.pages %}
-                                                <li {% if current_path == page.path %}class="border-r rounded border-gray-500/15"{% endif %}>
+                                                <li {% if current_path == page.path %}class="rounded bg-gray-500/15"{% endif %}>
                                                     <a href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a>
                                                 </li>
                                             {% endfor %}
                                         </ul>
                                     </details>
                                 {% else %}
-                                    <a {% if current_path == subsection.path %}class="border-r rounded border-gray-500/15"{% endif %} href="{{ get_url(path=subsection.path, lang=lang) | safe }}">{{ subsection.title }}</a>
+                                    <a {% if current_path == subsection.path %}class="rounded bg-gray-500/15"{% endif %} href="{{ get_url(path=subsection.path, lang=lang) | safe }}">{{ subsection.title }}</a>
                                 {% endif %}
                             </li>
                         {% endfor %}
