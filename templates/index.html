@@ -188,6 +188,37 @@
                 <main class="prose w-full max-w-4xl mx-auto">
                     {% block content %}{% endblock content %}
 
+                    {# Comment system block #}
+                    {% if config.extra.comments and config.extra.comments.enabled %}
+                        <div id="comments" class="mt-12">
+                            {% if config.extra.comments.system == "giscus" %}
+                                <script src="https://giscus.app/client.js"
+                                    data-repo="{{ config.extra.comments.repo }}"
+                                    data-repo-id="{{ config.extra.comments.repo_id }}"
+                                    data-category="{{ config.extra.comments.category }}"
+                                    data-category-id="{{ config.extra.comments.category_id }}"
+                                    data-mapping="{{ config.extra.comments.mapping | default(value='pathname') }}"
+                                    data-strict="{{ config.extra.comments.strict | default(value='0') }}"
+                                    data-reactions-enabled="{{ config.extra.comments.reactions_enabled | default(value='1') }}"
+                                    data-emit-metadata="{{ config.extra.comments.emit_metadata | default(value='0') }}"
+                                    data-input-position="{{ config.extra.comments.input_position | default(value='bottom') }}"
+                                    data-theme="{{ config.extra.comments.theme | default(value='preferred_color_scheme') }}"
+                                    data-lang="{{ config.extra.comments.lang | default(value='en') }}"
+                                    crossorigin="anonymous"
+                                    async>
+                                </script>
+                            {% elif config.extra.comments.system == "utterances" %}
+                                <script src="https://utteranc.es/client.js"
+                                    repo="{{ config.extra.comments.repo }}"
+                                    issue-term="{{ config.extra.comments.issue_term | default(value='pathname') }}"
+                                    theme="{{ config.extra.comments.theme | default(value='github-light') }}"
+                                    crossorigin="anonymous"
+                                    async>
+                                </script>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
                     <div class="flex justify-between mt-8">
                         <div class="prev-link">
                             {% block prev_link %}{% endblock prev_link %}
@@ -268,20 +299,49 @@
                             {% set subsection = get_section(path=s) %}
                             {% set is_active = current_path is starting_with(subsection.path) %}
                             <li>
-                                {% if subsection.pages %}
-                                <details {% if is_active %}open{% endif %}>
-                                    <summary>
-                                        <a href="{{ get_url(path=subsection.path, lang=lang) | safe }}">{{ subsection.title }}</a>
-                                    </summary>
-
-                                    <ul>
-                                        {% for page in subsection.pages %}
-                                            <li {% if current_path == page.path %}class="border-r rounded border-gray-500/15"{% endif %}>
-                                                <a href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                </details>
+                                {% if subsection.subsections %}
+                                    <details {% if is_active %}open{% endif %}>
+                                        <summary>
+                                            <a href="{{ get_url(path=subsection.path, lang=lang) | safe }}">{{ subsection.title }}</a>
+                                        </summary>
+                                        <ul>
+                                            {% for subs in subsection.subsections %}
+                                                {% set subsubsection = get_section(path=subs) %}
+                                                {% set is_sub_active = current_path is starting_with(subsubsection.path) %}
+                                                <li>
+                                                    {% if subsubsection.pages %}
+                                                        <details {% if is_sub_active %}open{% endif %}>
+                                                            <summary>
+                                                                <a href="{{ get_url(path=subsubsection.path, lang=lang) | safe }}">{{ subsubsection.title }}</a>
+                                                            </summary>
+                                                            <ul>
+                                                                {% for page in subsubsection.pages %}
+                                                                    <li {% if current_path == page.path %}class="border-r rounded border-gray-500/15"{% endif %}>
+                                                                        <a href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a>
+                                                                    </li>
+                                                                {% endfor %}
+                                                            </ul>
+                                                        </details>
+                                                    {% else %}
+                                                        <a {% if current_path == subsubsection.path %}class="border-r rounded border-gray-500/15"{% endif %} href="{{ get_url(path=subsubsection.path, lang=lang) | safe }}">{{ subsubsection.title }}</a>
+                                                    {% endif %}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </details>
+                                {% elif subsection.pages %}
+                                    <details {% if is_active %}open{% endif %}>
+                                        <summary>
+                                            <a href="{{ get_url(path=subsection.path, lang=lang) | safe }}">{{ subsection.title }}</a>
+                                        </summary>
+                                        <ul>
+                                            {% for page in subsection.pages %}
+                                                <li {% if current_path == page.path %}class="border-r rounded border-gray-500/15"{% endif %}>
+                                                    <a href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </details>
                                 {% else %}
                                     <a {% if current_path == subsection.path %}class="border-r rounded border-gray-500/15"{% endif %} href="{{ get_url(path=subsection.path, lang=lang) | safe }}">{{ subsection.title }}</a>
                                 {% endif %}
