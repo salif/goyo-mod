@@ -184,8 +184,13 @@
                 {% endif %}
             </div>
 
+            {% if section and section.path == "/" %}
+            <div class="p-8 w-full">
+                <main class="prose w-full mx-auto">
+            {% else %}
             <div class="p-8 w-full max-w-7xl mx-auto lg:grid lg:grid-cols-[1fr_250px] lg:gap-8">
-                <main class="prose w-full max-w-4xl mx-auto">
+                <main class="prose w-full max-w-7xl mx-auto">
+            {% endif %}
                     {% block content %}{% endblock content %}
 
                     {# Comment system block #}
@@ -286,7 +291,7 @@
 
         </div>
         {% if section and section.path == "/" %}
-        <div id="sidebar" class="drawer-side fixed top-0 pt-12 bottom-0 z-40 border-r border-gray-500/15">
+        <div id="sidebar" class="hidden">
         {% else %}
         <div id="sidebar" class="drawer-side fixed top-0 pt-12 bottom-0 z-40 border-r border-gray-500/15">
         {% endif %}
