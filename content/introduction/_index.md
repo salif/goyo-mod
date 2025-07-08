@@ -6,13 +6,17 @@ sort_by = "weight"
 [extra]
 +++
 
-Goyo는 Zola 기반의 심플하고 모던한 블로그/문서용 테마입니다.
-다크/라이트 테마, 검색, 다국어, SEO, 반응형 디자인 등 다양한 기능을 제공합니다.
+Goyo is a simple and modern theme for Zola, designed for blogs and documentation sites. It's perfect for users who appreciate clean, intuitive interfaces, especially technical bloggers and developers writing documentation.
 
-- 다크/라이트 테마 지원
-- 검색 기능
-- 다국어 지원
-- SEO 최적화
-- Table of Contents 지원
-- 반응형 디자인
-- 다양한 쇼트코드(머메이드 차트, 알림 박스, 뱃지 등)
+**Key Features:**
+
+*   **Elegant and Modern Design:** Minimizes distractions to keep the focus on your content.
+*   **Dark/Light Theme Support:** Adapts to user's system settings or can be toggled manually.
+*   **Responsive Design:** Ensures optimal readability across various devices, including desktops, tablets, and mobiles.
+*   **Built-in Search Functionality:** Allows users to easily search content within your website.
+*   **Multilingual Support:** Designed to help you provide content in multiple languages.
+*   **SEO Optimized:** Built with a search-engine-friendly structure to improve content visibility.
+*   **Automatic Table of Contents:** Generates a table of contents for your documents to enhance readability.
+*   **Variety of Shortcodes:** Comes with useful shortcodes like Mermaid charts, alert boxes, badges, and more to enrich your content creation.
+
+Share your ideas and knowledge beautifully and effectively with the Goyo theme.

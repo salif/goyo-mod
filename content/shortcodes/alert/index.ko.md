@@ -29,7 +29,7 @@ weight = 1
 {%/* end */%}
 ```
 
-## Warnging
+## Warning
 
 {% alert_warning() %}
   Warning alert
