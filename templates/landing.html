@@ -1,8 +1,41 @@
 {% extends "index.html" %}
 
 {% block content %}
-    <h1>{{ section.title }}</h1>
-    {{ section.content | safe }}
+    {# 상단 큰 이미지 #}
+    {% if section.extra.landing_image %}
+        <div class="w-full flex justify-center mb-8">
+            <img src="{{ section.extra.landing_image | safe }}"
+                 alt="Landing Image"
+                 class="rounded-2xl shadow-xl border border-gray-500/15 max-w-3xl w-full object-cover" />
+        </div>
+    {% endif %}
+
+    {# 제목과 버전 뱃지 #}
+    <div class="flex items-center gap-4 mb-6 justify-center">
+        <h1 class="text-4xl font-extrabold tracking-tight">{{ section.title }}</h1>
+        {% if section.extra.version %}
+            <span class="badge badge-outline badge-lg border-gray-500/15 text-base-content font-semibold">
+                {{ section.extra.version }}
+            </span>
+        {% endif %}
+    </div>
+    <div class="prose max-w-2xl mb-10 mx-auto text-center">
+        {{ section.content | safe }}
+    </div>
+
+    {# Feature Grid #}
+    {% if section.extra.features %}
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {% for feature in section.extra.features %}
+                <div class="card bg-base-100 border border-gray-500/15 shadow-lg rounded-2xl transition-transform hover:scale-105 hover:shadow-2xl">
+                    <div class="card-body">
+                        <h3 class="card-title text-lg font-bold mb-2">{{ feature.title }}</h3>
+                        <p class="text-base text-gray-500">{{ feature.desc }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
 {% endblock content %}
 
 {% block prev_link %}
