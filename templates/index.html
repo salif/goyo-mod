@@ -77,11 +77,17 @@
 
         </div>
         
-        {% if section is defined %}
-            {{ macros_sidebar::sidebar(config=config, lang=lang, current_path=current_path, section=section) }}
+        {% if section is defined and section.path == "/" %}
+        <div id="sidebar" class="hidden">
         {% else %}
-            {{ macros_sidebar::sidebar(config=config, lang=lang, current_path=current_path, section=false) }}
+        <div id="sidebar" class="drawer-side fixed top-0 pt-12 bottom-0 z-40 border-r border-gray-500/15">
         {% endif %}
+            {% if section is defined %}
+                {{ macros_sidebar::sidebar(config=config, lang=lang, current_path=current_path, section=section) }}
+            {% else %}
+                {{ macros_sidebar::sidebar(config=config, lang=lang, current_path=current_path, section=false) }}
+            {% endif %}
+        </div>
     </div>
 
     {% block js_body %}
