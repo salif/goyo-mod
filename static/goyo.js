@@ -189,7 +189,9 @@ function initTheme() {
     return;
   }
 
-  var currentTheme = localStorage.getItem("theme") || "night";
+  var fallbackTheme =
+    window && window.fallbackTheme ? window.fallbackTheme : "night";
+  var currentTheme = localStorage.getItem("theme") || fallbackTheme;
   document.documentElement.setAttribute("data-theme", currentTheme);
   themeController.checked = currentTheme === "night";
 

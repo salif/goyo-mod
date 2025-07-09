@@ -266,10 +266,15 @@
             </div>
 
             <script>
-              var currentTheme = localStorage.getItem('theme') || 'night';
-              var mermaidTheme = "dark"
+              // Determine theme: localStorage > extra.default_colorset > night
+              // Expose theme config for global use (e.g., goyo.js)
+              window.defaultColorset = "{{ config.extra.default_colorset | default(value='dark') }}";
+              window.themeMap = { "dark": "night", "light": "lofi" };
+              window.fallbackTheme = window.themeMap[window.defaultColorset] || "night";
+              var currentTheme = localStorage.getItem('theme') || window.fallbackTheme;
+              var mermaidTheme = "dark";
               if(currentTheme == "lofi") {
-                mermaidTheme = "light"
+                mermaidTheme = "light";
               }
               mermaid.initialize({ startOnLoad: false, theme: mermaidTheme });
               document.addEventListener('DOMContentLoaded', async () => {

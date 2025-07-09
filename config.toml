@@ -22,6 +22,7 @@ footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href
 default_thumbnail = "images/default_thumbnail.jpg"
 twitter_site = "@hahwul"
 twitter_creator = "@hahwul"
+default_colorset = "dark"
 
 nav = [
     { name = "Documents", url = "/introduction", type = "url" },
