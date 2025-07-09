@@ -1,0 +1,7 @@
+{% macro footer(config) %}
+<footer class="footer text-xs p-4 text-base-content border-t border-gray-500/15">
+    <aside>
+        <p>{{ config.extra.footer_html | safe }}</p>
+    </aside>
+</footer>
+{% endmacro footer %}

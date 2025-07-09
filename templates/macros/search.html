@@ -1,0 +1,19 @@
+{% macro search(config) %}
+{% if config.build_search_index %}
+<!-- Search Modal -->
+<input type="checkbox" id="search-modal" class="modal-toggle" />
+<div class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box relative bg-opacity-90 backdrop-blur-sm glass">
+        <label for="search-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+        <h3 class="text-lg font-bold">Search</h3>
+        <div class="search-container py-4">
+            <input id="search" type="search" placeholder="Search.." class="input input-bordered w-full bg-transparent">
+            <div class="search-results mt-4" style="display: none;">
+                <div class="search-results__header"></div>
+                <ul class="search-results__items menu"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endmacro search %}
