@@ -23,6 +23,7 @@ default_thumbnail = "images/default_thumbnail.jpg"
 twitter_site = "@hahwul"
 twitter_creator = "@hahwul"
 default_colorset = "dark"
+gtag = ""
 
 nav = [
     { name = "Documents", url = "/introduction", type = "url" },

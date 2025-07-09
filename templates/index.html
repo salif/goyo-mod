@@ -29,6 +29,19 @@
       {% endblock title %}
     </title>
 
+    {# Google Analytics gtag.js integration #}
+    {% if config.extra.gtag and config.extra.gtag != "" %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.extra.gtag }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '{{ config.extra.gtag }}');
+    </script>
+    {% endif %}
+
       <!-- SEO: Open Graph / Twitter Card -->
       <meta property="og:title" content="
         {%- if page and page.title -%}
