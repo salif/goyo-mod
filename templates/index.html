@@ -24,7 +24,8 @@
         <div class="drawer-content flex flex-col pt-16">
             {{ macros_header::header(config=config, lang=lang) }}
 
-            {% if section is defined and section.path == "/" %}
+            {% set lang_root_path = "/" ~ lang ~ "/" %}
+            {% if section is defined and (section.path == "/" or section.path == lang_root_path) %}
             <div class="p-8 w-full">
                 <main class="prose w-full mx-auto">
             {% else %}
@@ -76,8 +77,9 @@
             {{ macros_footer::footer(config=config) }}
 
         </div>
-        
-        {% if section is defined and section.path == "/" %}
+
+        {% set lang_root_path = "/" ~ lang ~ "/" %}
+        {% if section is defined and (section.path == "/" or section.path == lang_root_path) %}
         <div id="sidebar" class="hidden">
         {% else %}
         <div id="sidebar" class="drawer-side fixed top-0 pt-12 bottom-0 z-40 border-r border-gray-500/15">
