@@ -1,10 +1,12 @@
 +++
-title = "Comments"
+title = "Configuration"
 weight = 2
 sort_by = "weight"
 
 [extra]
 +++
+
+## Commnets
 
 ```toml
 [extra.comments]

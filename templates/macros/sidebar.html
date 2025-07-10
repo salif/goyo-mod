@@ -15,60 +15,6 @@
                         </summary>
                         <ul>
                             {# Level 2 #}
-                            {% if s1.subsections %}
-                                {% for s2_path in s1.subsections %}
-                                    {% set s2 = get_section(path=s2_path) %}
-                                    {% set is_active2 = current_path is starting_with(s2.path) %}
-                                    <li>
-                                        {% if s2.subsections or s2.pages %}
-                                            <details {% if is_active2 %}open{% endif %}>
-                                                <summary {% if current_path == s2.path %}class="rounded bg-gray-500/15"{% endif %}>
-                                                    <a class="hover:no-underline" href="{{ get_url(path=s2.path, lang=lang) | safe }}">{{ s2.title }}</a>
-                                                </summary>
-                                                <ul>
-                                                    {# Level 3 #}
-                                                    {% if s2.subsections %}
-                                                        {% for s3_path in s2.subsections %}
-                                                            {% set s3 = get_section(path=s3_path) %}
-                                                            {% set is_active3 = current_path is starting_with(s3.path) %}
-                                                            <li>
-                                                                {% if s3.subsections or s3.pages %}
-                                                                    <details {% if is_active3 %}open{% endif %}>
-                                                                        <summary {% if current_path == s3.path %}class="rounded bg-gray-500/15"{% endif %}>
-                                                                            <a class="hover:no-underline" href="{{ get_url(path=s3.path, lang=lang) | safe }}">{{ s3.title }}</a>
-                                                                        </summary>
-                                                                        <ul>
-                                                                            {# Level 4 - Pages only #}
-                                                                            {% if s3.pages %}
-                                                                                {% for page in s3.pages %}
-                                                                                    <li {% if current_path == page.path %}class="rounded bg-gray-500/15"{% endif %}>
-                                                                                        <a class="hover:no-underline" href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a>
-                                                                                    </li>
-                                                                                {% endfor %}
-                                                                            {% endif %}
-                                                                        </ul>
-                                                                    </details>
-                                                                {% else %}
-                                                                    <a {% if current_path == s3.path %}class="rounded bg-gray-500/15"{% endif %} href="{{ get_url(path=s3.path, lang=lang) | safe }}">{{ s3.title }}</a>
-                                                                {% endif %}
-                                                            </li>
-                                                        {% endfor %}
-                                                    {% endif %}
-                                                    {% if s2.pages %}
-                                                        {% for page in s2.pages %}
-                                                            <li {% if current_path == page.path %}class="rounded bg-gray-500/15"{% endif %}>
-                                                                <a class="hover:no-underline" href="{{ get_url(path=page.path, lang=lang) | safe }}">{{ page.title }}</a>
-                                                            </li>
-                                                        {% endfor %}
-                                                    {% endif %}
-                                                </ul>
-                                            </details>
-                                        {% else %}
-                                            <a {% if current_path == s2.path %}class="rounded bg-gray-500/15"{% endif %} href="{{ get_url(path=s2.path, lang=lang) | safe }}">{{ s2.title }}</a>
-                                        {% endif %}
-                                    </li>
-                                {% endfor %}
-                            {% endif %}
                             {% if s1.pages %}
                                 {% for page in s1.pages %}
                                     <li {% if current_path == page.path %}class="rounded bg-gray-500/15"{% endif %}>
