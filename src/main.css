@@ -124,14 +124,14 @@ body {
     }
 
     em {
-        @apply italic text-sm mt-2 flex justify-center gap-1;
+        @apply italic text-sm;
         @apply text-base-content;
     }
 
     /* Color definitions for the syntax highlighting */
     .z-code {
         @apply text-base-content;
-        @apply bg-base-200;
+        @apply bg-base-100;
     }
 }
 
