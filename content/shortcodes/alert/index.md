@@ -3,7 +3,7 @@ title = "Alert"
 weight = 1
 +++
 
-Display different types of alert messages to highlight important information, statuses, or warnings in your content. Use these alert shortcodes to visually distinguish info, success, warning, and error messages for your readers.
+Display different types of alert messages to highlight important information, statuses, or warnings.
 
 ## Info
 
@@ -29,7 +29,7 @@ Display different types of alert messages to highlight important information, st
 {%/* end */%}
 ```
 
-## Warnging
+## Warning
 
 {% alert_warning() %}
   Warning alert

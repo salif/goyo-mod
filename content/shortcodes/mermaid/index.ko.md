@@ -3,7 +3,7 @@ title = "Mermaid Chart"
 weight = 3
 +++
 
-[Mermaid](https://mermaid-js.github.io/) Shortcode를 사용하면 복잡한 구조나 프로세스를 쉽게 시각적으로 표현할 수 있습니다.
+[Mermaid](https://mermaid-js.github.io/) Shortcode를 사용하여 복잡한 구조나 프로세스를 시각적으로 표현할 수 있습니다.
 
 ## Example
 
