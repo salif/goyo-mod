@@ -72,7 +72,7 @@ body {
     }
 
     a {
-        @apply text-base-content;
+        @apply text-base-content font-bold;
         @apply hover:link;
     }
 
@@ -98,7 +98,7 @@ body {
         @apply text-base-content;
         @apply italic;
         @apply border-l-2;
-        @apply border-base-300;
+        @apply border-gray-500;
         @apply pl-4;
         @apply mb-4;
     }
