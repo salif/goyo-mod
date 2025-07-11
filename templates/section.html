@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 
 {% block content %}
-    <h1>{{ section.title }}</h1>
+    <h1 class="mb-12 pb-4 border-b border-gray-500/15">{{ section.title }}</h1>
     {{ section.content | safe }}
 
     {% if section.pages %}
