@@ -1,7 +1,7 @@
 +++
 template = "landing.html"
 extra.version = "v0.1.0"
-extra.landing_image = "/images/landing.png"
+extra.landing_image = "/images/landing.jpg"
 extra.features = [
     { title = "Document Friendly", desc = "Provides a clean writing experience for documentation." },
     { title = "Simple Design", desc = "A theme that pursues minimalism." },
