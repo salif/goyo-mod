@@ -17,7 +17,7 @@
   * [x] Mermaid chart
   * [x] 4 alert boxes
   * [x] 7 badges
-  * [ ] Image Diff
+  * [x] Image Diff
   * [ ] Youtube
   * [ ] Asciinema
 
