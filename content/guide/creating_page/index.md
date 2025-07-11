@@ -51,11 +51,11 @@ Your Markdown content starts here...
 
 **Common Front Matter Fields:**
 
--   `title`: Page title.
--   `date`: Publication date.
--   `description`: Page summary (for SEO).
--   `[taxonomies]`: Content categorization (e.g., categories, tags).
--   `[extra]`: Custom data for the theme or your needs.
+- `title`: Page title.
+- `date`: Publication date.
+- `description`: Page summary (for SEO).
+- `[taxonomies]`: Content categorization (e.g., categories, tags).
+- `[extra]`: Custom data for the theme or your needs.
 
 ## Writing Content
 

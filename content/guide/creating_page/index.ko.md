@@ -51,11 +51,11 @@ tags = ["zola", "goyo", "블로깅"]
 
 **주요 프론트 매터 필드:**
 
--   `title`: 페이지 제목.
--   `date`: 발행 날짜.
--   `description`: 페이지 요약 (SEO).
--   `[taxonomies]`: 카테고리, 태그 등 콘텐츠 분류.
--   `[extra]`: 테마 또는 사용자 정의 데이터.
+- `title`: 페이지 제목.
+- `date`: 발행 날짜.
+- `description`: 페이지 요약 (SEO).
+- `[taxonomies]`: 카테고리, 태그 등 콘텐츠 분류.
+- `[extra]`: 테마 또는 사용자 정의 데이터.
 
 ## 콘텐츠 작성하기
 
