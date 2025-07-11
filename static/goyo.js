@@ -107,7 +107,7 @@ function makeTeaser(body, terms) {
 
 function formatSearchResultItem(item, terms) {
   var li = document.createElement("li");
-  li.innerHTML = `<a><div class="prose prose-sm"><h3>${item.doc.title}</h3><p>${makeTeaser(item.doc.body, terms)}</p></div></a>`;
+  li.innerHTML = `<a class="border border-gray-500/15 my-2"><div class="prose prose-sm"><h3>${item.doc.title}</h3><p>${makeTeaser(item.doc.body, terms)}</p></div></a>`;
   li.addEventListener("click", function () {
     window.location.href = item.ref;
   });
