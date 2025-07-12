@@ -6,11 +6,11 @@ sort_by = "weight"
 [extra]
 +++
 
-## Logo
+## 로고
 `logo_text` / `logo_image_path`
 
-- `logo_text`: Text displayed when no logo image is present.
-- `logo_image_path`: Path to the logo image.
+- `logo_text`: 로고 이미지 없을 때 표시되는 텍스트
+- `logo_image_path`: 로고 이미지 경로
 
 ```toml
 [extra]
@@ -18,31 +18,31 @@ logo_text = "Goyo"
 logo_image_path = "images/goyo.png"
 ```
 
-## Footer
+## 푸터
 `footer_html`
 
-- `footer_html`: HTML code displayed in the footer.
+- `footer_html`: 푸터에 표시되는 HTML 코드
 
 ```toml
 [extra]
 footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://github.com/hahwul/goyo'>Goyo</a>"
 ```
 
-## Thumbnail
+## 썸네일
 `default_thumbnail`
 
-- `default_thumbnail`: Path to the default thumbnail image.
+- `default_thumbnail`: 기본 썸네일 이미지 경로
 
 ```toml
 [extra]
 default_thumbnail = "images/default_thumbnail.jpg"
 ```
 
-## Twitter
+## 트위터
 `twitter_site` / `twitter_creator`
 
-- `twitter_site`: Twitter site handle.
-- `twitter_creator`: Twitter creator handle.
+- `twitter_site`: 트위터 사이트 핸들
+- `twitter_creator`: 트위터 생성자 핸들
 
 ```toml
 [extra]
@@ -50,30 +50,40 @@ twitter_site = "@hahwul"
 twitter_creator = "@hahwul"
 ```
 
-## Color
+## 컬러셋
 `default_colorset`
 
-- `default_colorset`: Default theme (dark/light).
+- `default_colorset`: 기본 테마 (dark/light)
 
 ```toml
 [extra]
 default_colorset = "dark"
 ```
 
-## Google Tag
+## 구글 태그
 `gtag`
 
-- `gtag`: Google Tag ID.
+- `gtag`: 구글 태그 ID
 
 ```toml
 [extra]
 gtag = "G-XXXXXXXXXX"
 ```
 
-## Navigations
+## 사이드바 확장 깊이
+`sidebar_expand_depth`
+
+- `sidebar_expand_depth`: 사이드바 섹션이 기본적으로 확장되어야 하는 깊이(최대 5)를 지정합니다. 예를 들어, `1` 값은 최상위 섹션만 표시하고, `2`는 첫 번째 하위 섹션 수준을 확장합니다.
+
+```toml
+[extra]
+sidebar_expand_depth = 2
+```
+
+## 네비게이션
 `nav`
 
-- `nav`: Top navigation menu.
+- `nav`: 상단 네비게이션 메뉴
 
 ```toml
 [extra]
@@ -86,10 +96,10 @@ nav = [
 ]
 ```
 
-## Comments
+## 댓글
 `comments`
 
-- `comments`: Comment feature settings (giscus/utterances).
+- `comments`: 댓글 기능 설정 (giscus/utterances)
 
 ```toml
 [extra.comments]

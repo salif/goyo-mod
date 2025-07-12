@@ -1,5 +1,5 @@
 +++
-title = "Markdown Style Guide & Writing Tips"
+title = "Markdown Syntax"
 weight = 2 # Assuming "Creating Content" is weight 1
 template = "page.html"
 description = "Learn how to use Markdown effectively with the Goyo theme, including styling examples and writing best practices."
@@ -40,7 +40,7 @@ It has multiple lines.
 This is a new paragraph.
 
 This line has a soft break.
-This line has a soft break.  
+This line has a soft break.
 This line is below it.
 ```
 

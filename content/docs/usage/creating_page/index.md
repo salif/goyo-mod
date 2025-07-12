@@ -1,5 +1,5 @@
 +++
-title = "Creating Content: Pages and Sections"
+title = "Creating Content"
 weight = 1
 template = "page.html"
 +++
@@ -8,22 +8,7 @@ This guide explains how to structure your content in Zola by creating pages and 
 
 ## Creating a New Page
 
-To create a new page (e.g., a blog post or an article):
-
-1.  **Use the `zola new` command (Recommended):**
-    Run the following command in your terminal:
-
-    ```bash
-    zola new path/to/your-page-slug.md
-    ```
-
-    Example: To create a page for a new Goyo feature in a `features` section:
-    ```bash
-    zola new features/amazing-new-feature.md
-    ```
-
-2.  **Manually Create a File:**
-    Alternatively, you can manually create a `.md` file within the desired location in your `content` directory.
+you can manually create a `.md` file within the desired location in your `content` directory.
 
 ## Page Front Matter
 

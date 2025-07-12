@@ -6,11 +6,11 @@ sort_by = "weight"
 [extra]
 +++
 
-## 로고
+## Logo
 `logo_text` / `logo_image_path`
 
-- `logo_text`: 로고 이미지 없을 때 표시되는 텍스트
-- `logo_image_path`: 로고 이미지 경로
+- `logo_text`: Text displayed when no logo image is present.
+- `logo_image_path`: Path to the logo image.
 
 ```toml
 [extra]
@@ -18,31 +18,31 @@ logo_text = "Goyo"
 logo_image_path = "images/goyo.png"
 ```
 
-## 푸터
+## Footer
 `footer_html`
 
-- `footer_html`: 푸터에 표시되는 HTML 코드
+- `footer_html`: HTML code displayed in the footer.
 
 ```toml
 [extra]
 footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://github.com/hahwul/goyo'>Goyo</a>"
 ```
 
-## 썸네일
+## Thumbnail
 `default_thumbnail`
 
-- `default_thumbnail`: 기본 썸네일 이미지 경로
+- `default_thumbnail`: Path to the default thumbnail image.
 
 ```toml
 [extra]
 default_thumbnail = "images/default_thumbnail.jpg"
 ```
 
-## 트위터
+## Twitter
 `twitter_site` / `twitter_creator`
 
-- `twitter_site`: 트위터 사이트 핸들
-- `twitter_creator`: 트위터 생성자 핸들
+- `twitter_site`: Twitter site handle.
+- `twitter_creator`: Twitter creator handle.
 
 ```toml
 [extra]
@@ -50,30 +50,40 @@ twitter_site = "@hahwul"
 twitter_creator = "@hahwul"
 ```
 
-## 컬러셋
+## Color
 `default_colorset`
 
-- `default_colorset`: 기본 테마 (dark/light)
+- `default_colorset`: Default theme (dark/light).
 
 ```toml
 [extra]
 default_colorset = "dark"
 ```
 
-## 구글 태그
+## Google Tag
 `gtag`
 
-- `gtag`: 구글 태그 ID
+- `gtag`: Google Tag ID.
 
 ```toml
 [extra]
 gtag = "G-XXXXXXXXXX"
 ```
 
-## 네비게이션
+## Sidebar Expand Depth
+`sidebar_expand_depth`
+
+- `sidebar_expand_depth`: Specifies the depth (up to 5) to which sidebar sections should be expanded by default. For example, a value of `1` will only show top-level sections, while `2` will expand the first level of subsections.
+
+```toml
+[extra]
+sidebar_expand_depth = 2
+```
+
+## Navigations
 `nav`
 
-- `nav`: 상단 네비게이션 메뉴
+- `nav`: Top navigation menu.
 
 ```toml
 [extra]
@@ -86,10 +96,10 @@ nav = [
 ]
 ```
 
-## 댓글
+## Comments
 `comments`
 
-- `comments`: 댓글 기능 설정 (giscus/utterances)
+- `comments`: Comment feature settings (giscus/utterances).
 
 ```toml
 [extra.comments]

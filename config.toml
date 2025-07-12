@@ -24,6 +24,7 @@ twitter_site = "@hahwul"
 twitter_creator = "@hahwul"
 default_colorset = "dark"
 gtag = ""
+sidebar_expand_depth = 1
 
 nav = [
     { name = "Documents", url = "/introduction", type = "url" },
