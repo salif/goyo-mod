@@ -96,6 +96,16 @@ nav = [
 ]
 ```
 
+## 루트 사이드바 숨기기 비활성화
+`disable_root_sidebar_hide`
+
+- `disable_root_sidebar_hide`: `true`로 설정하면 루트 페이지 (`/` 또는 `/{lang}/`)에서 사이드바가 숨겨지지 않습니다. 이를 통해 메인 랜딩 페이지에서도 사이드바를 항상 볼 수 있습니다.
+
+```toml
+[extra]
+disable_root_sidebar_hide = false
+```
+
 ## 댓글
 `comments`
 

@@ -96,6 +96,16 @@ nav = [
 ]
 ```
 
+## Disable Root Sidebar Hide
+`disable_root_sidebar_hide`
+
+- `disable_root_sidebar_hide`: If set to `true`, the sidebar will not be hidden on the root page (`/` or `/{lang}/`). This allows the sidebar to always be visible, even on the main landing page.
+
+```toml
+[extra]
+disable_root_sidebar_hide = false
+```
+
 ## Comments
 `comments`
 
