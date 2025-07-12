@@ -12,6 +12,6 @@ extra.features = [
 ]
 +++
 
-Welcome to the landing page of Goyo theme documentation. Goyo is a simple and modern theme for Zola, designed for blogs and documentation sites.
+Discover Goyo: A sleek, modern Zola theme crafted for blogs and documentation sites. With its minimalist design and effortless setup, Goyo empowers you to build stunning, functional websites with ease.
 
-Explore the documentation to learn how to install, configure, and use Goyo to create your own beautiful and functional website.
+Dive into our documentation to learn how to install, customize, and bring your vision to life with Goyo.

@@ -12,6 +12,6 @@ extra.features = [
 ]
 +++
 
-Welcome to the landing page of Goyo theme documentation. Goyo is a simple and modern theme for Zola, designed for blogs and documentation sites.
+Goyo에 오신 걸 환영합니다! 심플함과 스타일을 모두 잡은 Zola 테마로, 블로그와 문서 사이트에 딱 맞아요. Goyo와 함께라면 멋지고 실용적인 웹사이트를 뚝딱 만들 수 있습니다.
 
-Explore the documentation to learn how to install, configure, and use Goyo to create your own beautiful and functional website.
+문서를 살펴보며 설치와 설정, 그리고 나만의 Goyo를 만드는 팁을 확인해보세요!
