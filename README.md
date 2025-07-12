@@ -18,8 +18,8 @@
   * [x] 4 alert boxes
   * [x] 7 badges
   * [x] Image Diff
-  * [ ] Youtube
-  * [ ] Asciinema
+  * [x] Youtube
+  * [x] Asciinema
 
 ## Installation
 
