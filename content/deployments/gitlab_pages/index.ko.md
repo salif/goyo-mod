@@ -1,5 +1,6 @@
 +++
-title = "GitLab Pages에 배포하기"
+title = "Gitlab"
+description = "GitLab Pages에 배포하기"
 weight = 2
 template = "page.html"
 +++

@@ -1,5 +1,6 @@
 +++
-title = "Deploying to GitLab Pages"
+title = "Gitlab"
+description = "Deploying to GitLab Pages"
 weight = 2
 template = "page.html"
 +++

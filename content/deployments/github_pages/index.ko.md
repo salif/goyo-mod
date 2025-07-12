@@ -1,5 +1,6 @@
 +++
-title = "GitHub Pages에 배포하기"
+title = "Github"
+description = "GitHub Pages에 배포하기"
 weight = 1
 template = "page.html"
 +++
