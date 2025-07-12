@@ -2,24 +2,15 @@
 
 ## Features
 
-* [x] Dark, Light Themes.
-* [x] Search support.
-* [x] Multi-language support.
-* [ ] PWA support.
-* [x] SEO support.
-* [x] Table of Contents support.
-* [x] Responsive design.
-* [x] GTag
-* [x] Comments
-  * [x] Giscus
-  * [x] Utterances
-* Shortcodes
-  * [x] Mermaid chart
-  * [x] 4 alert boxes
-  * [x] 7 badges
-  * [x] Image Diff
-  * [x] Youtube
-  * [x] Asciinema
+- Dark & Light Themes
+- Responsive Design
+- SEO-Friendly
+- Multi-Language Support
+- Auto-Generated Sidebar & Custom Nav
+- Comments (Giscus, Utterances)
+- Mermaid.js Diagrams
+- Custom Shortcodes
+- Layout Customization
 
 ## Installation
 
