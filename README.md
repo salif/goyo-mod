@@ -35,8 +35,6 @@ Add the theme as a git submodule:
 ```bash
 git init  # if your project is a git repository already, ignore this command
 git submodule add https://github.com/hahwul/goyo themes/goyo
-git submodule update --init --recursive
-git submodule update --remote --merge
 ```
 
 Or clone the theme into your themes directory:
@@ -45,22 +43,40 @@ Or clone the theme into your themes directory:
 git clone https://github.com/hahwul/goyo themes/goyo
 ```
 
+Then set `goyo` as your theme in `config.toml`.
+
+```toml
+title = "Your Docs"
+theme = "goyo"
+```
+
 ## Configuration
 
 Add extra field in config.toml
 
 ```toml
+[extra]
 logo_text = "Goyo"
 logo_image_path = "images/goyo.png"
 footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://github.com/hahwul/goyo'>Goyo</a>"
 default_thumbnail = "images/default_thumbnail.jpg"
 twitter_site = "@hahwul"
 twitter_creator = "@hahwul"
+default_colorset = "dark"
+gtag = ""
+sidebar_expand_depth = 1
+disable_root_sidebar_hide = false
+
 nav = [
-    { name = "Home", url = "/" },
-    { name = "GitHub", url = "https://github.com/hahwul/goyo" },
+    { name = "Documents", url = "/introduction", type = "url" },
+    { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url" },
+    { name = "Links", type = "dropdown", members = [
+        { name = "Creator Blog", url = "https://www.hahwul.com", type = "url" },
+    ] },
 ]
 ```
+
+More information? [https://goyo.hahwul.com/get_started/configuration/](https://goyo.hahwul.com/get_started/configuration/)
 
 ## Run
 
@@ -69,3 +85,5 @@ zola serve
 
 # and open http://localhost:1111 in your browser.
 ```
+
+![](./screenshot.png)
