@@ -14,9 +14,8 @@
 - Multi-Language Support
 - Auto-Generated Sidebar & Custom Nav
 - Comments (Giscus, Utterances)
-- Mermaid.js Diagrams
-- Custom Shortcodes
-- Layout Customization
+- Various shortcodes (Mermaid, Asciinema, etc.)
+- Customization
 
 ## Installation
 
