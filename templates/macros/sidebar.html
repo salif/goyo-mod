@@ -1,4 +1,10 @@
 {% macro sidebar(config, lang, current_path, section) %}
+{% if config.extra.sidebar_expand_depth is defined %}
+    {% set sidebar_expand_depth = config.extra.sidebar_expand_depth | int %}
+{% else %}
+    {% set sidebar_expand_depth = 0 %}
+{% endif %}
+
 <label for="my-drawer-2" class="drawer-overlay"></label>
 <div class="p-4 w-80 min-h-full text-base-content overflow-y-auto">
     <ul class="menu w-full mt-4">
@@ -9,7 +15,7 @@
             {% set is_active1 = current_path is starting_with(s1.path) %}
             <li>
                 {% if s1.subsections or s1.pages %}
-                    <details {% if is_active1 or (config.extra.sidebar_expand_depth | default(0)) >= 1 %}open{% endif %}>
+                    <details {% if is_active1 or sidebar_expand_depth >= 1 %}open{% endif %}>
                         <summary {% if current_path == s1.path %}class="rounded bg-gray-500/15"{% endif %}>
                             {{ s1.title }}
                         </summary>
@@ -20,7 +26,7 @@
                                 {% set is_active2 = current_path is starting_with(s2.path) %}
                                 <li>
                                     {% if s2.subsections or s2.pages %}
-                                        <details {% if is_active2 or (config.extra.sidebar_expand_depth | default(0)) >= 2 %}open{% endif %}>
+                                        <details {% if is_active2 or sidebar_expand_depth >= 2 %}open{% endif %}>
                                             <summary {% if current_path == s2.path %}class="rounded bg-gray-500/15"{% endif %}>
                                                 <a class="hover:no-underline" href="{{ get_url(path=s2.path, lang=lang) | safe }}">{{ s2.title }}</a>
                                             </summary>
@@ -31,7 +37,7 @@
                                                     {% set is_active3 = current_path is starting_with(s3.path) %}
                                                     <li>
                                                         {% if s3.subsections or s3.pages %}
-                                                            <details {% if is_active3 or (config.extra.sidebar_expand_depth | default(0)) >= 3 %}open{% endif %}>
+                                                            <details {% if is_active3 or sidebar_expand_depth >= 3 %}open{% endif %}>
                                                                 <summary {% if current_path == s3.path %}class="rounded bg-gray-500/15"{% endif %}>
                                                                     <a class="hover:no-underline" href="{{ get_url(path=s3.path, lang=lang) | safe }}">{{ s3.title }}</a>
                                                                 </summary>
@@ -42,7 +48,7 @@
                                                                         {% set is_active4 = current_path is starting_with(s4.path) %}
                                                                         <li>
                                                                             {% if s4.subsections or s4.pages %}
-                                                                                <details {% if is_active4 or (config.extra.sidebar_expand_depth | default(0)) >= 4 %}open{% endif %}>
+                                                                                <details {% if is_active4 or sidebar_expand_depth >= 4 %}open{% endif %}>
                                                                                     <summary {% if current_path == s4.path %}class="rounded bg-gray-500/15"{% endif %}>
                                                                                         <a class="hover:no-underline" href="{{ get_url(path=s4.path, lang=lang) | safe }}">{{ s4.title }}</a>
                                                                                     </summary>
@@ -53,7 +59,7 @@
                                                                                             {% set is_active5 = current_path is starting_with(s5.path) %}
                                                                                             <li>
                                                                                                 {% if s5.subsections or s5.pages %}
-                                                                                                    <details {% if is_active5 or (config.extra.sidebar_expand_depth | default(0)) >= 5 %}open{% endif %}>
+                                                                                                    <details {% if is_active5 or sidebar_expand_depth >= 5 %}open{% endif %}>
                                                                                                         <summary {% if current_path == s5.path %}class="rounded bg-gray-500/15"{% endif %}>
                                                                                                             <a class="hover:no-underline" href="{{ get_url(path=s5.path, lang=lang) | safe }}">{{ s5.title }}</a>
                                                                                                         </summary>
