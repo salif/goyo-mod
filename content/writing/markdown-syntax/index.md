@@ -2,8 +2,6 @@
 title = "Markdown Syntax"
 weight = 2 # Assuming "Creating Content" is weight 1
 template = "page.html"
-description = "Learn how to use Markdown effectively with the Goyo theme, including styling examples and writing best practices."
-extra.show_toc = true
 +++
 
 Writing clear and well-structured content is key to a great website. This guide provides examples of common Markdown elements as rendered by the Goyo theme and offers some tips for effective writing.
@@ -273,33 +271,3 @@ And another one.[^another]
 
 [^1]: This is the first footnote.
 [^another]: This is another footnote. It can contain **Markdown** as well.
-
-
-## Writing Tips for Goyo
-
-1.  **Keep it Clear and Concise:**
-    *   Use short sentences and paragraphs.
-    *   Get straight to the point. Readers often scan.
-
-2.  **Structure with Headings:**
-    *   Use headings (`##`, `###`, etc.) to break up content and create a logical flow. This improves readability and SEO.
-
-3.  **Use Lists:**
-    *   Bulleted or numbered lists are easier to scan than long paragraphs of items.
-
-4.  **Emphasize Key Points:**
-    *   Use **bold** or *italics* sparingly to highlight important terms or concepts.
-
-5.  **Leverage Shortcodes:**
-    *   Goyo comes with shortcodes (like `alert`, `badge`, `mermaid`). Use them to add richer visual elements to your content. Check the "Shortcodes" section of this documentation.
-
-6.  **Write Good Alt Text for Images:**
-    *   This is crucial for accessibility (screen readers) and SEO. Describe the image concisely.
-
-7.  **Preview Your Content:**
-    *   Use `zola serve` to preview your site locally. Check for formatting issues, broken links, and overall readability.
-
-8.  **Proofread:**
-    *   Typos and grammatical errors can undermine credibility. Read through your content before publishing.
-
-By following these Markdown guidelines and writing tips, you can create engaging and easy-to-understand content for your Goyo-powered website.

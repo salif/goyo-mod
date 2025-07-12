@@ -1,10 +1,12 @@
 +++
 title = "Configuration"
-weight = 2
+weight = 3
 sort_by = "weight"
 
 [extra]
 +++
+
+이제 Goyo 테마의 설정을 알아봅니다. 테마를 커스텀하게 사용하기 위한 여러가지 설정을 제공합니다. `config.toml`에서 사용할 수 있습니다.
 
 ## 로고
 `logo_text` / `logo_image_path`
@@ -105,6 +107,12 @@ nav = [
 [extra]
 disable_root_sidebar_hide = false
 ```
+
+{{ image_diff(
+    src1="/images/side-home.jpg",
+    src2="/images/wide-home.jpg",
+    alt="goyo"
+) }}
 
 ## 댓글
 `comments`

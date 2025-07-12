@@ -3,15 +3,15 @@ template = "landing.html"
 extra.version = "v0.1.0"
 extra.landing_image = "/images/landing.jpg"
 extra.features = [
-    { title = "Document Friendly", desc = "Provides a clean writing experience for documentation." },
+    { title = "Documentation Friendly", desc = "Provides a clean writing experience for documentation." },
     { title = "Simple Design", desc = "A theme that pursues minimalism." },
-    { title = "Fast Performance", desc = "No one likes slow websites." },
-    { title = "SEO Optimized", desc = "Structured for optimal search engine visibility." },
-    { title = "Rich Shortcode Support", desc = "Offers a variety of useful shortcodes." },
-    { title = "Dark & Light Mode", desc = "Supports both dark and light color schemes." },
+    { title = "Fast Speed", desc = "Fast, because we don't like slow things." },
+    { title = "SEO Optimized", desc = "Provides a structure optimized for search engines." },
+    { title = "Various Shortcodes", desc = "Offers a variety of useful shortcodes." },
+    { title = "Dark & Light Mode", desc = "Supports both dark and light modes." },
 ]
 +++
 
-Discover Goyo: A sleek, modern Zola theme crafted for blogs and documentation sites. With its minimalist design and effortless setup, Goyo empowers you to build stunning, functional websites with ease.
+Welcome to Goyo! Inspired by the Korean word "Goyohada" (고요하다), meaning calm or serene, Goyo is a Zola theme that aims for simplicity and clean documentation. With Goyo, you can easily create beautiful and practical documentation pages.
 
-Dive into our documentation to learn how to install, customize, and bring your vision to life with Goyo.
+Explore the docs to learn about installation, configuration, and tips for customizing your own Goyo!
