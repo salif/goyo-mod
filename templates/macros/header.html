@@ -42,6 +42,7 @@
                     {% endif %}
                 {% endfor %}
             {% endif %}
+            {% if config.languages | length >= 0 %}
             <li>
                 <div class="dropdown dropdown-end p-0">
                     <div tabindex="0" role="button" class="btn btn-ghost px-2">
@@ -63,6 +64,7 @@
                     </ul>
                 </div>
             </li>
+            {% endif %}
             <li>
                 <label class="swap swap-rotate btn btn-ghost">
                   <input type="checkbox" class="theme-controller" value="night" />
