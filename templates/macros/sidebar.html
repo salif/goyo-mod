@@ -1,8 +1,8 @@
 {% macro sidebar(config, lang, current_path, section) %}
 {% if config.extra.sidebar_expand_depth is defined %}{% set sidebar_expand_depth = config.extra.sidebar_expand_depth | int %}{% else %}{% set sidebar_expand_depth = 0 %}{% endif %}
 <label for="my-drawer-2" class="drawer-overlay"></label>
-<div class="p-4 w-80 min-h-full text-base-content overflow-y-auto">
-    <ul class="menu w-full mt-4">
+<div class="p-4 w-80 h-[calc(100vh-4rem)] text-base-content flex flex-col">
+    <ul class="menu w-full flex-grow">
         {% set index = get_section(path="_index.md") %}
         {# Level 1 - Root #}
         {% for page in index.pages %}
@@ -77,5 +77,7 @@
             </li>
         {% endfor %}
     </ul>
+
+    {{ macros_footer::footer(config=config) }}
 </div>
 {% endmacro sidebar %}
