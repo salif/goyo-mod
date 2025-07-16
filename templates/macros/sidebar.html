@@ -2,7 +2,7 @@
 {% if config.extra.sidebar_expand_depth is defined %}{% set sidebar_expand_depth = config.extra.sidebar_expand_depth | int %}{% else %}{% set sidebar_expand_depth = 0 %}{% endif %}
 <label for="my-drawer-2" class="drawer-overlay"></label>
 <div class="pt-4 w-80 h-[calc(100vh-4rem)] text-base-content flex flex-col">
-    <ul class="menu w-full flex-grow">
+    <ul class="menu w-full flex-grow overflow-y-auto">
         {% set index = get_section(path="_index.md") %}
         {# Level 1 - Root #}
         {% for page in index.pages %}
