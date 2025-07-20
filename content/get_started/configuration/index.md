@@ -85,15 +85,15 @@ sidebar_expand_depth = 2
 ## Navigations
 `nav`
 
-- `nav`: Top navigation menu.
+- `nav`: Top navigation menu. name and icon fields is optional.
 
 ```toml
 [extra]
 nav = [
-    { name = "Documents", url = "/introduction", type = "url" },
-    { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url" },
-    { name = "Links", type = "dropdown", members = [
-        { name = "Creator Blog", url = "https://www.hahwul.com", type = "url" },
+    { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
+    { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
+    { name = "Links", type = "dropdown", icon = "fa-solid fa-link", members = [
+        { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
     ] },
 ]
 ```
