@@ -17,6 +17,7 @@
 - SEO-Friendly
 - Multi-Language Support
 - Auto-Generated Sidebar & Custom Nav
+- Built-in resources (FontAwesome, Mermaid.js)
 - Comments (Giscus, Utterances)
 - Various shortcodes (Mermaid, Asciinema, etc.)
 - Customization
