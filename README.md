@@ -69,10 +69,10 @@ sidebar_expand_depth = 1
 disable_root_sidebar_hide = false
 
 nav = [
-    { name = "Documents", url = "/introduction", type = "url" },
-    { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url" },
-    { name = "Links", type = "dropdown", members = [
-        { name = "Creator Blog", url = "https://www.hahwul.com", type = "url" },
+    { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
+    { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
+    { name = "Links", type = "dropdown", icon = "fa-solid fa-link", members = [
+        { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
     ] },
 ]
 ```
