@@ -208,6 +208,7 @@ blockquote cite:before {
 @import "./syntax-highlight.css";
 
 .copy-code-button {
+    visibility: hidden;
     position: absolute !important;
     top: 0.5em !important;
     right: 0.5em !important;
@@ -227,4 +228,8 @@ blockquote cite:before {
 
 pre {
     position: relative !important;
+}
+
+pre:hover .copy-code-button {
+    visibility: visible;
 }
