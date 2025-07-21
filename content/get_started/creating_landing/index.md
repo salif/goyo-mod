@@ -1,6 +1,6 @@
 +++
 title = "Creating a Landing Page"
-weight = 2
+weight = 3
 sort_by = "weight"
 
 [extra]

@@ -1,7 +1,7 @@
 +++
 title = "Configuration"
 description = "Goyo의 설정 방법을 알아보세요."
-weight = 3
+weight = 4
 sort_by = "weight"
 
 [extra]

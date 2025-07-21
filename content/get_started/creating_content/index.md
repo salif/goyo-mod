@@ -1,5 +1,5 @@
 +++
-title = "Creating Content"
+title = "Creating a Content"
 weight = 2
 +++
 
