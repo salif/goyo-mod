@@ -1,5 +1,6 @@
 +++
 title = "References"
+description = "Goyo의 레퍼런스입니다."
 weight = 8
 sort_by = "weight"
 

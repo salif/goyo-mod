@@ -1,5 +1,6 @@
 +++
 title = "콘텐츠 생성하기"
+description = "Goyo로 페이지를 만드는 방법을 알아보세요."
 weight = 2
 +++
 

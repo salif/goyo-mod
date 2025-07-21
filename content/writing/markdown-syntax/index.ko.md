@@ -1,5 +1,6 @@
 +++
 title = "마크다운 문법"
+description = "마크다운 문법 가이드입니다."
 weight = 2
 template = "page.html"
 +++
