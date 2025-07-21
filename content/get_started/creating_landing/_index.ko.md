@@ -1,5 +1,6 @@
 +++
 title = "랜딩 페이지 만들기"
+description = "Goyo로 랜딩 페이지를 만드는 방법을 알아보세요."
 weight = 2
 sort_by = "weight"
 
