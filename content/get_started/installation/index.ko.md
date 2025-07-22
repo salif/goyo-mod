@@ -41,6 +41,24 @@ Submodule 예시
 git add submodule https://github.com/hahwul/goyo themes/goyo
 ```
 
+## Goyo 테마 업데이트
+
+Goyo 테마를 최신 버전으로 업데이트하려면 아래 방법을 사용할 수 있습니다.
+
+- clone으로 설치한 경우:
+  ```bash
+  cd themes/goyo
+  git pull
+  ```
+
+- submodule로 설치한 경우:
+  ```bash
+  git submodule sync
+  git submodule update --remote
+  ```
+
+최신 Goyo 테마의 기능과 버그 수정 사항을 적용할 수 있습니다.
+
 ## Set theme in config.toml
 
 마지막 단계입니다. config.toml에서 theme를 작성하여 goyo 테마를 사용하도록 합니다.
