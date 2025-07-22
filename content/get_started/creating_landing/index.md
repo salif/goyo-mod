@@ -1,5 +1,6 @@
 +++
 title = "Creating a Landing Page"
+description = "Learn how to create a landing page with Goyo."
 weight = 3
 sort_by = "weight"
 
