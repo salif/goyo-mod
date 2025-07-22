@@ -1,5 +1,6 @@
 +++
 title = "Configuration"
+description = "Learn how to configure Goyo."
 weight = 4
 sort_by = "weight"
 
