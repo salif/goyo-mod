@@ -10,6 +10,7 @@ generate_sitemap = true
 
 [markdown]
 highlight_code = true
+bottom_footnotes = true
 
 [languages.ko]
 generate_feeds = true
