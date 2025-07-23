@@ -12,6 +12,6 @@ extra.features = [
 ]
 +++
 
-Welcome to Goyo! Inspired by the Korean word "Goyohada" (고요하다), meaning calm or serene, Goyo is a Zola theme that aims for simplicity and clean documentation. With Goyo, you can easily create beautiful and practical documentation pages.
+Welcome to Goyo! Inspired by the Korean word "Goyo" (고요), meaning calm or serene, Goyo is a Zola theme that aims for simplicity and clean documentation. With Goyo, you can easily create beautiful and practical documentation pages.
 
 Explore the docs to learn about installation, configuration, and tips for customizing your own Goyo!
