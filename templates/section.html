@@ -1,5 +1,9 @@
 {% extends "index.html" %}
 
+{% block header %}
+    {{ macros_header::header(config=config, lang=lang, section=section) }}
+{% endblock header %}
+
 {% block content %}
     <div class="mb-12 pb-4 border-b border-gray-500/15">
         <h1>{{ section.title }}</h1>

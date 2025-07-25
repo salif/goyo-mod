@@ -20,7 +20,7 @@ function makeTeaser(body, terms) {
   var TEASER_MAX_WORDS = 30;
 
   var stemmedTerms = terms.map(function (w) {
-    return elasticlunr.stemmer(w.toLowerCase());
+    return w.toLowerCase(); // Removed stemming for Fuse.js compatibility
   });
   var termFound = false;
   var index = 0;
@@ -37,7 +37,7 @@ function makeTeaser(body, terms) {
 
       if (word.length > 0) {
         for (var k in stemmedTerms) {
-          if (elasticlunr.stemmer(word).startsWith(stemmedTerms[k])) {
+          if (word.toLowerCase().startsWith(stemmedTerms[k])) {
             value = TERM_WEIGHT;
             termFound = true;
           }
@@ -107,9 +107,9 @@ function makeTeaser(body, terms) {
 
 function formatSearchResultItem(item, terms) {
   var li = document.createElement("li");
-  li.innerHTML = `<a class="border border-gray-500/15 my-2"><div class="prose prose-sm"><h3>${item.doc.title}</h3><p>${makeTeaser(item.doc.body, terms)}</p></div></a>`;
+  li.innerHTML = `<a class="border border-gray-500/15 my-2"><div class="prose prose-sm"><h3>${item.item.title}</h3><p>${makeTeaser(item.item.body, terms)}</p></div></a>`;
   li.addEventListener("click", function () {
-    window.location.href = item.ref;
+    window.location.href = item.item.id;
   });
   return li;
 }
@@ -126,20 +126,24 @@ function initSearch() {
   var MAX_ITEMS = 10;
 
   var options = {
-    bool: "AND",
-    fields: {
-      title: { boost: 2 },
-      body: { boost: 1 },
-    },
+    keys: [
+      { name: "title", weight: 2 },
+      { name: "body", weight: 1 },
+      { name: "tags", weight: 1 },
+    ],
+    includeScore: true,
+    ignoreLocation: true,
+    threshold: 0.4, // Adjust as needed for search sensitivity
   };
   var currentTerm = "";
-  var index = elasticlunr.Index.load(window.searchIndex);
+  var documents = Object.values(window.searchIndex.documentStore.docs);
+  var fuse = new Fuse(documents, options);
 
   $searchInput.addEventListener(
     "keyup",
     debounce(function () {
       var term = $searchInput.value.trim();
-      if (term === currentTerm || !index) {
+      if (term === currentTerm || !fuse) {
         return;
       }
       $searchResults.style.display = term === "" ? "none" : "block";
@@ -148,8 +152,8 @@ function initSearch() {
         return;
       }
 
-      var results = index.search(term, options).filter(function (r) {
-        return r.doc.body !== "";
+      var results = fuse.search(term).filter(function (r) {
+        return r.item.body !== "";
       });
 
       if (results.length === 0) {
@@ -160,7 +164,7 @@ function initSearch() {
       currentTerm = term;
       $searchResultsHeader.innerText = `${results.length} results for '${term}':`;
       for (var i = 0; i < Math.min(results.length, MAX_ITEMS); i++) {
-        if (!results[i].doc.body) {
+        if (!results[i].item.body) {
           continue;
         }
         $searchResultsItems.appendChild(
