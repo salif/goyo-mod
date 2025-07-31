@@ -47,9 +47,9 @@ icon = "fa-solid fa-circle-half-stroke"
 [extra.trust_section]
 title = "Trusted by the Best"
 logos = [
-    { src = "https://raw.githubusercontent.com/harness-community/gitness-documentation-template/main/static/images/gitness.svg", alt = "Gitness" },
-    { src = "https://raw.githubusercontent.com/harness-community/gitness-documentation-template/main/static/images/harness.svg", alt = "Harness" },
-    { src = "https://raw.githubusercontent.com/harness-community/gitness-documentation-template/main/static/images/drone.svg", alt = "Drone" },
+    { src = "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg", alt = "Google" },
+    { src = "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg", alt = "Google" },
+    { src = "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg", alt = "Google" },
 ]
 
 [extra.social_proof_section]
