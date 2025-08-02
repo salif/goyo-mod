@@ -45,18 +45,18 @@ desc = "Supports both dark and light modes."
 icon = "fa-solid fa-circle-half-stroke"
 
 [extra.trust_section]
-title = "Trusted by the Best"
+title = "Tech Stack"
 logos = [
-    { src = "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg", alt = "Google" },
-    { src = "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg", alt = "Google" },
-    { src = "https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg", alt = "Google" },
+    { src = "zola.svg", alt = "Zola" },
+    { src = "tailwindcss.svg", alt = "Tailwindcss" },
+    { src = "daisyui.svg", alt = "DaisyUI"},
 ]
 
 [extra.social_proof_section]
-title = "What Our Users Say"
+title = "What Our Users Say (Sample)"
 testimonials = [
-    { author = "Jane Doe", role = "Developer at TechCorp", quote = "Goyo has transformed our documentation process. It's simple, elegant, and incredibly fast. Our team loves it!", avatar = "https://i.pravatar.cc/150?u=a042581f4e29026024d" },
-    { author = "John Smith", role = "Project Manager at Innovate LLC", quote = "The best Zola theme for documentation out there. The setup was a breeze, and the final result looks professional and clean.", avatar = "https://i.pravatar.cc/150?u=a042581f4e29026704d" },
+    { author = "Michael", role = "Developer", quote = "Goyo has transformed our documentation process. It's simple, elegant, and incredibly fast. Our team loves it!", avatar = "https://i.pravatar.cc/150?u=a042581f4e29026024d" },
+    { author = "John Smith", role = "Project Manager", quote = "The best Zola theme for documentation out there. The setup was a breeze, and the final result looks professional and clean.", avatar = "https://i.pravatar.cc/150?u=a042581f4e29026704d" },
     { author = "Emily White", role = "Freelance Writer", quote = "I'm not a developer, but I found Goyo very easy to use for my project's help guides. The shortcodes are a lifesaver!", avatar = "https://i.pravatar.cc/150?u=a04258114e29026702d" },
 ]
 
