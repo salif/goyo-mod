@@ -233,3 +233,7 @@ pre {
 pre:hover .copy-code-button {
     visibility: visible;
 }
+
+.grayscale {
+    filter: grayscale(100%);
+}

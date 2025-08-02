@@ -1,50 +1,104 @@
 +++
 title = "Creating a Landing Page"
-description = "Learn how to create a landing page with Goyo."
+description = "Learn how to create a modern, feature-rich landing page with Goyo."
 weight = 3
 sort_by = "weight"
 
 [extra]
 +++
 
-The landing page is the first page that visitors see, and it's created with `landing.html`, unlike regular pages. This page is located at `content/_index.md`, and if you want to create a landing page in another language, you can create a file like `content/_index.ko.md`.
+The landing page is the first page visitors see. In Goyo, it's built using `landing.html` and configured in `content/_index.md`. This allows you to create a rich, engaging entry point for your project.
 
-## Set the Template
+To create a landing page for another language, simply create a corresponding file, such as `content/_index.ko.md`.
 
-First, you need to specify the template to use. For the landing page, you should use `landing.html`.
+## Template Configuration
+
+First, ensure your `_index.md` file is set to use the `landing.html` template.
 
 ```toml
 template = "landing.html"
 ```
 
-## Configure Extra Data
+## Full Configuration Example
 
-The `extra` section in your Markdown file allows you to add custom data. For the landing page, you can set a version, a landing image, and a list of features.
+The Goyo landing page is highly customizable through the `[extra]` section of your `_index.md`. Below is a full example showcasing all available sections. You can omit any section you don't need, and it won't be rendered.
 
 ```toml
++++
+template = "landing.html"
+title = "Goyo"
+
 [extra]
 version = "v0.1.0"
-landing_image = "/images/landing.jpg"
-features = [
-    { title = "Documentation Friendly", desc = "Provides a clean writing experience for documentation.", icon = "fa-solid fa-book" },
-    { title = "Simple Design", desc = "A theme that pursues minimalism.", icon = "fa-solid fa-minimize" },
-    { title = "Fast Speed", desc = "Fast, because we don't like slow things.", icon = "fa-solid fa-bolt" },
-    { title = "SEO Optimized", desc = "Provides a structure optimized for search engines.", icon = "fa-solid fa-magnifying-glass-chart" },
-    { title = "Various Shortcodes", desc = "Offers a variety of useful shortcodes.", icon = "fa-solid fa-code" },
-    { title = "Dark & Light Mode", desc = "Supports both dark and light modes.", icon = "fa-solid fa-circle-half-stroke" },
+
+# Hero Section
+# The main section at the top of the page.
+[extra.hero]
+title = "Welcome to Goyo!"
+description = "A simple and clean Zola theme for documentation."
+image = "/images/landing.jpg" # Background image
+cta_buttons = [
+    { text = "Get Started", url = "/get-started/installation/", style = "primary" },
+    { text = "View on GitHub", url = "https://github.com/your/repo", style = "secondary" },
 ]
+
+# Features Section
+# A grid to highlight key features.
+[[extra.features]]
+title = "Documentation Friendly"
+desc = "Provides a clean writing experience for documentation."
+icon = "fa-solid fa-book"
+
+[[extra.features]]
+title = "Simple Design"
+desc = "A theme that pursues minimalism."
+icon = "fa-solid fa-minimize"
+
+# Trust Section
+# Display logos of companies or projects that trust you.
+[extra.trust_section]
+title = "Trusted by the Best"
+logos = [
+    { src = "/images/logo1.svg", alt = "Company One" },
+    { src = "/images/logo2.svg", alt = "Company Two" },
+]
+
+# Social Proof Section
+# Showcase testimonials from your users.
+[extra.social_proof_section]
+title = "What Our Users Say"
+testimonials = [
+    {
+        author = "Jane Doe",
+        role = "Developer at TechCorp",
+        quote = "Goyo has transformed our documentation process. It's simple, elegant, and incredibly fast.",
+        avatar = "/images/avatars/jane.png"
+    },
+    {
+        author = "John Smith",
+        role = "Project Manager at Innovate LLC",
+        quote = "The best Zola theme for documentation out there. The setup was a breeze.",
+        avatar = "/images/avatars/john.png"
+    },
+]
+
+# Final Call to Action Section
+# A final prompt for users before the footer.
+[extra.final_cta_section]
+title = "Ready to Get Started?"
+description = "Begin your journey with Goyo today and create beautiful documentation with ease."
+button = { text = "Start Now", url = "/get-started/installation/" }
++++
 ```
 
-### Features
+## Section Breakdown
 
-The `features` are a list of items that will be displayed on the landing page. Each feature has a `title`, `desc` (description), and `icon`. You can use any icon from [Font Awesome](https://fontawesome.com/).
+- **`[extra.hero]`**: The main banner. It includes a title, description, a full-screen background image, and a list of call-to-action buttons (`cta_buttons`). Each button has `text`, `url`, and `style` (`primary` for the main button, `secondary` for the other).
 
-## Add Content
+- **`[[extra.features]]`**: A list of features to display in a grid. Each feature has a `title`, `desc` (description), and an `icon` from [Font Awesome](https://fontawesome.com/).
 
-Finally, you can add any content you want to display on the landing page in the body of the Markdown file.
+- **`[extra.trust_section]`**: Showcases logos of companies or projects. `logos` is a list where each item has an image `src` and `alt` text.
 
-```markdown
-Welcome to Goyo! Inspired by the Korean word "Goyohada" (고요하다), meaning calm or serene, Goyo is a Zola theme that aims for simplicity and clean documentation. With Goyo, you can easily create beautiful and practical documentation pages.
+- **`[extra.social_proof_section]`**: Displays user testimonials. `testimonials` is a list of objects, each with an `author`, `role`, `quote`, and `avatar` image.
 
-Explore the docs to learn about installation, configuration, and tips for customizing your own Goyo!
-```
+- **`[extra.final_cta_section]`**: A final call-to-action block with a `title`, `description`, and a single `button` with `text` and `url`.
