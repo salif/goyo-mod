@@ -47,17 +47,17 @@ icon = "fa-solid fa-circle-half-stroke"
 [extra.trust_section]
 title = "Tech Stack"
 logos = [
-    { src = "zola.svg", alt = "Zola" },
-    { src = "tailwindcss.svg", alt = "Tailwindcss" },
-    { src = "daisyui.svg", alt = "DaisyUI"},
+    { src = "/resources/zola.svg", alt = "Zola" },
+    { src = "/resources/tailwindcss.svg", alt = "Tailwindcss" },
+    { src = "/resources/daisyui.svg", alt = "DaisyUI"},
 ]
 
 [extra.social_proof_section]
-title = "What Our Users Say (Sample)"
+title = "What Our Users Say"
 testimonials = [
-    { author = "Michael", role = "Developer", quote = "Goyo has transformed our documentation process. It's simple, elegant, and incredibly fast. Our team loves it!", avatar = "https://i.pravatar.cc/150?u=a042581f4e29026024d" },
-    { author = "John Smith", role = "Project Manager", quote = "The best Zola theme for documentation out there. The setup was a breeze, and the final result looks professional and clean.", avatar = "https://i.pravatar.cc/150?u=a042581f4e29026704d" },
-    { author = "Emily White", role = "Freelance Writer", quote = "I'm not a developer, but I found Goyo very easy to use for my project's help guides. The shortcodes are a lifesaver!", avatar = "https://i.pravatar.cc/150?u=a04258114e29026702d" },
+    { author = "KSG", role = "Security Developer", quote = "복잡한 기술 없이도 검색, 다국어, 댓글 등 실용 기능이 포함된 점이 매우 실용적입니다.", avatar = "/resources/ksg.jpg" },
+    { author = "Lina", role = "Security Engineer", quote = "It's so simple and fast, yet I can apply an incredibly beautiful theme, which I absolutely love! I'm ready to embark on a journey to find the calm in my heart with this theme!", avatar = "/resources/lina.jpg" },
+    { author = "Borii Bae", role = "Security Engineer", quote = "The theme is clean and the settings are intuitive, so even first-time users can easily use it!", avatar = "/resources/bori.png" },
 ]
 
 [extra.final_cta_section]

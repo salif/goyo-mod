@@ -47,17 +47,17 @@ icon = "fa-solid fa-circle-half-stroke"
 [extra.trust_section]
 title = "기술 스택"
 logos = [
-    { src = "zola.svg", alt = "Zola" },
-    { src = "tailwindcss.svg", alt = "Tailwindcss" },
-    { src= "daisyui.svg", alt = "DaisyUI"},
+    { src = "/resources/zola.svg", alt = "Zola" },
+    { src = "/resources/tailwindcss.svg", alt = "Tailwindcss" },
+    { src= "/resources/daisyui.svg", alt = "DaisyUI"},
 ]
 
 [extra.social_proof_section]
-title = "사용자들의 평가 (샘플입니다)"
+title = "사용자들의 평가"
 testimonials = [
-    { author = "Michael", role = "개발자", quote = "Goyo는 우리의 문서화 프로세스를 완전히 바꾸어 놓았습니다. 간단하고, 우아하며, 믿을 수 없을 정도로 빠릅니다. 우리 팀 모두가 Goyo를 좋아합니다!", avatar = "https://i.pravatar.cc/150?u=a042581f4e29026024d" },
-    { author = "John Smith", role = "프로젝트 관리자", quote = "최고의 Zola 문서 테마입니다. 설정이 매우 쉬웠고, 최종 결과물은 전문적이고 깔끔해 보입니다.", avatar = "https://i.pravatar.cc/150?u=a042581f4e29026704d" },
-    { author = "Emily White", role = "프리랜서 작가", quote = "저는 개발자가 아니지만, 제 프로젝트의 도움말 가이드를 만드는 데 Goyo가 매우 사용하기 쉽다는 것을 알게 되었습니다. 숏코드는 정말 구세주입니다!", avatar = "https://i.pravatar.cc/150?u=a04258114e29026702d" },
+    { author = "KSG", role = "보안 개발자", quote = "복잡한 기술 없이도 검색, 다국어, 댓글 등 실용 기능이 포함된 점이 매우 실용적입니다.", avatar = "/resources/ksg.jpg" },
+    { author = "Lina", role = "보안 엔지니어", quote = "넘나 간단하고 빠르지만 어마무시하게 이쁜 테마를 적용할 수 있어 너무 좋습니다! 이 테마로 내 마음속 고요를 찾아 떠나보겠습니다~", avatar = "/resources/lina.jpg" },
+    { author = "Borii Bae", role = "보안 엔지니어", quote = "테마가 깔끔하고 설정이 직관적이여서 처음쓰는 사람도 쉽게 사용할수있어요!", avatar = "/resources/bori.png" },
 ]
 
 [extra.final_cta_section]
