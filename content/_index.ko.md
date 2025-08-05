@@ -57,7 +57,7 @@ title = "사용자들의 평가"
 testimonials = [
     { author = "KSG", role = "보안 개발자", quote = "복잡한 기술 없이도 검색, 다국어, 댓글 등 실용 기능이 포함된 점이 매우 실용적입니다.", avatar = "/resources/ksg.jpg" },
     { author = "Lina", role = "보안 엔지니어", quote = "넘나 간단하고 빠르지만 어마무시하게 이쁜 테마를 적용할 수 있어 너무 좋습니다! 이 테마로 내 마음속 고요를 찾아 떠나보겠습니다~", avatar = "/resources/lina.jpg" },
-    { author = "Borii Bae", role = "보안 엔지니어", quote = "테마가 깔끔하고 설정이 직관적이여서 처음쓰는 사람도 쉽게 사용할수있어요!", avatar = "/resources/bori.png" },
+    { author = "Bori Bae", role = "보안 엔지니어", quote = "테마가 깔끔하고 설정이 직관적이여서 처음쓰는 사람도 쉽게 사용할수있어요!", avatar = "/resources/bori.png" },
 ]
 
 [extra.final_cta_section]
