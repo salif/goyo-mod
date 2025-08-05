@@ -49,7 +49,7 @@ title = "기술 스택"
 logos = [
     { src = "/resources/zola.svg", alt = "Zola" },
     { src = "/resources/tailwindcss.svg", alt = "Tailwindcss" },
-    { src= "/resources/daisyui.svg", alt = "DaisyUI"},
+    { src = "/resources/daisyui.svg", alt = "DaisyUI"},
 ]
 
 [extra.social_proof_section]
