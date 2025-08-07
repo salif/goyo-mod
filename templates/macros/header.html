@@ -10,7 +10,7 @@
     <div class="flex-1">
         <a href="/" class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl">
             {% if config.extra.logo_image_path %}
-                <img src="{{ get_url(path=config.extra.logo_image_path) | safe }}" alt="{{ config.extra.logo_text | default(value=config.title) }}" class="h-18 w-auto"/>
+                <img src="{{ get_url(path=config.extra.logo_image_path) | safe }}" alt="{{ config.extra.logo_text | default(value=config.title) }}" class="h-18 w-auto" {% if config.extra.logo_image_padding is defined and config.extra.logo_image_padding %}style="padding: {{ config.extra.logo_image_padding }};"{% endif %}/>
             {% else %}
                 {{ config.extra.logo_text | default(value=config.title) }}
             {% endif %}
