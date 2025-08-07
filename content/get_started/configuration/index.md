@@ -101,6 +101,16 @@ nav = [
 ]
 ```
 
+## Disable Theme Toggle
+`disable_theme_toggle`
+
+- `disable_theme_toggle`: If set to `true`, the theme toggle button (for switching between dark and light mode) will be hidden from the header.
+
+```toml
+[extra]
+disable_theme_toggle = true
+```
+
 ## Disable Root Sidebar Hide
 `disable_root_sidebar_hide`
 

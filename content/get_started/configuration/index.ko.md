@@ -101,6 +101,16 @@ nav = [
 ]
 ```
 
+## 테마 토글 비활성화
+`disable_theme_toggle`
+
+- `disable_theme_toggle`: `true`로 설정하면 상단 네비게이션에서 테마(다크/라이트) 토글 버튼이 표시되지 않습니다.
+
+```toml
+[extra]
+disable_theme_toggle = true
+```
+
 ## 루트 사이드바 숨기기 비활성화
 `disable_root_sidebar_hide`
 
