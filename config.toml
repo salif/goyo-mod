@@ -28,7 +28,7 @@ default_colorset = "dark"
 gtag = ""
 sidebar_expand_depth = 1
 disable_root_sidebar_hide = false
-logo_padding = "5px"
+
 
 nav = [
     { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
