@@ -10,15 +10,17 @@ sort_by = "weight"
 이제 Goyo 테마의 설정을 알아봅니다. 테마를 커스텀하게 사용하기 위한 여러가지 설정을 제공합니다. `config.toml`에서 사용할 수 있습니다.
 
 ## 로고
-`logo_text` / `logo_image_path`
+`logo_text` / `logo_image_path` / `logo_image_padding`
 
 - `logo_text`: 로고 이미지 없을 때 표시되는 텍스트
 - `logo_image_path`: 로고 이미지 경로
+- `logo_image_padding`: 로고 이미지에 적용할 padding 값 (예: "5px")
 
 ```toml
 [extra]
 logo_text = "Goyo"
 logo_image_path = "images/goyo.png"
+logo_image_padding = "5px"
 ```
 
 ## 푸터

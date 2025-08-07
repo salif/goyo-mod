@@ -10,15 +10,17 @@ sort_by = "weight"
 Now let's look at the settings for the Goyo theme. It provides various settings to customize the theme. You can use them in `config.toml`.
 
 ## Logo
-`logo_text` / `logo_image_path`
+`logo_text` / `logo_image_path` / `logo_image_padding`
 
 - `logo_text`: Text displayed when no logo image is present.
 - `logo_image_path`: Path to the logo image.
+- `logo_image_padding`: Padding applied to the logo image (optional, e.g. `"5px"`).
 
 ```toml
 [extra]
 logo_text = "Goyo"
 logo_image_path = "images/goyo.png"
+logo_image_padding = "5px"
 ```
 
 ## Footer
