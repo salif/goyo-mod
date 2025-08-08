@@ -275,4 +275,15 @@ document.addEventListener("DOMContentLoaded", function () {
   initSearch();
   initTheme();
   initToc();
+
+  document.addEventListener('keydown', function(event) {
+    if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+      event.preventDefault();
+      const searchModal = document.getElementById('search-modal');
+      if (searchModal) {
+        searchModal.checked = !searchModal.checked;
+        searchModal.dispatchEvent(new Event('change'));
+      }
+    }
+  });
 });
