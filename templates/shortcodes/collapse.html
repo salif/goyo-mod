@@ -3,6 +3,6 @@
     {{ title | default(value="Collapse Title") }}
   </div>
   <div class="collapse-content text-sm">
-    {{ content | default(value="Collapse content goes here.") }}
+    {{ body | markdown | safe }}
   </div>
 </div>
