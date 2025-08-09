@@ -65,14 +65,8 @@
         @apply hover:underline;
     }
 
-    /* Improve anchor visibility in content areas */
     main a {
         @apply text-primary;
-        text-decoration: underline;
-    }
-
-    main a:hover {
-        opacity: 0.8;
     }
 
     img {
