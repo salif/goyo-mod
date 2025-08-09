@@ -1,3 +1,4 @@
+{% import "macros/footer.html" as macros_footer %}
 {% macro sidebar(config, lang, current_path, section) %}
 {% if config.extra.sidebar_expand_depth is defined %}{% set sidebar_expand_depth = config.extra.sidebar_expand_depth | int %}{% else %}{% set sidebar_expand_depth = 0 %}{% endif %}
 <label for="my-drawer-2" class="drawer-overlay"></label>

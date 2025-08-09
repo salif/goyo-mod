@@ -1,5 +1,9 @@
 
-{% macro head(config, page, section) %}
+{% macro head(config, page, section, current_url) %}
+    {# current_url이 정의되어 있지 않으면 기본값으로 설정 #}
+    {% if current_url is not defined or current_url == "" %}
+        {% set current_url = config.base_url %}
+    {% endif %}
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
