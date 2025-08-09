@@ -294,3 +294,9 @@ h6:hover .copy-heading-link-button {
 .copy-heading-link-button:hover .copy-heading-link-tooltip {
     visibility: visible;
 }
+
+.modal-toggle:checked + .modal .modal-box {
+    @apply border border-gray-500/15;
+    @apply opacity-95;
+    @apply border-gray-500/15 backdrop-blur-3xl;
+}
