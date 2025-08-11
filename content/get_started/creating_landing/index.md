@@ -84,10 +84,12 @@ testimonials = [
 
 # Final Call to Action Section
 # A final prompt for users before the footer.
+# You can also add an image field to show an image above the CTA text.
 [extra.final_cta_section]
 title = "Ready to Get Started?"
 description = "Begin your journey with Goyo today and create beautiful documentation with ease."
 button = { text = "Start Now", url = "/get-started/installation/" }
+image = "/images/contribute.png" # (Optional) Image above the CTA section
 +++
 ```
 
@@ -101,4 +103,5 @@ button = { text = "Start Now", url = "/get-started/installation/" }
 
 - **`[extra.social_proof_section]`**: Displays user testimonials. `testimonials` is a list of objects, each with an `author`, `role`, `quote`, and `avatar` image.
 
-- **`[extra.final_cta_section]`**: A final call-to-action block with a `title`, `description`, and a single `button` with `text` and `url`.
+- **`[extra.final_cta_section]`**: A final call-to-action block with a `title`, `description`, and a single `button` with `text` and `url`.  
+  You can also add an optional `image` field (e.g. `image = "/images/contribute.png"`) to display an image above the CTA text.

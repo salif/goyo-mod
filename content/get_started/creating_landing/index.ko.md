@@ -88,6 +88,7 @@ testimonials = [
 title = "시작할 준비가 되셨나요?"
 description = "오늘 Goyo와 함께 여정을 시작하고 아름다운 문서를 쉽게 만들어보세요."
 button = { text = "지금 시작하기", url = "/get-started/installation/" }
+image = "/images/contribute.png"
 +++
 ```
 
@@ -102,3 +103,4 @@ button = { text = "지금 시작하기", url = "/get-started/installation/" }
 - **`[extra.social_proof_section]`**: 사용자 추천사를 표시합니다. `testimonials`는 각 객체가 `author`, `role`, `quote`, `avatar` 이미지를 가지는 목록입니다.
 
 - **`[extra.final_cta_section]`**: `title`, `description`, 그리고 `text`와 `url`을 가진 단일 `button`으로 구성된 마지막 클릭 유도 블록입니다.
+    - `image` 필드를 추가하면 CTA 섹션에 이미지를 함께 보여줄 수 있습니다. 예시: `image = "/images/contribute.png"`
