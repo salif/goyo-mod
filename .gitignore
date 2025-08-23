@@ -6,3 +6,8 @@ public
 ._.DS_Store
 **/.DS_Store
 **/._.DS_Store
+
+# Node modules and npm files
+node_modules/
+package-lock.json
+npm-debug.log*
