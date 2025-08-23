@@ -1,6 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss" source(none);
+@source "../templates/**/*.{html,md}";
+@source "../content/**/*.{html,md}";
+@plugin "./daisyui.js" {
+    themes:
+        night --default,
+        lofi;
+}
+
+/* Optional for custom themes – Docs: https://daisyui.com/docs/themes/#how-to-add-a-new-custom-theme */
+@plugin "./daisyui-theme.js" {
+}
 
 @layer base {
     /* Article base styling */
@@ -11,9 +20,11 @@
 
     body {
         line-height: 1.7;
-        color: var(--fallback-bc,oklch(var(--bc)/1));
+        color: var(--fallback-bc, oklch(var(--bc) / 1));
         font-size: 18px;
-        font-feature-settings: "liga" 1, "kern" 1;
+        font-feature-settings:
+            "liga" 1,
+            "kern" 1;
     }
 
     h1 {
@@ -58,7 +69,7 @@
     main ul li::before {
         content: "•";
         @apply absolute left-0 top-0;
-        @apply text-primary font-bold;
+        @apply text-gray-500/50 font-bold;
         font-size: 1.2em;
     }
 
@@ -78,7 +89,7 @@
     main ol li::before {
         content: counter(list-counter);
         @apply absolute left-0 top-0;
-        @apply bg-primary text-primary-content;
+        @apply bg-gray-500/50 text-base-content;
         @apply w-7 h-7 rounded-full;
         @apply flex items-center justify-center;
         @apply text-sm font-bold;
@@ -112,7 +123,7 @@
 
     main ol ol li::before {
         content: counter(nested-counter, lower-alpha);
-        @apply bg-base-300 text-base-content;
+        @apply bg-gray-500/50 text-base-content;
         @apply w-6 h-6;
         @apply text-xs;
         min-width: 1.5rem;
