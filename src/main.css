@@ -235,6 +235,104 @@
         @apply text-base-content;
     }
 
+    /* Footnote Styling */
+    
+    /* Footnote References - make them more visually appealing */
+    .footnote-reference {
+        @apply inline-block;
+        @apply ml-1;
+        line-height: 1;
+    }
+    
+    .footnote-reference a {
+        @apply bg-primary text-primary-content;
+        @apply text-xs font-bold;
+        @apply px-1.5 py-0.5;
+        @apply rounded-full;
+        @apply no-underline;
+        @apply transition-all duration-200;
+        @apply hover:bg-primary/90 hover:shadow-md;
+        @apply hover:scale-110;
+        min-width: 1.2rem;
+        text-align: center;
+        display: inline-block;
+        text-decoration: none !important;
+    }
+    
+    .footnote-reference a:hover {
+        text-decoration: none !important;
+        opacity: 1;
+    }
+    
+    /* Footnote List - enhanced styling */
+    .footnotes-list {
+        @apply mt-8 pt-6;
+        @apply border-t border-gray-500/15;
+        @apply bg-base-200/30;
+        @apply p-6 rounded-lg;
+        @apply list-none;
+        counter-reset: footnote-counter;
+        margin-left: 0;
+        padding-left: 0;
+    }
+    
+    .footnotes-list li {
+        @apply relative pl-12 mb-4 pb-4;
+        @apply border-b border-gray-500/10;
+        counter-increment: footnote-counter;
+        line-height: 1.6;
+    }
+    
+    .footnotes-list li:last-child {
+        @apply border-b-0 mb-0 pb-0;
+    }
+    
+    .footnotes-list li::before {
+        content: counter(footnote-counter);
+        @apply absolute left-0 top-0;
+        @apply bg-primary text-primary-content;
+        @apply w-8 h-8 rounded-full;
+        @apply flex items-center justify-center;
+        @apply text-sm font-bold;
+        @apply shadow-md;
+        min-width: 2rem;
+        min-height: 2rem;
+    }
+    
+    .footnotes-list li p {
+        @apply m-0;
+        @apply text-base-content;
+    }
+    
+    /* Back-link styling */
+    .footnotes-list a[href^="#fr-"] {
+        @apply ml-2 px-2 py-1;
+        @apply bg-gray-500/20 text-base-content;
+        @apply rounded-md text-sm;
+        @apply no-underline;
+        @apply transition-all duration-200;
+        @apply hover:bg-primary hover:text-primary-content;
+        @apply hover:shadow-sm;
+        text-decoration: none !important;
+        font-weight: normal;
+    }
+    
+    .footnotes-list a[href^="#fr-"]:hover {
+        text-decoration: none !important;
+        opacity: 1;
+    }
+    
+    /* Hide the horizontal rule before footnotes since we have our own styling */
+    hr + .footnotes-list {
+        @apply border-t-0 pt-0;
+    }
+    
+    .footnotes-list::before {
+        content: "Footnotes";
+        @apply block text-base-content font-bold text-lg mb-4;
+        @apply border-b border-gray-500/15 pb-2;
+    }
+
     /* Color definitions for the syntax highlighting */
     .z-code {
         @apply text-base-content;
