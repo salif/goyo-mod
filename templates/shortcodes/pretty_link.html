@@ -9,7 +9,7 @@
       <div class="flex-1 min-w-0">
         <h2 class="card-title text-base font-semibold text-base-content mb-1">
           <a href="{{ url }}" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
-            {{ title | default(value=url) }}
+            {% if title %}{{ title }}{% else %}{{ url | safe }}{% endif %}
           </a>
         </h2>
         {% if description %}
