@@ -8,7 +8,7 @@
     </div>
     <!-- Logo -->
     <div class="flex-1">
-        <a href="/" class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl">
+        <a href="{{ get_url(path=``, lang=lang) }}" class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl">
             {% if config.extra.logo_image_path %}
                 <img src="{{ get_url(path=config.extra.logo_image_path) | safe }}" alt="{{ config.extra.logo_text | default(value=config.title) }}" class="h-18 w-auto" {% if config.extra.logo_image_padding is defined and config.extra.logo_image_padding %}style="padding: {{ config.extra.logo_image_padding }};"{% endif %}/>
             {% else %}
@@ -31,7 +31,7 @@
                             <ul tabindex="0" class="dropdown-content menu bg-base-100 border border-gray-500/15 rounded-box z-1 p-2 shadow-sm">
                                 {% for member in item.members %}
                                     <li>
-                                        <a class="btn btn-ghost hover:no-underline" href="{{ member.url | safe }}">
+                                        <a class="btn btn-ghost hover:no-underline" href="{{ member.url | replace(from=`$BASE_URL`, to=get_url(path=``, lang=lang)) | safe }}">
                                             {% if member.icon %}<i class="{{ member.icon }}"></i>{% endif %}
                                             {{ member.name }}
                                         </a>
@@ -41,7 +41,7 @@
                         </li>
                     {% else %}
                         <li>
-                            <a class="btn btn-ghost hover:no-underline" href="{{ item.url | safe }}">
+                            <a class="btn btn-ghost hover:no-underline" href="{{ item.url | replace(from=`$BASE_URL`, to=get_url(path=``, lang=lang)) | safe }}">
                                 {% if item.icon %}<i class="{{ item.icon }}"></i>{% endif %}
                                 {{ item.name }}
                             </a>

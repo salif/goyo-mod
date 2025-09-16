@@ -60,13 +60,16 @@
               window.defaultColorset = "{{ config.extra.default_colorset | default(value='dark') }}";
               window.themeMap = { "dark": "night", "light": "lofi" };
               window.fallbackTheme = window.themeMap[window.defaultColorset] || "night";
-              var currentTheme = localStorage.getItem('theme') || window.fallbackTheme;
-              var mermaidTheme = "dark";
-              if(currentTheme == "lofi") {
-                mermaidTheme = "light";
-              }
-              mermaid.initialize({ startOnLoad: false, theme: mermaidTheme });
+            </script>
+            <script src="{{ get_url(path="js/mermaid.min.js") | safe }}" defer></script>
+            <script>
               document.addEventListener('DOMContentLoaded', async () => {
+                var currentTheme = localStorage.getItem('theme') || window.fallbackTheme;
+                var mermaidTheme = "dark";
+                if(currentTheme == "lofi") {
+                  mermaidTheme = "light";
+                }
+                mermaid.initialize({ startOnLoad: false, theme: mermaidTheme });
                 const mermaidElements = document.querySelectorAll('.mermaid');
 
                 if (mermaidElements.length > 0) {

@@ -5,7 +5,7 @@
     {% if section.extra.hero %}
         <div class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
             <div class="absolute inset-0">
-                <img src="{{ section.extra.hero.image | safe }}" alt="Hero Background" class="w-full h-full rounded-none object-cover object-center filter brightness-50">
+                <img src="{{ section.extra.hero.image | replace(from=`$BASE_URL`, to=get_url(path=``, lang=lang)) | safe }}" alt="Hero Background" class="w-full h-full rounded-none object-cover object-center filter brightness-50">
             </div>
             <div class="relative z-10 p-8">
                 <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-4 drop-shadow-lg">{{ section.extra.hero.title }}</h1>
@@ -13,7 +13,7 @@
                 {% if section.extra.hero.cta_buttons %}
                     <div class="flex justify-center gap-4">
                         {% for button in section.extra.hero.cta_buttons %}
-                            <a href="{{ button.url | safe }}"
+                            <a href="{{ button.url | replace(from=`$BASE_URL`, to=get_url(path=``, lang=lang)) | safe }}"
                                class="btn btn-lg transition-transform transform hover:scale-105
                                       {% if button.style == 'primary' %}btn-primary{% else %}btn-ghost text-white{% endif %}">
                                 {{ button.text }}

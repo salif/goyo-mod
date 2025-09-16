@@ -8,9 +8,9 @@ version = "v0.1.0"
 [extra.hero]
 title = "Welcome to Goyo!"
 description = "Inspired by the Korean word \"Goyo\" (고요), meaning calm or serene, Goyo is a Zola theme that aims for simplicity and clean documentation. With Goyo, you can easily create beautiful and practical documentation pages."
-image = "/images/landing.jpg"
+image = "$BASE_URL/images/landing.jpg"
 cta_buttons = [
-    { text = "Get Started", url = "/introduction", style = "primary" },
+    { text = "Get Started", url = "$BASE_URL/introduction", style = "primary" },
     { text = "View on GitHub", url = "https://github.com/hahwul/goyo", style = "secondary" },
 ]
 
@@ -47,17 +47,17 @@ icon = "fa-solid fa-circle-half-stroke"
 [extra.trust_section]
 title = "Tech Stack"
 logos = [
-    { src = "/resources/zola.svg", alt = "Zola" },
-    { src = "/resources/tailwindcss.svg", alt = "Tailwindcss" },
-    { src = "/resources/daisyui.svg", alt = "DaisyUI"},
+    { src = "resources/zola.svg", alt = "Zola" },
+    { src = "resources/tailwindcss.svg", alt = "Tailwindcss" },
+    { src = "resources/daisyui.svg", alt = "DaisyUI"},
 ]
 
 [extra.social_proof_section]
 title = "What Our Users Say"
 testimonials = [
-    { author = "KSG", role = "Security Developer", quote = "Without extra tools, it includes practical features like search, multilingual support, and comments out of the box", avatar = "/resources/ksg.jpg" },
-    { author = "Lina", role = "Security Engineer", quote = "It's so simple and fast, yet I can apply an incredibly beautiful theme, which I absolutely love! I'm ready to embark on a journey to find the calm in my heart with this theme!", avatar = "/resources/lina.jpg" },
-    { author = "Bori Bae", role = "Security Engineer", quote = "The theme is clean and the settings are intuitive, so even first-time users can easily use it!", avatar = "/resources/bori.png" },
+    { author = "KSG", role = "Security Developer", quote = "Without extra tools, it includes practical features like search, multilingual support, and comments out of the box", avatar = "resources/ksg.jpg" },
+    { author = "Lina", role = "Security Engineer", quote = "It's so simple and fast, yet I can apply an incredibly beautiful theme, which I absolutely love! I'm ready to embark on a journey to find the calm in my heart with this theme!", avatar = "resources/lina.jpg" },
+    { author = "Bori Bae", role = "Security Engineer", quote = "The theme is clean and the settings are intuitive, so even first-time users can easily use it!", avatar = "resources/bori.png" },
 ]
 
 [extra.final_cta_section]

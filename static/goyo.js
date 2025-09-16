@@ -270,10 +270,9 @@ function initToc() {
     }
   }
 }
-
+initTheme();
 document.addEventListener("DOMContentLoaded", function () {
   initSearch();
-  initTheme();
   initToc();
 
   document.addEventListener('keydown', function(event) {
