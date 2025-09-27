@@ -506,3 +506,81 @@ h6:hover .copy-heading-link-button {
     opacity: 0.95;
     backdrop-filter: blur(3rem);
 }
+
+/* Modern Prev/Next Navigation Styling */
+.nav-button {
+    @apply block w-full p-6 bg-base-100 border border-gray-500/15 rounded-2xl;
+    @apply transition-all duration-300 ease-in-out;
+    @apply hover:border-primary/30 hover:shadow-lg hover:-translate-y-1;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50;
+    @apply no-underline text-base-content;
+    min-height: 5rem;
+}
+
+.nav-button:hover {
+    @apply bg-base-200/50 shadow-xl;
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.nav-button-content {
+    @apply flex flex-col gap-2 h-full justify-center;
+}
+
+.nav-button-direction {
+    @apply flex items-center gap-2 text-sm font-medium;
+    @apply text-gray-500;
+}
+
+.nav-button-prev .nav-button-direction {
+    @apply justify-start;
+}
+
+.nav-button-next .nav-button-direction {
+    @apply justify-end;
+}
+
+.nav-button-label {
+    @apply uppercase tracking-wider text-xs font-bold;
+}
+
+.nav-button-title {
+    @apply text-lg font-semibold leading-tight;
+    @apply text-base-content;
+}
+
+.nav-button-prev .nav-button-title {
+    @apply text-left;
+}
+
+.nav-button-next .nav-button-title {
+    @apply text-right;
+}
+
+/* Navigation layout styling */
+.prev-nav-item:empty,
+.next-nav-item:empty {
+    @apply hidden;
+}
+
+.prev-nav-item:not(:empty) ~ .next-nav-item:empty {
+    @apply md:col-start-2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-button {
+        @apply p-4;
+        min-height: 4rem;
+    }
+    
+    .nav-button-title {
+        @apply text-base;
+    }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+    .nav-button:hover {
+        box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    }
+}

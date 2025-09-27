@@ -36,14 +36,16 @@
 
                     {{ macros_comments::comments(config=config) }}
 
-                    <div class="flex justify-between mt-8">
-                        <div class="prev-link">
-                            {% block prev_link %}{% endblock prev_link %}
+                    <nav class="mt-12 pt-8 border-t border-gray-500/15">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="prev-nav-item">
+                                {% block prev_link %}{% endblock prev_link %}
+                            </div>
+                            <div class="next-nav-item">
+                                {% block next_link %}{% endblock next_link %}
+                            </div>
                         </div>
-                        <div class="next-link">
-                            {% block next_link %}{% endblock next_link %}
-                        </div>
-                    </div>
+                    </nav>
                 </main>
 
                 {% if page is defined %}
