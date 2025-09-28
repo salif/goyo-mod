@@ -8,7 +8,7 @@
     </div>
     <!-- Logo -->
     <div class="flex-1">
-        <a href="/" class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl">
+        <a href="/" class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl" style="background: linear-gradient(135deg, #9ca3af, #6b7280); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; font-size: 1.5rem;">
             {% if config.extra.logo_image_path %}
                 <img src="{{ get_url(path=config.extra.logo_image_path) | safe }}" alt="{{ config.extra.logo_text | default(value=config.title) }}" class="h-18 w-auto" {% if config.extra.logo_image_padding is defined and config.extra.logo_image_padding %}style="padding: {{ config.extra.logo_image_padding }};"{% endif %}/>
             {% else %}
