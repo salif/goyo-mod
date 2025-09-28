@@ -35,6 +35,7 @@ version = "v0.1.0"
 # The main section at the top of the page.
 [extra.hero]
 title = "Welcome to Goyo!"
+badge = "✨ Minimalist Documentation Theme"
 description = "A simple and clean Zola theme for documentation."
 image = "/images/landing.jpg" # Background image
 cta_buttons = [
@@ -103,5 +104,5 @@ image = "/images/contribute.png" # (Optional) Image above the CTA section
 
 - **`[extra.social_proof_section]`**: Displays user testimonials. `testimonials` is a list of objects, each with an `author`, `role`, `quote`, and `avatar` image.
 
-- **`[extra.final_cta_section]`**: A final call-to-action block with a `title`, `description`, and a single `button` with `text` and `url`.  
+- **`[extra.final_cta_section]`**: A final call-to-action block with a `title`, `description`, and a single `button` with `text` and `url`.
   You can also add an optional `image` field (e.g. `image = "/images/contribute.png"`) to display an image above the CTA text.

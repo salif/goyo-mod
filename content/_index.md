@@ -7,6 +7,7 @@ version = "v0.1.0"
 
 [extra.hero]
 title = "Welcome to Goyo!"
+badge = "✨ Minimalist Documentation Theme"
 description = "Inspired by the Korean word \"Goyo\" (고요), meaning calm or serene, Goyo is a Zola theme that aims for simplicity and clean documentation. With Goyo, you can easily create beautiful and practical documentation pages."
 image = "/images/landing.jpg"
 cta_buttons = [
