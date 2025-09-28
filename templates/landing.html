@@ -117,11 +117,11 @@
                         </span>
                     </h2>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
                     {% for testimonial in section.extra.social_proof_section.testimonials %}
-                        <div class="group relative">
+                        <div class="group relative flex">
                             <div class="absolute inset-0 bg-gradient-to-r from-slate-500/5 to-gray-500/5 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300"></div>
-                            <div class="relative bg-slate-800/30 backdrop-blur-sm border border-slate-600/30 rounded-xl p-8 h-full transition-all duration-300 group-hover:border-slate-500/50 group-hover:bg-slate-700/30 group-hover:scale-105">
+                            <div class="relative bg-slate-800/30 backdrop-blur-sm border border-slate-600/30 rounded-xl p-8 flex flex-col w-full transition-all duration-300 group-hover:border-slate-500/50 group-hover:bg-slate-700/30 group-hover:scale-105">
                                 <div class="flex items-start mb-6">
                                     <div class="flex text-slate-400 mb-4">
                                         {% for i in range(end=5) %}
@@ -131,8 +131,8 @@
                                         {% endfor %}
                                     </div>
                                 </div>
-                                <p class="text-gray-300 mb-8 text-lg italic leading-relaxed">"{{ testimonial.quote }}"</p>
-                                <div class="flex items-center">
+                                <p class="text-gray-300 mb-8 text-lg italic leading-relaxed flex-grow">"{{ testimonial.quote }}"</p>
+                                <div class="flex items-center mt-auto">
                                     {% if testimonial.avatar %}
                                         <div class="mr-4">
                                             <div class="w-14 h-14 rounded-full bg-gradient-to-r from-slate-500 to-gray-600 p-0.5">
