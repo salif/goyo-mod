@@ -1,4 +1,4 @@
-![](./banner.jpg)
+![](./screenshot.png)
 
 <div align="center">
   <p>Goyo is a <a href="https://www.getzola.org/">Zola</a> theme that aims for simplicity and clean documentation.</p>
@@ -86,5 +86,3 @@ zola serve
 
 # and open http://localhost:1111 in your browser.
 ```
-
-![](./screenshot.png)
