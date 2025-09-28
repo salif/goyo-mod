@@ -34,7 +34,7 @@
         {% if subsection.permalink == section.permalink %}
             {% set_global found_current = true %}
         {% else %}
-            {% if found_current %}
+            {% if found_current and subsection.title and subsection.title != "" %}
                 {% if subsection.pages %}
                     {% set last_page = subsection.pages | last %}
                     <a class="nav-button nav-button-prev group" href="{{ last_page.permalink | safe }}">
@@ -86,7 +86,7 @@
         {% set found_current = false %}
         {% for s in index.subsections %}
             {% set subsection = get_section(path=s) %}
-            {% if found_current %}
+            {% if found_current and subsection.title and subsection.title != "" %}
                 <a class="nav-button nav-button-next group" href="{{ subsection.permalink | safe }}">
                     <div class="nav-button-content">
                         <div class="nav-button-direction">
