@@ -463,9 +463,6 @@ h4,
 h5,
 h6 {
     position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
 }
 
 .copy-heading-link-button {
@@ -479,8 +476,9 @@ h6 {
     transition: all 0.3s ease;
     cursor: pointer;
     border-radius: 0.375rem;
-    flex-shrink: 0;
     text-decoration: none !important;
+    margin-left: 0.5rem;
+    vertical-align: middle;
 }
 
 /* Dark theme button */
