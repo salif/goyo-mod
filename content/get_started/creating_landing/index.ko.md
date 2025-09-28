@@ -35,6 +35,7 @@ version = "v0.1.0"
 # 페이지 상단의 메인 섹션입니다.
 [extra.hero]
 title = "Goyo에 오신 것을 환영합니다!"
+badge = "✨ Minimalist Documentation Theme"
 description = "문서화를 위한 간단하고 깔끔한 Zola 테마입니다."
 image = "/images/landing.jpg" # 배경 이미지
 cta_buttons = [
