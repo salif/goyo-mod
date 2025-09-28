@@ -541,6 +541,233 @@ h6:hover .copy-heading-link-button {
     @apply text-base-content;
 }
 
+/* Landing Page Theme-Specific Styles */
+
+/* Hero background */
+.hero-background {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+}
+
+[data-theme="lofi"] .hero-background {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+}
+
+/* Hero badge */
+.hero-badge {
+    background: rgba(100, 116, 139, 0.2);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    color: #64748b;
+}
+
+[data-theme="lofi"] .hero-badge {
+    background: rgba(71, 85, 105, 0.15);
+    border: 1px solid rgba(71, 85, 105, 0.25);
+    color: #475569;
+}
+
+/* Hero title */
+.hero-title {
+    background: linear-gradient(135deg, #d1d5db 0%, #9ca3af 50%, #6b7280 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+[data-theme="lofi"] .hero-title {
+    background: linear-gradient(135deg, #374151 0%, #1f2937 50%, #111827 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Hero description */
+.hero-description {
+    color: #9ca3af;
+}
+
+[data-theme="lofi"] .hero-description {
+    color: #6b7280;
+}
+
+/* Feature cards */
+.feature-card {
+    background: rgba(30, 41, 59, 0.3);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+.feature-card:hover {
+    border-color: rgba(100, 116, 139, 0.5);
+    background: rgba(51, 65, 85, 0.3);
+}
+
+[data-theme="lofi"] .feature-card {
+    background: rgba(248, 250, 252, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(203, 213, 225, 0.4);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="lofi"] .feature-card:hover {
+    border-color: rgba(148, 163, 184, 0.4);
+    background: rgba(241, 245, 249, 0.9);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Feature icon background */
+.feature-icon-bg {
+    background: linear-gradient(135deg, rgba(100, 116, 139, 0.2), rgba(148, 163, 184, 0.2));
+    border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+[data-theme="lofi"] .feature-icon-bg {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.1));
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Feature icon */
+.feature-icon {
+    color: #64748b;
+}
+
+[data-theme="lofi"] .feature-icon {
+    color: #3b82f6;
+}
+
+/* Feature title */
+.feature-title {
+    color: #e5e7eb;
+}
+
+[data-theme="lofi"] .feature-title {
+    color: #1e293b;
+}
+
+/* Feature description */
+.feature-description {
+    color: #9ca3af;
+}
+
+[data-theme="lofi"] .feature-description {
+    color: #64748b;
+}
+
+/* Testimonial cards */
+.testimonial-card {
+    background: rgba(30, 41, 59, 0.3);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+.testimonial-card:hover {
+    border-color: rgba(100, 116, 139, 0.5);
+    background: rgba(51, 65, 85, 0.3);
+}
+
+[data-theme="lofi"] .testimonial-card {
+    background: rgba(248, 250, 252, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(203, 213, 225, 0.4);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="lofi"] .testimonial-card:hover {
+    border-color: rgba(148, 163, 184, 0.4);
+    background: rgba(241, 245, 249, 0.9);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Testimonial stars */
+.testimonial-stars {
+    color: #64748b;
+}
+
+[data-theme="lofi"] .testimonial-stars {
+    color: #fbbf24;
+}
+
+/* Testimonial quote */
+.testimonial-quote {
+    color: #d1d5db;
+}
+
+[data-theme="lofi"] .testimonial-quote {
+    color: #374151;
+}
+
+/* Testimonial author */
+.testimonial-author {
+    color: #e5e7eb;
+}
+
+[data-theme="lofi"] .testimonial-author {
+    color: #1f2937;
+}
+
+/* Testimonial role */
+.testimonial-role {
+    color: #9ca3af;
+}
+
+[data-theme="lofi"] .testimonial-role {
+    color: #6b7280;
+}
+
+/* Testimonial avatar border */
+.testimonial-avatar-border {
+    background: linear-gradient(135deg, #64748b, #9ca3af);
+}
+
+[data-theme="lofi"] .testimonial-avatar-border {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+}
+
+/* Hero CTA Buttons */
+.hero-cta-primary {
+    background: linear-gradient(135deg, #64748b, #6b7280);
+    color: white;
+    box-shadow: 0 4px 16px rgba(100, 116, 139, 0.25);
+}
+
+.hero-cta-primary:hover {
+    box-shadow: 0 8px 24px rgba(100, 116, 139, 0.4);
+}
+
+[data-theme="lofi"] .hero-cta-primary {
+    background: linear-gradient(135deg, #374151, #1f2937);
+    color: white;
+    box-shadow: 0 4px 16px rgba(55, 65, 81, 0.25);
+}
+
+[data-theme="lofi"] .hero-cta-primary:hover {
+    box-shadow: 0 8px 24px rgba(55, 65, 81, 0.4);
+}
+
+.hero-cta-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #d1d5db;
+    border: 1px solid rgba(100, 116, 139, 0.2);
+    backdrop-filter: blur(12px);
+}
+
+.hero-cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="lofi"] .hero-cta-secondary {
+    background: rgba(255, 255, 255, 0.8);
+    color: #374151;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="lofi"] .hero-cta-secondary:hover {
+    background: rgba(248, 250, 252, 0.95);
+    border-color: rgba(148, 163, 184, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 /* Navigation layout styling */
 .prev-nav-item:empty,
 .next-nav-item:empty {
