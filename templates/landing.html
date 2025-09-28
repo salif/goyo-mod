@@ -35,9 +35,9 @@
                             <a href="{{ button.url | safe }}"
                                class="group relative px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 
                                       {% if button.style == 'primary' %}
-                                        bg-gradient-to-r from-slate-600 to-gray-700 text-white shadow-lg shadow-slate-500/25 hover:shadow-xl hover:shadow-slate-500/40
+                                        hero-cta-primary
                                       {% else %}
-                                        bg-white/5 text-slate-300 border border-slate-500/20 backdrop-blur-sm hover:bg-white/10
+                                        hero-cta-secondary
                                       {% endif %}">
                                 <span class="relative z-10">{{ button.text }}</span>
                                 {% if button.style == 'primary' %}

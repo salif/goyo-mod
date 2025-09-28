@@ -722,6 +722,52 @@ h6:hover .copy-heading-link-button {
     background: linear-gradient(135deg, #3b82f6, #8b5cf6);
 }
 
+/* Hero CTA Buttons */
+.hero-cta-primary {
+    background: linear-gradient(135deg, #64748b, #6b7280);
+    color: white;
+    box-shadow: 0 4px 16px rgba(100, 116, 139, 0.25);
+}
+
+.hero-cta-primary:hover {
+    box-shadow: 0 8px 24px rgba(100, 116, 139, 0.4);
+}
+
+[data-theme="lofi"] .hero-cta-primary {
+    background: linear-gradient(135deg, #374151, #1f2937);
+    color: white;
+    box-shadow: 0 4px 16px rgba(55, 65, 81, 0.25);
+}
+
+[data-theme="lofi"] .hero-cta-primary:hover {
+    box-shadow: 0 8px 24px rgba(55, 65, 81, 0.4);
+}
+
+.hero-cta-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #d1d5db;
+    border: 1px solid rgba(100, 116, 139, 0.2);
+    backdrop-filter: blur(12px);
+}
+
+.hero-cta-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="lofi"] .hero-cta-secondary {
+    background: rgba(255, 255, 255, 0.8);
+    color: #374151;
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="lofi"] .hero-cta-secondary:hover {
+    background: rgba(248, 250, 252, 0.95);
+    border-color: rgba(148, 163, 184, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 /* Navigation layout styling */
 .prev-nav-item:empty,
 .next-nav-item:empty {
