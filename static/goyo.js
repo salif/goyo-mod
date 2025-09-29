@@ -193,16 +193,35 @@ function initTheme() {
     return;
   }
 
+  // Theme mapping - maps user-friendly names to actual DaisyUI theme names
+  var themeMapping = {
+    "goyo-dark": "night",
+    "goyo-light": "lofi"
+  };
+
+  // Reverse mapping for checking current theme
+  var reverseThemeMapping = {
+    "night": "goyo-dark",
+    "lofi": "goyo-light"
+  };
+
   var fallbackTheme =
     window && window.fallbackTheme ? window.fallbackTheme : "goyo-dark";
-  var currentTheme = localStorage.getItem("theme") || fallbackTheme;
-  document.documentElement.setAttribute("data-theme", currentTheme);
-  themeController.checked = currentTheme === "goyo-dark";
+  var currentUserTheme = localStorage.getItem("theme") || fallbackTheme;
+  
+  // Map user theme to actual DaisyUI theme
+  var actualTheme = themeMapping[currentUserTheme] || currentUserTheme;
+  document.documentElement.setAttribute("data-theme", actualTheme);
+  
+  // Set checkbox state based on current theme
+  themeController.checked = currentUserTheme === "goyo-dark";
 
   themeController.addEventListener("change", function (e) {
-    var theme = e.target.checked ? "goyo-dark" : "goyo-light";
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
+    var userTheme = e.target.checked ? "goyo-dark" : "goyo-light";
+    var actualTheme = themeMapping[userTheme];
+    
+    document.documentElement.setAttribute("data-theme", actualTheme);
+    localStorage.setItem("theme", userTheme); // Store user-friendly name
   });
 }
 

@@ -7,13 +7,13 @@
         lofi;
 }
 
-/* Custom goyo themes that inherit from night and lofi - 
-   Using existing themes in the main DaisyUI configuration and custom theme overrides through CSS */
+/* Optional for custom themes – Docs: https://daisyui.com/docs/themes/#how-to-add-a-new-custom-theme */
+@plugin "./daisyui-theme.js" {
+}
 
 /* Ashen Monochromatic Theme Overrides */
 :root,
-[data-theme="night"],
-[data-theme="goyo-dark"] {
+[data-theme="night"] {
     --primary: 156 163 175;
     --primary-focus: 107 114 128;
     --primary-content: 17 24 39;

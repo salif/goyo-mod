@@ -62,9 +62,14 @@
               window.defaultColorset = "{{ config.extra.default_colorset | default(value='dark') }}";
               window.themeMap = { "dark": "goyo-dark", "light": "goyo-light" };
               window.fallbackTheme = window.themeMap[window.defaultColorset] || "goyo-dark";
-              var currentTheme = localStorage.getItem('theme') || window.fallbackTheme;
+              
+              // Theme mapping - maps user-friendly names to actual DaisyUI theme names
+              var themeMapping = { "goyo-dark": "night", "goyo-light": "lofi" };
+              var currentUserTheme = localStorage.getItem('theme') || window.fallbackTheme;
+              var actualTheme = themeMapping[currentUserTheme] || currentUserTheme;
+              
               var mermaidTheme = "dark";
-              if(currentTheme == "goyo-light") {
+              if(currentUserTheme == "goyo-light") {
                 mermaidTheme = "light";
               }
               mermaid.initialize({ startOnLoad: false, theme: mermaidTheme });
