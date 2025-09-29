@@ -57,14 +57,19 @@
             </div>
 
             <script>
-              // Determine theme: localStorage > extra.default_colorset > night
+              // Determine theme: localStorage > extra.default_colorset > goyo-dark
               // Expose theme config for global use (e.g., goyo.js)
               window.defaultColorset = "{{ config.extra.default_colorset | default(value='dark') }}";
-              window.themeMap = { "dark": "night", "light": "lofi" };
-              window.fallbackTheme = window.themeMap[window.defaultColorset] || "night";
-              var currentTheme = localStorage.getItem('theme') || window.fallbackTheme;
+              window.themeMap = { "dark": "goyo-dark", "light": "goyo-light" };
+              window.fallbackTheme = window.themeMap[window.defaultColorset] || "goyo-dark";
+              
+              // Theme mapping - maps user-friendly names to actual DaisyUI theme names
+              var themeMapping = { "goyo-dark": "night", "goyo-light": "lofi" };
+              var currentUserTheme = localStorage.getItem('theme') || window.fallbackTheme;
+              var actualTheme = themeMapping[currentUserTheme] || currentUserTheme;
+              
               var mermaidTheme = "dark";
-              if(currentTheme == "lofi") {
+              if(currentUserTheme == "goyo-light") {
                 mermaidTheme = "light";
               }
               mermaid.initialize({ startOnLoad: false, theme: mermaidTheme });
