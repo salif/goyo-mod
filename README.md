@@ -88,7 +88,18 @@ nav = [
   { name = "Links", type = "dropdown", icon = "fa-solid fa-link", members = [
     { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" }
   ] }
-]  # Navigation menu configuration
+]
+
+# Navigation Configuration (i18n / optional)
+# `nav_{lang}`: Language-specific navigation menu (e.g., `nav_ko` for Korean).
+# If defined, it will be used instead of the default `nav` for that language.
+nav_ko = [
+    { name = "문서", url = "/ko/introduction", type = "url", icon = "fa-solid fa-book" },
+    { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
+    { name = "링크", type = "dropdown", icon = "fa-solid fa-link", members = [
+        { name = "제작자 블로그", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
+    ] },
+]
 
 # Theme Toggle Configuration
 disable_theme_toggle = false  # Hide theme toggle button (true to disable)
