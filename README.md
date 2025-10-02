@@ -81,6 +81,10 @@ gtag = ""  # Google Analytics tracking ID
 # Sidebar Configuration
 sidebar_expand_depth = 1  # Sidebar expansion depth (max 5)
 
+# Language display names for the language selector
+# If not defined, the language code will be displayed
+lang_aliases = { en = "English", ko = "한국어" }
+
 # Navigation Configuration
 nav = [
   { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
@@ -100,6 +104,11 @@ nav_ko = [
         { name = "제작자 블로그", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
     ] },
 ]
+
+# Language Aliases Configuration
+# Custom display names for languages in the language selector
+# If not defined, language codes will be displayed
+lang_aliases = { en = "English", ko = "한국어" }
 
 # Theme Toggle Configuration
 disable_theme_toggle = false  # Hide theme toggle button (true to disable)

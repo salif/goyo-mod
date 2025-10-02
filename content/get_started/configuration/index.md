@@ -112,6 +112,29 @@ nav_ko = [
 ]
 ```
 
+## Language Aliases
+`lang_aliases`
+
+- `lang_aliases`: Custom display names for languages in the language selector dropdown. If not defined, the language code will be displayed. This allows you to show user-friendly names like "English" or "한국어" instead of just "en" or "ko".
+
+```toml
+[extra]
+# Language display names for the language selector
+lang_aliases = { en = "English", ko = "한국어" }
+```
+
+You can add as many languages as you need:
+
+```toml
+[extra]
+lang_aliases = { 
+    en = "English", 
+    ko = "한국어",
+    ja = "日本語",
+    id = "Bahasa Indonesia"
+}
+```
+
 ## Disable Theme Toggle
 `disable_theme_toggle`
 

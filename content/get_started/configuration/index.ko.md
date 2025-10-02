@@ -112,6 +112,29 @@ nav_ko = [
 ]
 ```
 
+## 언어 별칭
+`lang_aliases`
+
+- `lang_aliases`: 언어 선택 드롭다운에 표시될 언어의 사용자 정의 이름입니다. 정의하지 않으면 언어 코드가 표시됩니다. 이를 통해 "en" 또는 "ko" 대신 "English" 또는 "한국어"와 같은 사용자 친화적인 이름을 표시할 수 있습니다.
+
+```toml
+[extra]
+# 언어 선택기의 언어 표시 이름
+lang_aliases = { en = "English", ko = "한국어" }
+```
+
+필요한 만큼 언어를 추가할 수 있습니다:
+
+```toml
+[extra]
+lang_aliases = { 
+    en = "English", 
+    ko = "한국어",
+    ja = "日本語",
+    id = "Bahasa Indonesia"
+}
+```
+
 ## 테마 토글 비활성화
 `disable_theme_toggle`
 
