@@ -290,10 +290,41 @@ function initToc() {
   }
 }
 
+function initMath() {
+  // Render all inline math elements
+  var mathElements = document.querySelectorAll('.katex-inline');
+  mathElements.forEach(function(element) {
+    var formula = element.textContent;
+    try {
+      katex.render(formula, element, {
+        throwOnError: false,
+        displayMode: false
+      });
+    } catch (e) {
+      console.error("KaTeX rendering error:", e);
+    }
+  });
+
+  // Render all block math elements
+  var blockMathElements = document.querySelectorAll('.katex-block');
+  blockMathElements.forEach(function(element) {
+    var formula = element.textContent;
+    try {
+      katex.render(formula, element, {
+        throwOnError: false,
+        displayMode: true
+      });
+    } catch (e) {
+      console.error("KaTeX rendering error:", e);
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   initSearch();
   initTheme();
   initToc();
+  initMath();
 
   document.addEventListener('keydown', function(event) {
     if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
