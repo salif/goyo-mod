@@ -102,9 +102,9 @@ disable_root_sidebar_hide = false  # Prevent hiding sidebar on root page
 enabled = false  # Enable comments
 system = ""  # Comment system (e.g., "giscus")
 repo = ""  # Repository for comments (e.g., "hahwul/goyo")
-repo_id = ""  # Repository ID (e.g., "R_kgDOPHnqwg")
+repo_id = ""  # Repository ID (e.g., "R_kgDOXXXXXXX")
 category = ""  # Comment category (e.g., "General")
-category_id = ""  # Category ID (e.g., "DIC_kwDOPHnqws4Csp")
+category_id = ""  # Category ID (e.g., "DIC_kwDOXXXXXXXXXX")
 ```
 
 More information? [Configuration - Goyo Documents](https://goyo.hahwul.com/get_started/configuration/) and [Creating Landing - Goyo Documents](https://goyo.hahwul.com/get_started/creating-landing/)
