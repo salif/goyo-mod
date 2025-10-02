@@ -541,6 +541,19 @@ h6:hover .copy-heading-link-button {
     @apply text-base-content;
 }
 
+/* Next button alignment */
+.nav-button-next .nav-button-content {
+    @apply items-end;
+}
+
+.nav-button-next .nav-button-direction {
+    @apply flex-row-reverse;
+}
+
+.nav-button-next .nav-button-title {
+    @apply text-right;
+}
+
 /* Landing Page Theme-Specific Styles */
 
 /* Hero background */
