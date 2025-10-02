@@ -101,6 +101,11 @@ nav_ko = [
     ] },
 ]
 
+# Language Aliases Configuration
+# Custom display names for languages in the language selector
+# If not defined, language codes will be displayed
+lang_aliases = { en = "English", ko = "한국어" }
+
 # Theme Toggle Configuration
 disable_theme_toggle = false  # Hide theme toggle button (true to disable)
 

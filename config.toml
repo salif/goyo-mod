@@ -29,6 +29,10 @@ gtag = ""
 sidebar_expand_depth = 1
 disable_root_sidebar_hide = false
 
+# Language display names for the language selector
+# If not defined, the language code will be displayed
+lang_aliases = { en = "English", ko = "한국어" }
+
 nav = [
     { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
     { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },

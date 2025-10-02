@@ -75,19 +75,19 @@
                                 {% if page is defined and page.translations %}
                                 {% set translation = page.translations | filter(attribute="lang", value=lang_code) | first %}
                                 {% if translation %}
-                                    <li><a href="{{ translation.permalink | safe }}">{{ lang_config.name | default(value=lang_code) }}</a></li>
+                                    <li><a href="{{ translation.permalink | safe }}">{% if config.extra.lang_aliases and config.extra.lang_aliases[lang_code] %}{{ config.extra.lang_aliases[lang_code] }}{% else %}{{ lang_config.name | default(value=lang_code) }}{% endif %}</a></li>
                                 {% else %}
-                                    <li><a href="{{ get_url(path="/", lang=lang_code) | safe }}">{{ lang_config.name | default(value=lang_code) }}</a></li>
+                                    <li><a href="{{ get_url(path="/", lang=lang_code) | safe }}">{% if config.extra.lang_aliases and config.extra.lang_aliases[lang_code] %}{{ config.extra.lang_aliases[lang_code] }}{% else %}{{ lang_config.name | default(value=lang_code) }}{% endif %}</a></li>
                                 {% endif %}
                             {% elif section is defined and section.translations %}
                                 {% set translation = section.translations | filter(attribute="lang", value=lang_code) | first %}
                                 {% if translation %}
-                                    <li><a href="{{ translation.permalink | safe }}">{{ lang_config.name | default(value=lang_code) }}</a></li>
+                                    <li><a href="{{ translation.permalink | safe }}">{% if config.extra.lang_aliases and config.extra.lang_aliases[lang_code] %}{{ config.extra.lang_aliases[lang_code] }}{% else %}{{ lang_config.name | default(value=lang_code) }}{% endif %}</a></li>
                                 {% else %}
-                                    <li><a href="{{ get_url(path="/", lang=lang_code) | safe }}">{{ lang_config.name | default(value=lang_code) }}</a></li>
+                                    <li><a href="{{ get_url(path="/", lang=lang_code) | safe }}">{% if config.extra.lang_aliases and config.extra.lang_aliases[lang_code] %}{{ config.extra.lang_aliases[lang_code] }}{% else %}{{ lang_config.name | default(value=lang_code) }}{% endif %}</a></li>
                                 {% endif %}
                             {% else %}
-                                <li><a href="{{ get_url(path="/", lang=lang_code) | safe }}">{{ lang_config.name | default(value=lang_code) }}</a></li>
+                                <li><a href="{{ get_url(path="/", lang=lang_code) | safe }}">{% if config.extra.lang_aliases and config.extra.lang_aliases[lang_code] %}{{ config.extra.lang_aliases[lang_code] }}{% else %}{{ lang_config.name | default(value=lang_code) }}{% endif %}</a></li>
                             {% endif %}
                             {% endif %}
                         {% endfor %}
