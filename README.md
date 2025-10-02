@@ -57,7 +57,6 @@ Add extra field in config.toml
 
 ```toml
 [extra]
-[extra]
 # Logo Configuration
 logo_text = "Goyo"  # Text to display if no logo image
 logo_image_path = "images/goyo.png"  # Path to logo image
