@@ -81,6 +81,10 @@ gtag = ""  # Google Analytics tracking ID
 # Sidebar Configuration
 sidebar_expand_depth = 1  # Sidebar expansion depth (max 5)
 
+# Language display names for the language selector
+# If not defined, the language code will be displayed
+lang_aliases = { en = "English", ko = "한국어" }
+
 # Navigation Configuration
 nav = [
   { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
