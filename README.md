@@ -57,27 +57,56 @@ Add extra field in config.toml
 
 ```toml
 [extra]
-logo_text = "Goyo"
-logo_image_path = "images/goyo.png"
-footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://github.com/hahwul/goyo'>Goyo</a>"
-default_thumbnail = "images/default_thumbnail.jpg"
-twitter_site = "@hahwul"
-twitter_creator = "@hahwul"
-default_colorset = "dark"
-gtag = ""
-sidebar_expand_depth = 1
-disable_root_sidebar_hide = false
+# Logo Configuration
+logo_text = "Goyo"  # Text to display if no logo image
+logo_image_path = "images/goyo.png"  # Path to logo image
+logo_image_padding = "5px"  # Padding for logo image (optional)
 
+# Footer Configuration
+footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://github.com/hahwul/goyo'>Goyo</a>"  # Footer HTML content
+
+# Thumbnail Configuration
+default_thumbnail = "images/default_thumbnail.jpg"  # Default thumbnail image path
+
+# Twitter Configuration
+twitter_site = "@hahwul"  # Site Twitter handle
+twitter_creator = "@hahwul"  # Creator Twitter handle
+
+# Color Configuration
+default_colorset = "dark"  # Default color scheme (dark/light)
+
+# Google Tag Configuration
+gtag = ""  # Google Analytics tracking ID
+
+# Sidebar Configuration
+sidebar_expand_depth = 1  # Sidebar expansion depth (max 5)
+
+# Navigation Configuration
 nav = [
-    { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
-    { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
-    { name = "Links", type = "dropdown", icon = "fa-solid fa-link", members = [
-        { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
-    ] },
-]
+  { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
+  { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
+  { name = "Links", type = "dropdown", icon = "fa-solid fa-link", members = [
+    { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" }
+  ] }
+]  # Navigation menu configuration
+
+# Theme Toggle Configuration
+disable_theme_toggle = false  # Hide theme toggle button (true to disable)
+
+# Sidebar Visibility Configuration
+disable_root_sidebar_hide = false  # Prevent hiding sidebar on root page
+
+# Comments Configuration
+[extra.comments]
+enabled = false  # Enable comments
+system = ""  # Comment system (e.g., "giscus")
+repo = ""  # Repository for comments (e.g., "hahwul/goyo")
+repo_id = ""  # Repository ID (e.g., "R_kgDOXXXXXXX")
+category = ""  # Comment category (e.g., "General")
+category_id = ""  # Category ID (e.g., "DIC_kwDOXXXXXXXXXX")
 ```
 
-More information? [https://goyo.hahwul.com/get_started/configuration/](https://goyo.hahwul.com/get_started/configuration/)
+More information? [Configuration - Goyo Documents](https://goyo.hahwul.com/get_started/configuration/) and [Creating Landing - Goyo Documents](https://goyo.hahwul.com/get_started/creating-landing/)
 
 ## Run
 
