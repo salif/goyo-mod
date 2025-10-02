@@ -8,6 +8,8 @@
   <a href="https://goyo.hahwul.com"><img src="https://img.shields.io/badge/DOCUMENTS-000000?style=for-the-badge&labelColor=000000"></a>
   <a href="https://github.com/hahwul/goyo/blob/main/CONTRIBUTING.md"><img src="https://img.shields.io/badge/CONTRIBUTIONS-WELCOME-000000?style=for-the-badge&labelColor=000000"></a>
   <a href="https://www.getzola.org/"><img src="https://img.shields.io/badge/Zola-000000?style=for-the-badge&logo=zola&logoColor=white"></a>
+  <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/TailwindCSS-000000?style=for-the-badge&logo=tailwindcss&logoColor=white"></a>
+  <a href="https://daisyui.com"><img src="https://img.shields.io/badge/DaisyUI-000000?style=for-the-badge&logo=daisyui&logoColor=white"></a>
 </p>
 
 ## Features
