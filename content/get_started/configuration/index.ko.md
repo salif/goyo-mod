@@ -86,17 +86,28 @@ sidebar_expand_depth = 2
 ```
 
 ## 네비게이션
-`nav`
+`nav` / `nav_{lang}`
 
 - `nav`: 상단 네비게이션 메뉴입니다. name과 icon 필드는 optional 입니다.
+- `nav_{lang}`: 언어별 네비게이션 메뉴입니다 (예: `nav_ko`는 한국어용). 정의되면 해당 언어에서 기본 `nav` 대신 사용됩니다.
 
 ```toml
 [extra]
+# 기본 네비게이션 (영어 및 폴백용)
 nav = [
     { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
     { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
     { name = "Links", type = "dropdown", icon = "fa-solid fa-link", members = [
         { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
+    ] },
+]
+
+# 한국어 네비게이션 (선택사항)
+nav_ko = [
+    { name = "문서", url = "/ko/introduction", type = "url", icon = "fa-solid fa-book" },
+    { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
+    { name = "링크", type = "dropdown", icon = "fa-solid fa-link", members = [
+        { name = "제작자 블로그", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
     ] },
 ]
 ```
