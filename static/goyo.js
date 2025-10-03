@@ -109,7 +109,7 @@ function formatSearchResultItem(item, terms) {
   var li = document.createElement("li");
   li.className = "search-result-item";
   li.innerHTML = `
-    <a href="${item.item.id}" class="search-result-link block px-4 py-3 rounded-lg hover:bg-base-200/50 transition-colors duration-150 border border-transparent hover:border-base-300/30">
+    <a href="${item.item.id}" class="search-result-link block px-4 py-3 rounded-lg hover:bg-base-200/50 transition-colors duration-150 border border-transparent hover:border-base-300/10">
       <div class="flex items-start gap-3">
         <div class="search-result-icon flex-shrink-0 mt-1">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -206,6 +206,8 @@ function initSearch() {
 
   // Focus search input when modal is opened
   var searchModal = document.getElementById("search-modal");
+  var modalBackdrop = document.querySelector(".modal");
+  
   if (searchModal) {
     searchModal.addEventListener("change", function () {
       if (this.checked) {
@@ -218,6 +220,16 @@ function initSearch() {
         $searchResultsItems.innerHTML = "";
         $searchResultsHeader.innerHTML = "";
         currentTerm = "";
+      }
+    });
+  }
+  
+  // Handle click outside modal to close it
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener("click", function(e) {
+      // Close modal if clicking on the backdrop (not on modal-box)
+      if (e.target === modalBackdrop && searchModal.checked) {
+        searchModal.checked = false;
       }
     });
   }
