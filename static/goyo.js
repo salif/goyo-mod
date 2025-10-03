@@ -107,10 +107,38 @@ function makeTeaser(body, terms) {
 
 function formatSearchResultItem(item, terms) {
   var li = document.createElement("li");
-  li.innerHTML = `<a class="border border-gray-500/15 my-2"><div class="prose prose-sm"><h3>${item.item.title}</h3><p>${makeTeaser(item.item.body, terms)}</p></div></a>`;
-  li.addEventListener("click", function () {
-    window.location.href = item.item.id;
+  li.className = "search-result-item";
+  li.innerHTML = `
+    <a href="${item.item.id}" class="search-result-link block px-4 py-3 rounded-lg hover:bg-base-200/50 transition-colors duration-150 border border-transparent hover:border-base-300/30">
+      <div class="flex items-start gap-3">
+        <div class="search-result-icon flex-shrink-0 mt-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="search-result-title font-semibold text-sm text-base-content mb-1">${item.item.title}</div>
+          <div class="search-result-excerpt text-xs text-base-content/60 line-clamp-2">${makeTeaser(item.item.body, terms)}</div>
+        </div>
+        <div class="search-result-arrow flex-shrink-0 opacity-0 transition-opacity duration-150">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </a>
+  `;
+  
+  // Add hover effect for the arrow
+  var link = li.querySelector('.search-result-link');
+  var arrow = li.querySelector('.search-result-arrow');
+  link.addEventListener('mouseenter', function() {
+    arrow.style.opacity = '1';
   });
+  link.addEventListener('mouseleave', function() {
+    arrow.style.opacity = '0';
+  });
+  
   return li;
 }
 
@@ -120,7 +148,7 @@ function initSearch() {
     return;
   }
 
-  var $searchResults = document.querySelector(".search-results");
+  var $searchResultsContainer = document.querySelector(".search-results-container");
   var $searchResultsHeader = document.querySelector(".search-results__header");
   var $searchResultsItems = document.querySelector(".search-results__items");
   var MAX_ITEMS = 10;
@@ -146,9 +174,11 @@ function initSearch() {
       if (term === currentTerm || !fuse) {
         return;
       }
-      $searchResults.style.display = term === "" ? "none" : "block";
       $searchResultsItems.innerHTML = "";
+      $searchResultsHeader.innerHTML = "";
+      
       if (term === "") {
+        currentTerm = "";
         return;
       }
 
@@ -157,12 +187,12 @@ function initSearch() {
       });
 
       if (results.length === 0) {
-        $searchResultsHeader.innerText = `No results for '${term}'`;
+        $searchResultsHeader.innerHTML = `<span class="text-base-content/60">No results found for <strong class="text-base-content">"${term}"</strong></span>`;
         return;
       }
 
       currentTerm = term;
-      $searchResultsHeader.innerText = `${results.length} results for '${term}':`;
+      $searchResultsHeader.innerHTML = `<span class="text-base-content/60">${results.length} result${results.length === 1 ? '' : 's'} for <strong class="text-base-content">"${term}"</strong></span>`;
       for (var i = 0; i < Math.min(results.length, MAX_ITEMS); i++) {
         if (!results[i].item.body) {
           continue;
@@ -182,9 +212,22 @@ function initSearch() {
         setTimeout(function () {
           $searchInput.focus();
         }, 100);
+      } else {
+        // Clear search when modal is closed
+        $searchInput.value = "";
+        $searchResultsItems.innerHTML = "";
+        $searchResultsHeader.innerHTML = "";
+        currentTerm = "";
       }
     });
   }
+  
+  // Handle Escape key to close modal
+  $searchInput.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      searchModal.checked = false;
+    }
+  });
 }
 
 function initTheme() {
