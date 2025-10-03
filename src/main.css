@@ -787,6 +787,144 @@ h6:hover .copy-heading-link-button {
     @apply hidden;
 }
 
+/* Pretty Link Card Styling */
+.pretty-link-card {
+    @apply w-full rounded-xl overflow-hidden;
+    background: rgba(30, 41, 59, 0.3);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pretty-link-card:hover {
+    border-color: rgba(100, 116, 139, 0.5);
+    background: rgba(51, 65, 85, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+[data-theme="lofi"] .pretty-link-card {
+    background: rgba(248, 250, 252, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(203, 213, 225, 0.4);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="lofi"] .pretty-link-card:hover {
+    border-color: rgba(148, 163, 184, 0.5);
+    background: rgba(241, 245, 249, 0.9);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.pretty-link-image-wrapper {
+    @apply relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(100, 116, 139, 0.2), rgba(148, 163, 184, 0.2));
+    border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+[data-theme="lofi"] .pretty-link-image-wrapper {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.1));
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.pretty-link-image {
+    @apply w-full h-full object-cover;
+    transition: transform 0.3s ease;
+}
+
+.pretty-link-card:hover .pretty-link-image {
+    transform: scale(1.05);
+}
+
+.pretty-link-title {
+    @apply text-lg font-semibold leading-tight;
+    color: #e5e7eb;
+    transition: color 0.2s ease;
+}
+
+[data-theme="lofi"] .pretty-link-title {
+    color: #1e293b;
+}
+
+.pretty-link-card:hover .pretty-link-title {
+    background: linear-gradient(135deg, #9ca3af, #6b7280);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-theme="lofi"] .pretty-link-card:hover .pretty-link-title {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.pretty-link-description {
+    @apply text-sm leading-relaxed mb-3;
+    color: #9ca3af;
+}
+
+[data-theme="lofi"] .pretty-link-description {
+    color: #64748b;
+}
+
+.pretty-link-url {
+    @apply flex items-center text-xs font-medium;
+    color: rgba(156, 163, 175, 0.7);
+}
+
+[data-theme="lofi"] .pretty-link-url {
+    color: rgba(100, 116, 139, 0.7);
+}
+
+.pretty-link-icon-wrapper {
+    @apply flex items-center justify-center flex-shrink-0;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(100, 116, 139, 0.2), rgba(148, 163, 184, 0.2));
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    transition: all 0.3s ease;
+}
+
+[data-theme="lofi"] .pretty-link-icon-wrapper {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.1));
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.pretty-link-card:hover .pretty-link-icon-wrapper {
+    transform: translateX(2px) translateY(-2px);
+    background: linear-gradient(135deg, rgba(100, 116, 139, 0.3), rgba(148, 163, 184, 0.3));
+}
+
+[data-theme="lofi"] .pretty-link-card:hover .pretty-link-icon-wrapper {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(99, 102, 241, 0.2));
+}
+
+.pretty-link-icon {
+    @apply w-4 h-4;
+    color: #64748b;
+    transition: color 0.2s ease;
+}
+
+[data-theme="lofi"] .pretty-link-icon {
+    color: #3b82f6;
+}
+
+.pretty-link-card:hover .pretty-link-icon {
+    color: #9ca3af;
+}
+
+[data-theme="lofi"] .pretty-link-card:hover .pretty-link-icon {
+    color: #6366f1;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .nav-button {
@@ -796,5 +934,14 @@ h6:hover .copy-heading-link-button {
 
     .nav-button-title {
         @apply text-lg;
+    }
+    
+    .pretty-link-image-wrapper {
+        width: 64px;
+        height: 64px;
+    }
+    
+    .pretty-link-title {
+        @apply text-base;
     }
 }
