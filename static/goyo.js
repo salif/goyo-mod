@@ -107,10 +107,38 @@ function makeTeaser(body, terms) {
 
 function formatSearchResultItem(item, terms) {
   var li = document.createElement("li");
-  li.innerHTML = `<a class="border border-gray-500/15 my-2"><div class="prose prose-sm"><h3>${item.item.title}</h3><p>${makeTeaser(item.item.body, terms)}</p></div></a>`;
-  li.addEventListener("click", function () {
-    window.location.href = item.item.id;
+  li.className = "search-result-item";
+  li.innerHTML = `
+    <a href="${item.item.id}" class="search-result-link block px-4 py-3 rounded-lg hover:bg-base-200/50 transition-colors duration-150 border-gray-500/15">
+      <div class="flex items-start gap-3">
+        <div class="search-result-icon flex-shrink-0 mt-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="search-result-title font-semibold text-sm text-base-content mb-1">${item.item.title}</div>
+          <div class="search-result-excerpt text-xs text-base-content/60 line-clamp-2">${makeTeaser(item.item.body, terms)}</div>
+        </div>
+        <div class="search-result-arrow flex-shrink-0 opacity-0 transition-opacity duration-150">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-base-content/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </a>
+  `;
+
+  // Add hover effect for the arrow
+  var link = li.querySelector(".search-result-link");
+  var arrow = li.querySelector(".search-result-arrow");
+  link.addEventListener("mouseenter", function () {
+    arrow.style.opacity = "1";
   });
+  link.addEventListener("mouseleave", function () {
+    arrow.style.opacity = "0";
+  });
+
   return li;
 }
 
@@ -120,10 +148,13 @@ function initSearch() {
     return;
   }
 
-  var $searchResults = document.querySelector(".search-results");
+  var $searchResultsContainer = document.querySelector(
+    ".search-results-container",
+  );
   var $searchResultsHeader = document.querySelector(".search-results__header");
   var $searchResultsItems = document.querySelector(".search-results__items");
   var MAX_ITEMS = 10;
+  var selectedIndex = -1;
 
   var options = {
     keys: [
@@ -139,6 +170,26 @@ function initSearch() {
   var documents = Object.values(window.searchIndex.documentStore.docs);
   var fuse = new Fuse(documents, options);
 
+  function updateSelectedResult() {
+    var items = $searchResultsItems.querySelectorAll(".search-result-item");
+    items.forEach(function (item, index) {
+      var link = item.querySelector(".search-result-link");
+      if (index === selectedIndex) {
+        link.classList.add("border");
+      } else {
+        link.classList.remove("border");
+      }
+    });
+
+    // Scroll selected item into view
+    if (selectedIndex >= 0 && items[selectedIndex]) {
+      items[selectedIndex].scrollIntoView({
+        block: "nearest",
+        behavior: "smooth",
+      });
+    }
+  }
+
   $searchInput.addEventListener(
     "keyup",
     debounce(function () {
@@ -146,9 +197,12 @@ function initSearch() {
       if (term === currentTerm || !fuse) {
         return;
       }
-      $searchResults.style.display = term === "" ? "none" : "block";
       $searchResultsItems.innerHTML = "";
+      $searchResultsHeader.innerHTML = "";
+      selectedIndex = -1;
+
       if (term === "") {
+        currentTerm = "";
         return;
       }
 
@@ -157,12 +211,12 @@ function initSearch() {
       });
 
       if (results.length === 0) {
-        $searchResultsHeader.innerText = `No results for '${term}'`;
+        $searchResultsHeader.innerHTML = `<span class="text-base-content/60">No results found for <strong class="text-base-content">"${term}"</strong></span>`;
         return;
       }
 
       currentTerm = term;
-      $searchResultsHeader.innerText = `${results.length} results for '${term}':`;
+      $searchResultsHeader.innerHTML = `<span class="text-base-content/60">${results.length} result${results.length === 1 ? "" : "s"} for <strong class="text-base-content">"${term}"</strong></span>`;
       for (var i = 0; i < Math.min(results.length, MAX_ITEMS); i++) {
         if (!results[i].item.body) {
           continue;
@@ -176,15 +230,64 @@ function initSearch() {
 
   // Focus search input when modal is opened
   var searchModal = document.getElementById("search-modal");
+  var modalBackdrop = document.querySelector(".modal");
+
   if (searchModal) {
     searchModal.addEventListener("change", function () {
       if (this.checked) {
         setTimeout(function () {
           $searchInput.focus();
         }, 100);
+      } else {
+        // Clear search when modal is closed
+        $searchInput.value = "";
+        $searchResultsItems.innerHTML = "";
+        $searchResultsHeader.innerHTML = "";
+        currentTerm = "";
+        selectedIndex = -1;
       }
     });
   }
+
+  // Handle click outside modal to close it
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener("click", function (e) {
+      // Close modal if clicking on the backdrop (not on modal-box)
+      if (e.target === modalBackdrop && searchModal.checked) {
+        searchModal.checked = false;
+      }
+    });
+  }
+
+  // Handle keyboard navigation
+  $searchInput.addEventListener("keydown", function (e) {
+    var items = $searchResultsItems.querySelectorAll(".search-result-item");
+
+    if (e.key === "Escape") {
+      searchModal.checked = false;
+      return;
+    }
+
+    if (items.length === 0) {
+      return;
+    }
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+      updateSelectedResult();
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      selectedIndex = Math.max(selectedIndex - 1, -1);
+      updateSelectedResult();
+    } else if (e.key === "Enter" && selectedIndex >= 0) {
+      e.preventDefault();
+      var link = items[selectedIndex].querySelector(".search-result-link");
+      if (link) {
+        window.location.href = link.getAttribute("href");
+      }
+    }
+  });
 }
 
 function initTheme() {
@@ -196,30 +299,30 @@ function initTheme() {
   // Theme mapping - maps user-friendly names to actual DaisyUI theme names
   var themeMapping = {
     "goyo-dark": "night",
-    "goyo-light": "lofi"
+    "goyo-light": "lofi",
   };
 
   // Reverse mapping for checking current theme
   var reverseThemeMapping = {
-    "night": "goyo-dark",
-    "lofi": "goyo-light"
+    night: "goyo-dark",
+    lofi: "goyo-light",
   };
 
   var fallbackTheme =
     window && window.fallbackTheme ? window.fallbackTheme : "goyo-dark";
   var currentUserTheme = localStorage.getItem("theme") || fallbackTheme;
-  
+
   // Map user theme to actual DaisyUI theme
   var actualTheme = themeMapping[currentUserTheme] || currentUserTheme;
   document.documentElement.setAttribute("data-theme", actualTheme);
-  
+
   // Set checkbox state based on current theme
   themeController.checked = currentUserTheme === "goyo-dark";
 
   themeController.addEventListener("change", function (e) {
     var userTheme = e.target.checked ? "goyo-dark" : "goyo-light";
     var actualTheme = themeMapping[userTheme];
-    
+
     document.documentElement.setAttribute("data-theme", actualTheme);
     localStorage.setItem("theme", userTheme); // Store user-friendly name
   });
@@ -292,13 +395,13 @@ function initToc() {
 
 function initMath() {
   // Render all inline math elements
-  var mathElements = document.querySelectorAll('.katex-inline');
-  mathElements.forEach(function(element) {
+  var mathElements = document.querySelectorAll(".katex-inline");
+  mathElements.forEach(function (element) {
     var formula = element.textContent;
     try {
       katex.render(formula, element, {
         throwOnError: false,
-        displayMode: false
+        displayMode: false,
       });
     } catch (e) {
       console.error("KaTeX rendering error:", e);
@@ -306,13 +409,13 @@ function initMath() {
   });
 
   // Render all block math elements
-  var blockMathElements = document.querySelectorAll('.katex-block');
-  blockMathElements.forEach(function(element) {
+  var blockMathElements = document.querySelectorAll(".katex-block");
+  blockMathElements.forEach(function (element) {
     var formula = element.textContent;
     try {
       katex.render(formula, element, {
         throwOnError: false,
-        displayMode: true
+        displayMode: true,
       });
     } catch (e) {
       console.error("KaTeX rendering error:", e);
@@ -326,13 +429,13 @@ document.addEventListener("DOMContentLoaded", function () {
   initToc();
   initMath();
 
-  document.addEventListener('keydown', function(event) {
-    if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+  document.addEventListener("keydown", function (event) {
+    if ((event.metaKey || event.ctrlKey) && event.key === "k") {
       event.preventDefault();
-      const searchModal = document.getElementById('search-modal');
+      const searchModal = document.getElementById("search-modal");
       if (searchModal) {
         searchModal.checked = !searchModal.checked;
-        searchModal.dispatchEvent(new Event('change'));
+        searchModal.dispatchEvent(new Event("change"));
       }
     }
   });

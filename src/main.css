@@ -629,12 +629,20 @@ h6:hover .copy-heading-link-button {
 
 /* Feature icon background */
 .feature-icon-bg {
-    background: linear-gradient(135deg, rgba(100, 116, 139, 0.2), rgba(148, 163, 184, 0.2));
+    background: linear-gradient(
+        135deg,
+        rgba(100, 116, 139, 0.2),
+        rgba(148, 163, 184, 0.2)
+    );
     border: 1px solid rgba(100, 116, 139, 0.3);
 }
 
 [data-theme="lofi"] .feature-icon-bg {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.1));
+    background: linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.1),
+        rgba(99, 102, 241, 0.1)
+    );
     border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
@@ -823,12 +831,20 @@ h6:hover .copy-heading-link-button {
     height: 80px;
     border-radius: 12px;
     overflow: hidden;
-    background: linear-gradient(135deg, rgba(100, 116, 139, 0.2), rgba(148, 163, 184, 0.2));
+    background: linear-gradient(
+        135deg,
+        rgba(100, 116, 139, 0.2),
+        rgba(148, 163, 184, 0.2)
+    );
     border: 1px solid rgba(100, 116, 139, 0.3);
 }
 
 [data-theme="lofi"] .pretty-link-image-wrapper {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.1));
+    background: linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.1),
+        rgba(99, 102, 241, 0.1)
+    );
     border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
@@ -888,23 +904,39 @@ h6:hover .copy-heading-link-button {
     width: 32px;
     height: 32px;
     border-radius: 8px;
-    background: linear-gradient(135deg, rgba(100, 116, 139, 0.2), rgba(148, 163, 184, 0.2));
+    background: linear-gradient(
+        135deg,
+        rgba(100, 116, 139, 0.2),
+        rgba(148, 163, 184, 0.2)
+    );
     border: 1px solid rgba(100, 116, 139, 0.3);
     transition: all 0.3s ease;
 }
 
 [data-theme="lofi"] .pretty-link-icon-wrapper {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.1));
+    background: linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.1),
+        rgba(99, 102, 241, 0.1)
+    );
     border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .pretty-link-card:hover .pretty-link-icon-wrapper {
     transform: translateX(2px) translateY(-2px);
-    background: linear-gradient(135deg, rgba(100, 116, 139, 0.3), rgba(148, 163, 184, 0.3));
+    background: linear-gradient(
+        135deg,
+        rgba(100, 116, 139, 0.3),
+        rgba(148, 163, 184, 0.3)
+    );
 }
 
 [data-theme="lofi"] .pretty-link-card:hover .pretty-link-icon-wrapper {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(99, 102, 241, 0.2));
+    background: linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.2),
+        rgba(99, 102, 241, 0.2)
+    );
 }
 
 .pretty-link-icon {
@@ -935,13 +967,131 @@ h6:hover .copy-heading-link-button {
     .nav-button-title {
         @apply text-lg;
     }
-    
+
     .pretty-link-image-wrapper {
         width: 64px;
         height: 64px;
     }
-    
+
     .pretty-link-title {
         @apply text-base;
+    }
+
+    /* Search Modal Styles */
+    .search-container {
+        @apply relative;
+    }
+
+    .search-input-container {
+        @apply relative;
+    }
+
+    .search-input {
+        @apply text-base;
+        font-size: 16px;
+    }
+
+    .search-input:focus {
+        @apply outline-none ring-0;
+    }
+
+    .search-input::placeholder {
+        @apply text-base-content/40;
+    }
+
+    /* Remove default search input styling */
+    .search-input::-webkit-search-cancel-button {
+        @apply appearance-none;
+    }
+
+    .search-results-container {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(156, 163, 175, 0.3) transparent;
+    }
+
+    .search-results-container::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .search-results-container::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .search-results-container::-webkit-scrollbar-thumb {
+        background: rgba(156, 163, 175, 0.3);
+        border-radius: 3px;
+    }
+
+    .search-results-container::-webkit-scrollbar-thumb:hover {
+        background: rgba(156, 163, 175, 0.5);
+    }
+
+    .search-result-item {
+        @apply list-none;
+    }
+
+    .search-result-link {
+        @apply cursor-pointer;
+        text-decoration: none;
+    }
+
+    .search-result-link:hover .search-result-arrow,
+    .search-result-link.search-result-selected .search-result-arrow {
+        @apply opacity-100;
+    }
+
+    .search-result-link.search-result-selected {
+        @apply border;
+    }
+
+    .search-result-title {
+        @apply overflow-hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+    .search-result-excerpt {
+        @apply overflow-hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .search-result-excerpt b {
+        @apply font-semibold text-primary;
+    }
+
+    .search-footer {
+        @apply bg-base-200/30;
+    }
+
+    /* Modal backdrop improvements */
+    .modal-box {
+        @apply backdrop-blur-sm;
+    }
+
+    /* Animation for search modal */
+    .modal.modal-open .modal-box {
+        animation: searchModalSlideIn 0.2s ease-out;
+    }
+
+    @keyframes searchModalSlideIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95) translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    /* Line clamp utility */
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
     }
 }
