@@ -1003,8 +1003,13 @@ h6:hover .copy-heading-link-button {
         text-decoration: none;
     }
 
-    .search-result-link:hover .search-result-arrow {
+    .search-result-link:hover .search-result-arrow,
+    .search-result-link.search-result-selected .search-result-arrow {
         @apply opacity-100;
+    }
+
+    .search-result-link.search-result-selected {
+        @apply bg-base-200/50 border-base-300/10;
     }
 
     .search-result-title {

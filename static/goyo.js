@@ -154,6 +154,7 @@ function initSearch() {
   var $searchResultsHeader = document.querySelector(".search-results__header");
   var $searchResultsItems = document.querySelector(".search-results__items");
   var MAX_ITEMS = 10;
+  var selectedIndex = -1;
 
   var options = {
     keys: [
@@ -169,6 +170,26 @@ function initSearch() {
   var documents = Object.values(window.searchIndex.documentStore.docs);
   var fuse = new Fuse(documents, options);
 
+  function updateSelectedResult() {
+    var items = $searchResultsItems.querySelectorAll(".search-result-item");
+    items.forEach(function (item, index) {
+      var link = item.querySelector(".search-result-link");
+      if (index === selectedIndex) {
+        link.classList.add("search-result-selected");
+      } else {
+        link.classList.remove("search-result-selected");
+      }
+    });
+
+    // Scroll selected item into view
+    if (selectedIndex >= 0 && items[selectedIndex]) {
+      items[selectedIndex].scrollIntoView({
+        block: "nearest",
+        behavior: "smooth"
+      });
+    }
+  }
+
   $searchInput.addEventListener(
     "keyup",
     debounce(function () {
@@ -178,6 +199,7 @@ function initSearch() {
       }
       $searchResultsItems.innerHTML = "";
       $searchResultsHeader.innerHTML = "";
+      selectedIndex = -1;
 
       if (term === "") {
         currentTerm = "";
@@ -222,6 +244,7 @@ function initSearch() {
         $searchResultsItems.innerHTML = "";
         $searchResultsHeader.innerHTML = "";
         currentTerm = "";
+        selectedIndex = -1;
       }
     });
   }
@@ -236,10 +259,33 @@ function initSearch() {
     });
   }
 
-  // Handle Escape key to close modal
+  // Handle keyboard navigation
   $searchInput.addEventListener("keydown", function (e) {
+    var items = $searchResultsItems.querySelectorAll(".search-result-item");
+    
     if (e.key === "Escape") {
       searchModal.checked = false;
+      return;
+    }
+
+    if (items.length === 0) {
+      return;
+    }
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+      updateSelectedResult();
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      selectedIndex = Math.max(selectedIndex - 1, -1);
+      updateSelectedResult();
+    } else if (e.key === "Enter" && selectedIndex >= 0) {
+      e.preventDefault();
+      var link = items[selectedIndex].querySelector(".search-result-link");
+      if (link) {
+        window.location.href = link.getAttribute("href");
+      }
     }
   });
 }
