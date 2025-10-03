@@ -629,12 +629,20 @@ h6:hover .copy-heading-link-button {
 
 /* Feature icon background */
 .feature-icon-bg {
-    background: linear-gradient(135deg, rgba(100, 116, 139, 0.2), rgba(148, 163, 184, 0.2));
+    background: linear-gradient(
+        135deg,
+        rgba(100, 116, 139, 0.2),
+        rgba(148, 163, 184, 0.2)
+    );
     border: 1px solid rgba(100, 116, 139, 0.3);
 }
 
 [data-theme="lofi"] .feature-icon-bg {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.1));
+    background: linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.1),
+        rgba(99, 102, 241, 0.1)
+    );
     border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
@@ -823,12 +831,20 @@ h6:hover .copy-heading-link-button {
     height: 80px;
     border-radius: 12px;
     overflow: hidden;
-    background: linear-gradient(135deg, rgba(100, 116, 139, 0.2), rgba(148, 163, 184, 0.2));
+    background: linear-gradient(
+        135deg,
+        rgba(100, 116, 139, 0.2),
+        rgba(148, 163, 184, 0.2)
+    );
     border: 1px solid rgba(100, 116, 139, 0.3);
 }
 
 [data-theme="lofi"] .pretty-link-image-wrapper {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.1));
+    background: linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.1),
+        rgba(99, 102, 241, 0.1)
+    );
     border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
@@ -888,23 +904,39 @@ h6:hover .copy-heading-link-button {
     width: 32px;
     height: 32px;
     border-radius: 8px;
-    background: linear-gradient(135deg, rgba(100, 116, 139, 0.2), rgba(148, 163, 184, 0.2));
+    background: linear-gradient(
+        135deg,
+        rgba(100, 116, 139, 0.2),
+        rgba(148, 163, 184, 0.2)
+    );
     border: 1px solid rgba(100, 116, 139, 0.3);
     transition: all 0.3s ease;
 }
 
 [data-theme="lofi"] .pretty-link-icon-wrapper {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(99, 102, 241, 0.1));
+    background: linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.1),
+        rgba(99, 102, 241, 0.1)
+    );
     border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .pretty-link-card:hover .pretty-link-icon-wrapper {
     transform: translateX(2px) translateY(-2px);
-    background: linear-gradient(135deg, rgba(100, 116, 139, 0.3), rgba(148, 163, 184, 0.3));
+    background: linear-gradient(
+        135deg,
+        rgba(100, 116, 139, 0.3),
+        rgba(148, 163, 184, 0.3)
+    );
 }
 
 [data-theme="lofi"] .pretty-link-card:hover .pretty-link-icon-wrapper {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(99, 102, 241, 0.2));
+    background: linear-gradient(
+        135deg,
+        rgba(59, 130, 246, 0.2),
+        rgba(99, 102, 241, 0.2)
+    );
 }
 
 .pretty-link-icon {
@@ -935,12 +967,12 @@ h6:hover .copy-heading-link-button {
     .nav-button-title {
         @apply text-lg;
     }
-    
+
     .pretty-link-image-wrapper {
         width: 64px;
         height: 64px;
     }
-    
+
     .pretty-link-title {
         @apply text-base;
     }
@@ -1009,7 +1041,7 @@ h6:hover .copy-heading-link-button {
     }
 
     .search-result-link.search-result-selected {
-        @apply bg-base-200/50 border-base-300/10;
+        @apply border;
     }
 
     .search-result-title {

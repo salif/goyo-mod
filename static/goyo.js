@@ -109,7 +109,7 @@ function formatSearchResultItem(item, terms) {
   var li = document.createElement("li");
   li.className = "search-result-item";
   li.innerHTML = `
-    <a href="${item.item.id}" class="search-result-link block px-4 py-3 rounded-lg hover:bg-base-200/50 transition-colors duration-150 border border-gray-500/15">
+    <a href="${item.item.id}" class="search-result-link block px-4 py-3 rounded-lg hover:bg-base-200/50 transition-colors duration-150 border-gray-500/15">
       <div class="flex items-start gap-3">
         <div class="search-result-icon flex-shrink-0 mt-1">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -175,9 +175,9 @@ function initSearch() {
     items.forEach(function (item, index) {
       var link = item.querySelector(".search-result-link");
       if (index === selectedIndex) {
-        link.classList.add("search-result-selected");
+        link.classList.add("border");
       } else {
-        link.classList.remove("search-result-selected");
+        link.classList.remove("border");
       }
     });
 
@@ -185,7 +185,7 @@ function initSearch() {
     if (selectedIndex >= 0 && items[selectedIndex]) {
       items[selectedIndex].scrollIntoView({
         block: "nearest",
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   }
@@ -262,7 +262,7 @@ function initSearch() {
   // Handle keyboard navigation
   $searchInput.addEventListener("keydown", function (e) {
     var items = $searchResultsItems.querySelectorAll(".search-result-item");
-    
+
     if (e.key === "Escape") {
       searchModal.checked = false;
       return;
