@@ -109,7 +109,7 @@ function formatSearchResultItem(item, terms) {
   var li = document.createElement("li");
   li.className = "search-result-item";
   li.innerHTML = `
-    <a href="${item.item.id}" class="search-result-link block px-4 py-3 rounded-lg hover:bg-base-200/50 transition-colors duration-150 border border-transparent hover:border-base-300/10">
+    <a href="${item.item.id}" class="search-result-link block px-4 py-3 rounded-lg hover:bg-base-200/50 transition-colors duration-150 border border-gray-500/15">
       <div class="flex items-start gap-3">
         <div class="search-result-icon flex-shrink-0 mt-1">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -128,17 +128,17 @@ function formatSearchResultItem(item, terms) {
       </div>
     </a>
   `;
-  
+
   // Add hover effect for the arrow
-  var link = li.querySelector('.search-result-link');
-  var arrow = li.querySelector('.search-result-arrow');
-  link.addEventListener('mouseenter', function() {
-    arrow.style.opacity = '1';
+  var link = li.querySelector(".search-result-link");
+  var arrow = li.querySelector(".search-result-arrow");
+  link.addEventListener("mouseenter", function () {
+    arrow.style.opacity = "1";
   });
-  link.addEventListener('mouseleave', function() {
-    arrow.style.opacity = '0';
+  link.addEventListener("mouseleave", function () {
+    arrow.style.opacity = "0";
   });
-  
+
   return li;
 }
 
@@ -148,7 +148,9 @@ function initSearch() {
     return;
   }
 
-  var $searchResultsContainer = document.querySelector(".search-results-container");
+  var $searchResultsContainer = document.querySelector(
+    ".search-results-container",
+  );
   var $searchResultsHeader = document.querySelector(".search-results__header");
   var $searchResultsItems = document.querySelector(".search-results__items");
   var MAX_ITEMS = 10;
@@ -176,7 +178,7 @@ function initSearch() {
       }
       $searchResultsItems.innerHTML = "";
       $searchResultsHeader.innerHTML = "";
-      
+
       if (term === "") {
         currentTerm = "";
         return;
@@ -192,7 +194,7 @@ function initSearch() {
       }
 
       currentTerm = term;
-      $searchResultsHeader.innerHTML = `<span class="text-base-content/60">${results.length} result${results.length === 1 ? '' : 's'} for <strong class="text-base-content">"${term}"</strong></span>`;
+      $searchResultsHeader.innerHTML = `<span class="text-base-content/60">${results.length} result${results.length === 1 ? "" : "s"} for <strong class="text-base-content">"${term}"</strong></span>`;
       for (var i = 0; i < Math.min(results.length, MAX_ITEMS); i++) {
         if (!results[i].item.body) {
           continue;
@@ -207,7 +209,7 @@ function initSearch() {
   // Focus search input when modal is opened
   var searchModal = document.getElementById("search-modal");
   var modalBackdrop = document.querySelector(".modal");
-  
+
   if (searchModal) {
     searchModal.addEventListener("change", function () {
       if (this.checked) {
@@ -223,19 +225,19 @@ function initSearch() {
       }
     });
   }
-  
+
   // Handle click outside modal to close it
   if (modalBackdrop) {
-    modalBackdrop.addEventListener("click", function(e) {
+    modalBackdrop.addEventListener("click", function (e) {
       // Close modal if clicking on the backdrop (not on modal-box)
       if (e.target === modalBackdrop && searchModal.checked) {
         searchModal.checked = false;
       }
     });
   }
-  
+
   // Handle Escape key to close modal
-  $searchInput.addEventListener("keydown", function(e) {
+  $searchInput.addEventListener("keydown", function (e) {
     if (e.key === "Escape") {
       searchModal.checked = false;
     }
@@ -251,30 +253,30 @@ function initTheme() {
   // Theme mapping - maps user-friendly names to actual DaisyUI theme names
   var themeMapping = {
     "goyo-dark": "night",
-    "goyo-light": "lofi"
+    "goyo-light": "lofi",
   };
 
   // Reverse mapping for checking current theme
   var reverseThemeMapping = {
-    "night": "goyo-dark",
-    "lofi": "goyo-light"
+    night: "goyo-dark",
+    lofi: "goyo-light",
   };
 
   var fallbackTheme =
     window && window.fallbackTheme ? window.fallbackTheme : "goyo-dark";
   var currentUserTheme = localStorage.getItem("theme") || fallbackTheme;
-  
+
   // Map user theme to actual DaisyUI theme
   var actualTheme = themeMapping[currentUserTheme] || currentUserTheme;
   document.documentElement.setAttribute("data-theme", actualTheme);
-  
+
   // Set checkbox state based on current theme
   themeController.checked = currentUserTheme === "goyo-dark";
 
   themeController.addEventListener("change", function (e) {
     var userTheme = e.target.checked ? "goyo-dark" : "goyo-light";
     var actualTheme = themeMapping[userTheme];
-    
+
     document.documentElement.setAttribute("data-theme", actualTheme);
     localStorage.setItem("theme", userTheme); // Store user-friendly name
   });
@@ -347,13 +349,13 @@ function initToc() {
 
 function initMath() {
   // Render all inline math elements
-  var mathElements = document.querySelectorAll('.katex-inline');
-  mathElements.forEach(function(element) {
+  var mathElements = document.querySelectorAll(".katex-inline");
+  mathElements.forEach(function (element) {
     var formula = element.textContent;
     try {
       katex.render(formula, element, {
         throwOnError: false,
-        displayMode: false
+        displayMode: false,
       });
     } catch (e) {
       console.error("KaTeX rendering error:", e);
@@ -361,13 +363,13 @@ function initMath() {
   });
 
   // Render all block math elements
-  var blockMathElements = document.querySelectorAll('.katex-block');
-  blockMathElements.forEach(function(element) {
+  var blockMathElements = document.querySelectorAll(".katex-block");
+  blockMathElements.forEach(function (element) {
     var formula = element.textContent;
     try {
       katex.render(formula, element, {
         throwOnError: false,
-        displayMode: true
+        displayMode: true,
       });
     } catch (e) {
       console.error("KaTeX rendering error:", e);
@@ -381,13 +383,13 @@ document.addEventListener("DOMContentLoaded", function () {
   initToc();
   initMath();
 
-  document.addEventListener('keydown', function(event) {
-    if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+  document.addEventListener("keydown", function (event) {
+    if ((event.metaKey || event.ctrlKey) && event.key === "k") {
       event.preventDefault();
-      const searchModal = document.getElementById('search-modal');
+      const searchModal = document.getElementById("search-modal");
       if (searchModal) {
         searchModal.checked = !searchModal.checked;
-        searchModal.dispatchEvent(new Event('change'));
+        searchModal.dispatchEvent(new Event("change"));
       }
     }
   });
