@@ -14,7 +14,8 @@
 
 ## Features
 
-- Dark & Light Themes
+- Dark & Light Themes with Brightness Settings
+- Beautiful Landing Page
 - Responsive Design
 - SEO-Friendly
 - Multi-Language Support

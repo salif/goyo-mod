@@ -26,9 +26,9 @@ desc = "미니멀리즘을 추구하는 테마입니다."
 icon = "fa-solid fa-minimize"
 
 [[extra.features]]
-title = "빠른 속도"
-desc = "느린 것을 좋아하지 않기 때문에 빠릅니다."
-icon = "fa-solid fa-bolt"
+title = "커스터마이징과 우아한 랜딩 페이지"
+desc = "높은 커스터마이징성과 아름다운 랜딩 페이지를 제공합니다."
+icon = "fa-solid fa-palette"
 
 [[extra.features]]
 title = "SEO 최적화"

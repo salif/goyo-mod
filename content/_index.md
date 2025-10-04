@@ -26,9 +26,9 @@ desc = "A theme that pursues minimalism."
 icon = "fa-solid fa-minimize"
 
 [[extra.features]]
-title = "Fast Speed"
-desc = "Fast, because we don't like slow things."
-icon = "fa-solid fa-bolt"
+title = "Customization and Elegant Landing Page"
+desc = "Highly customizable with a beautiful landing page."
+icon = "fa-solid fa-palette"
 
 [[extra.features]]
 title = "SEO Optimized"
