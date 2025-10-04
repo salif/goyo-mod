@@ -60,6 +60,7 @@
               // Determine theme: localStorage > extra.default_colorset > goyo-dark
               // Expose theme config for global use (e.g., goyo.js)
               window.defaultColorset = "{{ config.extra.default_colorset | default(value='dark') }}";
+              window.defaultBrightness = "{{ config.extra.brightness | default(value='normal') }}";
               window.themeMap = { "dark": "goyo-dark", "light": "goyo-light" };
               window.fallbackTheme = window.themeMap[window.defaultColorset] || "goyo-dark";
               

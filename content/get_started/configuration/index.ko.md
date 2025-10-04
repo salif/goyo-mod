@@ -65,6 +65,24 @@ twitter_creator = "@hahwul"
 default_colorset = "dark"
 ```
 
+## 밝기
+`brightness`
+
+- `brightness`: 테마 전반적인 색상의 밝기를 조절합니다. 옵션:
+  - `"darker"`: 색상을 더 어둡게 - 다크 테마는 완전히 검정색으로, 라이트 테마는 더 어두운 색으로 변경됩니다
+  - `"normal"`: 기본 밝기 (기본값)
+  - `"lighter"`: 색상을 더 밝게 - 두 테마 모두 더 밝아집니다
+
+```toml
+[extra]
+brightness = "normal"  # 옵션: "darker", "normal", "lighter"
+```
+
+예시:
+- 완전히 검정색인 다크 테마를 원하는 경우: `brightness = "darker"`
+- 라이트 테마를 더 어둡게 만들려면: `brightness = "darker"` 와 `default_colorset = "light"` 설정
+- 다크 테마를 더 밝게 만들려면: `brightness = "lighter"`
+
 ## 구글 태그
 `gtag`
 
