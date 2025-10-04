@@ -47,6 +47,26 @@
     --tab-radius: 0.375rem;
 }
 
+/* Dark theme with darker brightness variant */
+[data-theme="night"][data-brightness="darker"] {
+    --base-100: 0 0 0;
+    --base-200: 10 10 15;
+    --base-300: 20 25 30;
+    --neutral: 10 10 15;
+    --neutral-focus: 0 0 0;
+    --primary-content: 10 10 15;
+    --accent-content: 5 8 12;
+}
+
+/* Dark theme with lighter brightness variant */
+[data-theme="night"][data-brightness="lighter"] {
+    --base-100: 30 41 59;
+    --base-200: 45 55 72;
+    --base-300: 71 85 105;
+    --neutral: 51 65 85;
+    --neutral-focus: 30 41 59;
+}
+
 /* Light Mode Support */
 [data-theme="lofi"] {
     --primary: 107 114 128;
@@ -69,6 +89,24 @@
     --success: 34 197 94;
     --warning: 245 158 11;
     --error: 239 68 68;
+}
+
+/* Light theme with darker brightness variant */
+[data-theme="lofi"][data-brightness="darker"] {
+    --base-100: 226 232 240;
+    --base-200: 203 213 225;
+    --base-300: 186 198 215;
+    --base-content: 15 23 42;
+    --neutral: 203 213 225;
+    --neutral-focus: 186 198 215;
+    --neutral-content: 10 15 30;
+}
+
+/* Light theme with lighter brightness variant */
+[data-theme="lofi"][data-brightness="lighter"] {
+    --base-100: 255 255 255;
+    --base-200: 252 253 254;
+    --base-300: 249 250 251;
 }
 
 @layer base {
@@ -99,9 +137,29 @@
         background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     }
 
+    /* Dark theme background - darker variant */
+    [data-theme="night"][data-brightness="darker"] body {
+        background: linear-gradient(135deg, #000000 0%, #0a0a0f 100%);
+    }
+
+    /* Dark theme background - lighter variant */
+    [data-theme="night"][data-brightness="lighter"] body {
+        background: linear-gradient(135deg, #1e293b 0%, #2d3e52 100%);
+    }
+
     /* Light theme background */
     [data-theme="lofi"] body {
         background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    /* Light theme background - darker variant */
+    [data-theme="lofi"][data-brightness="darker"] body {
+        background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+    }
+
+    /* Light theme background - lighter variant */
+    [data-theme="lofi"][data-brightness="lighter"] body {
+        background: linear-gradient(135deg, #ffffff 0%, #fcfcfd 100%);
     }
 
     /* Ashen Typography */
@@ -232,6 +290,38 @@
         position: relative;
     }
 
+    /* Code block brightness variants - Dark theme */
+    [data-theme="night"][data-brightness="darker"] pre {
+        background: linear-gradient(135deg, #000000 0%, #0a0a0f 100%);
+        border: 1px solid rgba(50, 50, 60, 0.3);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    }
+
+    [data-theme="night"][data-brightness="lighter"] pre {
+        background: linear-gradient(135deg, #2d3e52 0%, #3d4f69 100%);
+        border: 1px solid rgba(120, 130, 150, 0.25);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Code block brightness variants - Light theme */
+    [data-theme="lofi"] pre {
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        border: 1px solid rgba(100, 116, 139, 0.15);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    }
+
+    [data-theme="lofi"][data-brightness="darker"] pre {
+        background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+        border: 1px solid rgba(100, 116, 139, 0.2);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    [data-theme="lofi"][data-brightness="lighter"] pre {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border: 1px solid rgba(100, 116, 139, 0.1);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    }
+
     pre::before {
         content: "";
         position: absolute;
@@ -244,10 +334,34 @@
         opacity: 0.8;
     }
 
+    [data-theme="night"][data-brightness="darker"] pre::before {
+        background: linear-gradient(90deg, #505050, #303030);
+    }
+
+    [data-theme="lofi"] pre::before {
+        background: linear-gradient(90deg, #94a3b8, #64748b);
+    }
+
     pre code {
         @apply text-sm;
         @apply whitespace-pre-wrap;
         color: #e5e7eb;
+    }
+
+    [data-theme="night"][data-brightness="darker"] pre code {
+        color: #d0d0d0;
+    }
+
+    [data-theme="night"][data-brightness="lighter"] pre code {
+        color: #f0f0f5;
+    }
+
+    [data-theme="lofi"] pre code {
+        color: #1e293b;
+    }
+
+    [data-theme="lofi"][data-brightness="darker"] pre code {
+        color: #0f172a;
     }
 
     :not(pre) > code {
@@ -255,6 +369,36 @@
         background: rgba(100, 116, 139, 0.15);
         color: #9ca3af;
         border: 1px solid rgba(100, 116, 139, 0.3);
+    }
+
+    [data-theme="night"][data-brightness="darker"] :not(pre) > code {
+        background: rgba(80, 80, 90, 0.2);
+        color: #a0a0a8;
+        border: 1px solid rgba(80, 80, 90, 0.4);
+    }
+
+    [data-theme="night"][data-brightness="lighter"] :not(pre) > code {
+        background: rgba(120, 130, 150, 0.15);
+        color: #b0b8c8;
+        border: 1px solid rgba(120, 130, 150, 0.25);
+    }
+
+    [data-theme="lofi"] :not(pre) > code {
+        background: rgba(100, 116, 139, 0.08);
+        color: #475569;
+        border: 1px solid rgba(100, 116, 139, 0.2);
+    }
+
+    [data-theme="lofi"][data-brightness="darker"] :not(pre) > code {
+        background: rgba(71, 85, 105, 0.12);
+        color: #334155;
+        border: 1px solid rgba(71, 85, 105, 0.25);
+    }
+
+    [data-theme="lofi"][data-brightness="lighter"] :not(pre) > code {
+        background: rgba(100, 116, 139, 0.05);
+        color: #64748b;
+        border: 1px solid rgba(100, 116, 139, 0.15);
     }
 
     /* Ashen Blockquotes */
@@ -269,6 +413,53 @@
         );
         border-radius: 0 8px 8px 0;
         position: relative;
+    }
+
+    /* Blockquote brightness variants - Dark theme */
+    [data-theme="night"][data-brightness="darker"] blockquote {
+        border-left-color: #606060;
+        background: linear-gradient(
+            135deg,
+            rgba(80, 80, 90, 0.12) 0%,
+            rgba(90, 90, 100, 0.12) 100%
+        );
+    }
+
+    [data-theme="night"][data-brightness="lighter"] blockquote {
+        border-left-color: #b8c0d0;
+        background: linear-gradient(
+            135deg,
+            rgba(120, 130, 150, 0.08) 0%,
+            rgba(140, 150, 170, 0.08) 100%
+        );
+    }
+
+    /* Blockquote brightness variants - Light theme */
+    [data-theme="lofi"] blockquote {
+        border-left-color: #64748b;
+        background: linear-gradient(
+            135deg,
+            rgba(100, 116, 139, 0.05) 0%,
+            rgba(148, 163, 184, 0.05) 100%
+        );
+    }
+
+    [data-theme="lofi"][data-brightness="darker"] blockquote {
+        border-left-color: #475569;
+        background: linear-gradient(
+            135deg,
+            rgba(71, 85, 105, 0.08) 0%,
+            rgba(100, 116, 139, 0.08) 100%
+        );
+    }
+
+    [data-theme="lofi"][data-brightness="lighter"] blockquote {
+        border-left-color: #94a3b8;
+        background: linear-gradient(
+            135deg,
+            rgba(148, 163, 184, 0.03) 0%,
+            rgba(203, 213, 225, 0.03) 100%
+        );
     }
 
     blockquote p {
@@ -324,6 +515,114 @@
 
 .menu a:hover {
     @apply no-underline bg-base-content/10;
+}
+
+/* Sidebar brightness adjustments */
+/* Sidebar background for darker dark theme */
+[data-theme="night"][data-brightness="darker"] .drawer-side .bg-base-100 {
+    background-color: rgb(0, 0, 0) !important;
+}
+
+[data-theme="night"][data-brightness="darker"] .drawer-side {
+    border-right-color: rgba(60, 60, 70, 0.2) !important;
+}
+
+/* Sidebar background for lighter dark theme */
+[data-theme="night"][data-brightness="lighter"] .drawer-side .bg-base-100 {
+    background-color: rgb(30, 41, 59) !important;
+}
+
+[data-theme="night"][data-brightness="lighter"] .drawer-side {
+    border-right-color: rgba(120, 130, 150, 0.2) !important;
+}
+
+/* Sidebar background for light theme */
+[data-theme="lofi"] .drawer-side .bg-base-100 {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+[data-theme="lofi"] .drawer-side {
+    border-right-color: rgba(100, 116, 139, 0.12) !important;
+}
+
+/* Sidebar background for darker light theme */
+[data-theme="lofi"][data-brightness="darker"] .drawer-side .bg-base-100 {
+    background-color: rgb(226, 232, 240) !important;
+}
+
+[data-theme="lofi"][data-brightness="darker"] .drawer-side {
+    border-right-color: rgba(71, 85, 105, 0.18) !important;
+}
+
+/* Sidebar background for lighter light theme */
+[data-theme="lofi"][data-brightness="lighter"] .drawer-side .bg-base-100 {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+[data-theme="lofi"][data-brightness="lighter"] .drawer-side {
+    border-right-color: rgba(148, 163, 184, 0.08) !important;
+}
+
+/* Sidebar active item background */
+[data-theme="night"][data-brightness="darker"] .menu .rounded.bg-gray-500\/15 {
+    background-color: rgba(80, 80, 90, 0.2) !important;
+}
+
+[data-theme="night"][data-brightness="lighter"] .menu .rounded.bg-gray-500\/15 {
+    background-color: rgba(120, 130, 150, 0.18) !important;
+}
+
+[data-theme="lofi"] .menu .rounded.bg-gray-500\/15 {
+    background-color: rgba(100, 116, 139, 0.12) !important;
+}
+
+[data-theme="lofi"][data-brightness="darker"] .menu .rounded.bg-gray-500\/15 {
+    background-color: rgba(71, 85, 105, 0.15) !important;
+}
+
+[data-theme="lofi"][data-brightness="lighter"] .menu .rounded.bg-gray-500\/15 {
+    background-color: rgba(148, 163, 184, 0.08) !important;
+}
+
+/* Sidebar search input border */
+[data-theme="night"][data-brightness="darker"] .drawer-side .input.border-gray-500\/15 {
+    border-color: rgba(80, 80, 90, 0.2) !important;
+}
+
+[data-theme="night"][data-brightness="darker"] .drawer-side .input.border-gray-500\/15:hover {
+    border-color: rgba(100, 100, 110, 0.4) !important;
+}
+
+[data-theme="night"][data-brightness="lighter"] .drawer-side .input.border-gray-500\/15 {
+    border-color: rgba(120, 130, 150, 0.18) !important;
+}
+
+[data-theme="night"][data-brightness="lighter"] .drawer-side .input.border-gray-500\/15:hover {
+    border-color: rgba(140, 150, 170, 0.35) !important;
+}
+
+[data-theme="lofi"] .drawer-side .input.border-gray-500\/15 {
+    border-color: rgba(100, 116, 139, 0.12) !important;
+}
+
+[data-theme="lofi"] .drawer-side .input.border-gray-500\/15:hover {
+    border-color: rgba(100, 116, 139, 0.25) !important;
+}
+
+[data-theme="lofi"][data-brightness="darker"] .drawer-side .input.border-gray-500\/15 {
+    border-color: rgba(71, 85, 105, 0.18) !important;
+}
+
+[data-theme="lofi"][data-brightness="darker"] .drawer-side .input.border-gray-500\/15:hover {
+    border-color: rgba(71, 85, 105, 0.35) !important;
+}
+
+[data-theme="lofi"][data-brightness="lighter"] .drawer-side .input.border-gray-500\/15 {
+    border-color: rgba(148, 163, 184, 0.08) !important;
+}
+
+[data-theme="lofi"][data-brightness="lighter"] .drawer-side .input.border-gray-500\/15:hover {
+    border-color: rgba(148, 163, 184, 0.2) !important;
 }
 
 /* ToC Neutral Link Colors */

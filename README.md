@@ -76,6 +76,7 @@ twitter_creator = "@hahwul"  # Creator Twitter handle
 
 # Color Configuration
 default_colorset = "dark"  # Default color scheme (dark/light)
+brightness = "normal"  # Options: "darker", "normal", "lighter"
 
 # Google Tag Configuration
 gtag = ""  # Google Analytics tracking ID

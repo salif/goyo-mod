@@ -65,6 +65,24 @@ twitter_creator = "@hahwul"
 default_colorset = "dark"
 ```
 
+## Brightness
+`brightness`
+
+- `brightness`: Controls the overall brightness of the theme colors. Options are:
+  - `"darker"`: Makes colors darker - dark theme becomes completely black, light theme becomes darker
+  - `"normal"`: Default brightness (default value)
+  - `"lighter"`: Makes colors lighter - both themes become lighter
+
+```toml
+[extra]
+brightness = "normal"  # Options: "darker", "normal", "lighter"
+```
+
+Examples:
+- For a completely black dark theme: `brightness = "darker"`
+- For a darker light theme: `brightness = "darker"` with `default_colorset = "light"`
+- For a lighter dark theme: `brightness = "lighter"`
+
 ## Google Tag
 `gtag`
 
