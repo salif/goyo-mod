@@ -78,10 +78,9 @@ default_colorset = "dark"
 ```toml
 [extra]
 brightness = "normal"  # Options: "darker", "normal", "lighter"
-images = ["images/darker.png", "images/normal.png", "images/lighter.png"]
 ```
 
-{{ carousel() }}
+{{ carousel(images=["images/darker.png", "images/normal.png", "images/lighter.png"]) }}
 
 ## Google Tag
 `gtag`
