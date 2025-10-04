@@ -65,6 +65,8 @@ twitter_creator = "@hahwul"
 default_colorset = "dark"
 ```
 
+{{ image_diff(src1="images/dark.png" src2="images/light.png" alt="Dark and Light") }}
+
 ## Brightness
 `brightness`
 
@@ -76,12 +78,10 @@ default_colorset = "dark"
 ```toml
 [extra]
 brightness = "normal"  # Options: "darker", "normal", "lighter"
+images = ["images/darker.png", "images/normal.png", "images/lighter.png"]
 ```
 
-Examples:
-- For a completely black dark theme: `brightness = "darker"`
-- For a darker light theme: `brightness = "darker"` with `default_colorset = "light"`
-- For a lighter dark theme: `brightness = "lighter"`
+{{ carousel() }}
 
 ## Google Tag
 `gtag`
@@ -145,8 +145,8 @@ You can add as many languages as you need:
 
 ```toml
 [extra]
-lang_aliases = { 
-    en = "English", 
+lang_aliases = {
+    en = "English",
     ko = "한국어",
     ja = "日本語",
     id = "Bahasa Indonesia"
