@@ -298,18 +298,18 @@ function initTheme() {
 
   // Theme mapping - maps user-friendly names to actual DaisyUI theme names
   var themeMapping = {
-    "goyo-dark": "night",
-    "goyo-light": "lofi",
+    "trankwilo-dark": "night",
+    "trankwilo-light": "lofi",
   };
 
   // Reverse mapping for checking current theme
   var reverseThemeMapping = {
-    night: "goyo-dark",
-    lofi: "goyo-light",
+    night: "trankwilo-dark",
+    lofi: "trankwilo-light",
   };
 
   var fallbackTheme =
-    window && window.fallbackTheme ? window.fallbackTheme : "goyo-dark";
+    window && window.fallbackTheme ? window.fallbackTheme : "trankwilo-dark";
   var currentUserTheme = localStorage.getItem("theme") || fallbackTheme;
   
   // Get brightness from config
@@ -324,10 +324,10 @@ function initTheme() {
   document.documentElement.setAttribute("data-brightness", defaultBrightness);
 
   // Set checkbox state based on current theme
-  themeController.checked = currentUserTheme === "goyo-dark";
+  themeController.checked = currentUserTheme === "trankwilo-dark";
 
   themeController.addEventListener("change", function (e) {
-    var userTheme = e.target.checked ? "goyo-dark" : "goyo-light";
+    var userTheme = e.target.checked ? "trankwilo-dark" : "trankwilo-light";
     var actualTheme = themeMapping[userTheme];
 
     document.documentElement.setAttribute("data-theme", actualTheme);

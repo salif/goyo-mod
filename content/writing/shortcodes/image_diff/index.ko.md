@@ -20,7 +20,7 @@ weight = 3
 {{ image_diff(
     src1="/images/dark.jpg",
     src2="/images/light.jpg",
-    alt="goyo"
+    alt="trankwilo"
 ) }}
 
 위와 같이 사용하면 두 이미지를 드래그로 비교할 수 있는 UI가 생성됩니다.

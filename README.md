@@ -1,12 +1,12 @@
 ![](./screenshot.png)
 
 <div align="center">
-  <p>Goyo is a <a href="https://www.getzola.org/">Zola</a> theme that aims for simplicity and clean documentation.</p>
+  <p>Trankwilo is a <a href="https://www.getzola.org/">Zola</a> theme that aims for simplicity and clean documentation.</p>
 </div>
 
 <p align="center">
-  <a href="https://goyo.hahwul.com"><img src="https://img.shields.io/badge/DOCUMENTS-000000?style=for-the-badge&labelColor=000000"></a>
-  <a href="https://github.com/hahwul/goyo/blob/main/CONTRIBUTING.md"><img src="https://img.shields.io/badge/CONTRIBUTIONS-WELCOME-000000?style=for-the-badge&labelColor=000000"></a>
+  <a href="https://salif.github.io/zola-themes-collection/demo/trankwilo/"><img src="https://img.shields.io/badge/DOCUMENTS-000000?style=for-the-badge&labelColor=000000"></a>
+  <a href="https://codeberg.org/salif/trankwilo/src/branch/trankwilo/CONTRIBUTING.md"><img src="https://img.shields.io/badge/CONTRIBUTIONS-WELCOME-000000?style=for-the-badge&labelColor=000000"></a>
   <a href="https://www.getzola.org/"><img src="https://img.shields.io/badge/Zola-000000?style=for-the-badge&logo=zola&logoColor=white"></a>
   <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/TailwindCSS-000000?style=for-the-badge&logo=tailwindcss&logoColor=white"></a>
   <a href="https://daisyui.com"><img src="https://img.shields.io/badge/DaisyUI-000000?style=for-the-badge&logo=daisyui&logoColor=white"></a>
@@ -38,20 +38,20 @@ Add the theme as a git submodule:
 
 ```bash
 git init  # if your project is a git repository already, ignore this command
-git submodule add https://github.com/hahwul/goyo themes/goyo
+git submodule add -b trankwilo https://codeberg.org/salif/trankwilo themes/trankwilo
 ```
 
 Or clone the theme into your themes directory:
 
 ```bash
-git clone https://github.com/hahwul/goyo themes/goyo
+git clone https://codeberg.org/salif/trankwilo themes/trankwilo
 ```
 
-Then set `goyo` as your theme in `config.toml`.
+Then set `trankwilo` as your theme in `config.toml`.
 
 ```toml
 title = "Your Docs"
-theme = "goyo"
+theme = "trankwilo"
 ```
 
 ## Configuration
@@ -61,12 +61,12 @@ Add extra field in config.toml
 ```toml
 [extra]
 # Logo Configuration
-logo_text = "Goyo"  # Text to display if no logo image
-logo_image_path = "images/goyo.png"  # Path to logo image
+logo_text = "Trankwilo"  # Text to display if no logo image
+logo_image_path = "images/trankwilo.png"  # Path to logo image
 logo_image_padding = "5px"  # Padding for logo image (optional)
 
 # Footer Configuration
-footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://github.com/hahwul/goyo'>Goyo</a>"  # Footer HTML content
+footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://codeberg.org/salif/trankwilo'>Trankwilo</a>"  # Footer HTML content
 
 # Thumbnail Configuration
 default_thumbnail = "images/default_thumbnail.jpg"  # Default thumbnail image path
@@ -91,8 +91,8 @@ lang_aliases = { en = "English", ko = "한국어" }
 
 # Navigation Configuration
 nav = [
-  { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
-  { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
+  { name = "Documents", url = "$BASE_URL/introduction", type = "url", icon = "fa-solid fa-book" },
+  { name = "Source", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
   { name = "Links", type = "dropdown", icon = "fa-solid fa-link", members = [
     { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" }
   ] }
@@ -102,8 +102,8 @@ nav = [
 # `nav_{lang}`: Language-specific navigation menu (e.g., `nav_ko` for Korean).
 # If defined, it will be used instead of the default `nav` for that language.
 nav_ko = [
-    { name = "문서", url = "/ko/introduction", type = "url", icon = "fa-solid fa-book" },
-    { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
+    { name = "문서", url = "$BASE_URL/introduction", type = "url", icon = "fa-solid fa-book" },
+    { name = "Source", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
     { name = "링크", type = "dropdown", icon = "fa-solid fa-link", members = [
         { name = "제작자 블로그", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
     ] },
@@ -124,13 +124,13 @@ disable_root_sidebar_hide = false  # Prevent hiding sidebar on root page
 [extra.comments]
 enabled = false  # Enable comments
 system = ""  # Comment system (e.g., "giscus")
-repo = ""  # Repository for comments (e.g., "hahwul/goyo")
+repo = ""  # Repository for comments (e.g., "salif/trankwilo")
 repo_id = ""  # Repository ID (e.g., "R_kgDOXXXXXXX")
 category = ""  # Comment category (e.g., "General")
 category_id = ""  # Category ID (e.g., "DIC_kwDOXXXXXXXXXX")
 ```
 
-More information? [Configuration - Goyo Documents](https://goyo.hahwul.com/get_started/configuration/) and [Creating Landing - Goyo Documents](https://goyo.hahwul.com/get_started/creating-landing/)
+More information? [Configuration - Trankwilo Documents](https://salif.github.io/zola-themes-collection/demo/trankwilo/get_started/configuration/) and [Creating Landing - Trankwilo Documents](https://salif.github.io/zola-themes-collection/demo/trankwilo/get_started/creating-landing/)
 
 ## Run
 

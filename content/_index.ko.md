@@ -1,18 +1,18 @@
 +++
 template = "landing.html"
-title = "Goyo"
+title = "Trankwilo"
 
 [extra]
 version = "v0.1.0"
 
 [extra.hero]
-title = "Goyo에 오신 것을 환영합니다!"
+title = "Trankwilo에 오신 것을 환영합니다!"
 badge = "✨ Minimalist Documentation Theme"
-description = "한국어 '고요'에서 영감을 받은 Goyo는 단순함과 깔끔한 문서를 지향하는 Zola 테마입니다. Goyo를 사용하면 아름답고 실용적인 문서 페이지를 쉽게 만들 수 있습니다."
+description = "한국어 '고요'에서 영감을 받은 Trankwilo는 단순함과 깔끔한 문서를 지향하는 Zola 테마입니다. Trankwilo를 사용하면 아름답고 실용적인 문서 페이지를 쉽게 만들 수 있습니다."
 image = "$BASE_URL/../images/landing.jpg"
 cta_buttons = [
     { text = "시작하기", url = "$BASE_URL/introduction", style = "primary" },
-    { text = "GitHub에서 보기", url = "https://github.com/hahwul/goyo", style = "secondary" },
+    { text = "Codeberg에서 보기", url = "https://codeberg.org/salif/trankwilo", style = "secondary" },
 ]
 
 [[extra.features]]
@@ -63,6 +63,6 @@ testimonials = [
 
 [extra.final_cta_section]
 title = "기여하기"
-description = "Goyo는 ❤️로 만들어진 오픈소스 프로젝트입니다. 이 프로젝트에 기여하고 싶다면, CONTRIBUTING.md를 확인하고 멋진 콘텐츠와 함께 풀 리퀘스트를 제출해주세요!"
-button = { text = "기여 가이드 보기", url = "https://github.com/hahwul/goyo/blob/main/CONTRIBUTING.md" }
+description = "Trankwilo는 ❤️로 만들어진 오픈소스 프로젝트입니다. 이 프로젝트에 기여하고 싶다면, CONTRIBUTING.md를 확인하고 멋진 콘텐츠와 함께 풀 리퀘스트를 제출해주세요!"
+button = { text = "기여 가이드 보기", url = "https://codeberg.org/salif/trankwilo/src/branch/trankwilo/CONTRIBUTING.md" }
 +++

@@ -23,11 +23,11 @@
                 </div>
                 <h1 class="text-6xl md:text-8xl font-black tracking-tight mb-8">
                     <span class="hero-title">
-                        {% if section.extra.hero.title %}{{ section.extra.hero.title }}{% else %}Welcome to Goyo!{% endif %}
+                        {% if section.extra.hero.title %}{{ section.extra.hero.title }}{% else %}Welcome to Trankwilo!{% endif %}
                     </span>
                 </h1>
                 <p class="max-w-3xl mx-auto text-xl md:text-2xl hero-description mb-12 leading-relaxed font-light">
-                    {% if section.extra.hero.description %}{{ section.extra.hero.description }}{% else %}Inspired by the Korean word "Goyo" (고요), meaning calm or serene, Goyo is a Zola theme that aims for simplicity and clean documentation. With Goyo, you can easily create beautiful and practical documentation pages.{% endif %}
+                    {% if section.extra.hero.description %}{{ section.extra.hero.description }}{% else %}Inspired by the Korean word "고요", meaning calm or serene, Trankwilo is a Zola theme that aims for simplicity and clean documentation. With Trankwilo, you can easily create beautiful and practical documentation pages.{% endif %}
                 </p>
                 {% if section.extra.hero.cta_buttons %}
                     <div class="flex justify-center gap-6 flex-wrap">
@@ -173,12 +173,12 @@
                 </p>
                 {% if section.extra.final_cta_section.image %}
                     <div class="mb-12">
-                        <img src="{{ section.extra.final_cta_section.image | safe }}" alt="CTA Image"
+                        <img src="{{ section.extra.final_cta_section.image | replace(from=`$BASE_URL`, to=get_url(path=``, lang=lang)) | safe }}" alt="CTA Image"
                              class="mx-auto max-w-md rounded-xl shadow-2xl border border-slate-600/50" />
                     </div>
                 {% endif %}
                 {% if section.extra.final_cta_section.button %}
-                    <a href="{{ section.extra.final_cta_section.button.url | safe }}"
+                    <a href="{{ section.extra.final_cta_section.button.url | replace(from=`$BASE_URL`, to=get_url(path=``, lang=lang)) | safe }}"
                        class="group relative inline-flex items-center px-12 py-4 text-xl font-bold text-slate-200 bg-gradient-to-r from-slate-600 to-gray-700 rounded-xl shadow-2xl shadow-slate-500/25 transition-all duration-300 transform hover:scale-105 hover:shadow-slate-500/40">
                         <span class="relative z-10">{{ section.extra.final_cta_section.button.text }}</span>
                         <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-slate-500 to-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

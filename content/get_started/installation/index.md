@@ -1,13 +1,13 @@
 +++
 title = "Installation"
-description = "How to install Goyo and get started."
+description = "How to install Trankwilo and get started."
 weight = 1
 sort_by = "weight"
 
 [extra]
 +++
 
-Goyo is a theme for Zola. To use this documentation, you need to install Zola first. You can install it on various operating systems with a simple command like the one below.
+Trankwilo is a theme for Zola. To use this documentation, you need to install Zola first. You can install it on various operating systems with a simple command like the one below.
 
 ```bash
 # macOS Example
@@ -25,29 +25,29 @@ cd docs
 
 You can then run the local development server with the `zola serve` command and view your site at `http://localhost:1111`.
 
-## Install the Goyo Theme
+## Install the Trankwilo Theme
 
 The easiest way to install a theme in Zola is to clone it or add it as a submodule into the `themes` subdirectory of your Zola project.
 
 Clone example
 
 ```bash
-git clone https://github.com/hahwul/goyo themes/goyo
+git clone https://codeberg.org/salif/trankwilo themes/trankwilo
 ```
 
 Submodule example
 
 ```bash
-git submodule add https://github.com/hahwul/goyo themes/goyo
+git submodule add -b trankwilo https://codeberg.org/salif/trankwilo themes/trankwilo
 ```
 
-## Update the Goyo Theme
+## Update the Trankwilo Theme
 
-If you want to update the Goyo theme to the latest version, you can do so easily:
+If you want to update the Trankwilo theme to the latest version, you can do so easily:
 
 - If you cloned the theme:
   ```bash
-  cd themes/goyo
+  cd themes/trankwilo
   git pull
   ```
 
@@ -57,18 +57,18 @@ If you want to update the Goyo theme to the latest version, you can do so easily
   git submodule update --remote
   ```
 
-This will ensure you always have the latest features and fixes from the Goyo theme.
+This will ensure you always have the latest features and fixes from the Trankwilo theme.
 
 ## Set the theme in config.toml
 
-This is the final step. Set the theme in your `config.toml` file to use Goyo.
+This is the final step. Set the theme in your `config.toml` file to use Trankwilo.
 
 ```toml
 title = "Your App"
-theme = "goyo"
+theme = "trankwilo"
 ```
 
-Now, when you run Zola, it will use the Goyo theme.
+Now, when you run Zola, it will use the Trankwilo theme.
 
 ```bash
 zola serve

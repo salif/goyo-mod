@@ -1,13 +1,13 @@
 +++
 title = "랜딩 페이지 만들기"
-description = "Goyo로 현대적이고 기능이 풍부한 랜딩 페이지를 만드는 방법을 알아보세요."
+description = "Trankwilo로 현대적이고 기능이 풍부한 랜딩 페이지를 만드는 방법을 알아보세요."
 weight = 3
 sort_by = "weight"
 
 [extra]
 +++
 
-랜딩 페이지는 방문자가 가장 먼저 보게 되는 페이지입니다. Goyo에서는 `landing.html`을 사용하여 제작되며, `content/_index.md`에서 설정합니다. 이를 통해 프로젝트를 위한 풍부하고 매력적인 진입점을 만들 수 있습니다.
+랜딩 페이지는 방문자가 가장 먼저 보게 되는 페이지입니다. Trankwilo에서는 `landing.html`을 사용하여 제작되며, `content/_index.md`에서 설정합니다. 이를 통해 프로젝트를 위한 풍부하고 매력적인 진입점을 만들 수 있습니다.
 
 다른 언어의 랜딩 페이지를 만들려면, `content/_index.ko.md`와 같이 해당 언어의 파일을 생성하면 됩니다.
 
@@ -21,12 +21,12 @@ template = "landing.html"
 
 ## 전체 설정 예시
 
-Goyo 랜딩 페이지는 `_index.md` 파일의 `[extra]` 섹션을 통해 매우 유연하게 사용자 정의할 수 있습니다. 아래는 사용 가능한 모든 섹션을 보여주는 전체 예시입니다. 필요하지 않은 섹션은 생략할 수 있으며, 그 경우 해당 섹션은 렌더링되지 않습니다.
+Trankwilo 랜딩 페이지는 `_index.md` 파일의 `[extra]` 섹션을 통해 매우 유연하게 사용자 정의할 수 있습니다. 아래는 사용 가능한 모든 섹션을 보여주는 전체 예시입니다. 필요하지 않은 섹션은 생략할 수 있으며, 그 경우 해당 섹션은 렌더링되지 않습니다.
 
 ```toml
 +++
 template = "landing.html"
-title = "Goyo"
+title = "Trankwilo"
 
 [extra]
 version = "v0.1.0"
@@ -34,13 +34,13 @@ version = "v0.1.0"
 # Hero 섹션
 # 페이지 상단의 메인 섹션입니다.
 [extra.hero]
-title = "Goyo에 오신 것을 환영합니다!"
+title = "Trankwilo에 오신 것을 환영합니다!"
 badge = "✨ Minimalist Documentation Theme"
 description = "문서화를 위한 간단하고 깔끔한 Zola 테마입니다."
 image = "/images/landing.jpg" # 배경 이미지
 cta_buttons = [
-    { text = "시작하기", url = "/get-started/installation/", style = "primary" },
-    { text = "GitHub에서 보기", url = "https://github.com/your/repo", style = "secondary" },
+    { text = "시작하기", url = "$BASE_URL/get-started/installation/", style = "primary" },
+    { text = "Codeberg에서 보기", url = "https://github.com/your/repo", style = "secondary" },
 ]
 
 # Features 섹션
@@ -72,7 +72,7 @@ testimonials = [
     {
         author = "Jane Doe",
         role = "TechCorp 개발자",
-        quote = "Goyo는 우리의 문서화 프로세스를 완전히 바꾸어 놓았습니다. 간단하고, 우아하며, 믿을 수 없을 정도로 빠릅니다.",
+        quote = "Trankwilo는 우리의 문서화 프로세스를 완전히 바꾸어 놓았습니다. 간단하고, 우아하며, 믿을 수 없을 정도로 빠릅니다.",
         avatar = "/images/avatars/jane.png"
     },
     {
@@ -87,8 +87,8 @@ testimonials = [
 # 푸터 전 사용자에게 마지막으로 행동을 유도하는 섹션입니다.
 [extra.final_cta_section]
 title = "시작할 준비가 되셨나요?"
-description = "오늘 Goyo와 함께 여정을 시작하고 아름다운 문서를 쉽게 만들어보세요."
-button = { text = "지금 시작하기", url = "/get-started/installation/" }
+description = "오늘 Trankwilo와 함께 여정을 시작하고 아름다운 문서를 쉽게 만들어보세요."
+button = { text = "지금 시작하기", url = "$BASE_URL/get-started/installation/" }
 image = "/images/contribute.png"
 +++
 ```

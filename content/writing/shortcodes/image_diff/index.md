@@ -20,7 +20,7 @@ The `image_diff` shortcode allows you to visually compare two images side by sid
 {{ image_diff(
     src1="/images/dark.jpg",
     src2="/images/light.jpg",
-    alt="goyo"
+    alt="trankwilo"
 ) }}
 
 This will render a draggable image diff viewer for the two provided images.

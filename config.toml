@@ -1,7 +1,7 @@
 # The URL the site will be built for
 base_url = "https://salif.github.io/zola-themes-collection/demo/trankwilo/"
-title = "Goyo"
-description = "Goyo is Theme"
+title = "Trankwilo"
+description = "Trankwilo is Theme"
 
 build_search_index = true
 default_language = "en"
@@ -18,9 +18,9 @@ generate_feeds = true
 build_search_index = true
 
 [extra]
-logo_text = "Goyo"
-logo_image_path = "images/goyo.png"
-footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://github.com/hahwul/goyo'>Goyo</a>"
+logo_text = "Trankwilo"
+logo_image_path = "images/trankwilo.png"
+footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://codeberg.org/salif/trankwilo'>Trankwilo</a>"
 default_thumbnail = "images/default_thumbnail.jpg"
 twitter_site = "@hahwul"
 twitter_creator = "@hahwul"
@@ -36,7 +36,7 @@ lang_aliases = { en = "English", ko = "한국어" }
 
 nav = [
     { name = "Documents", url = "$BASE_URL/introduction", type = "url", icon = "fa-solid fa-book" },
-    { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
+    { name = "Source", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
     { name = "Links", type = "dropdown", icon = "fa-solid fa-link", members = [
         { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
         { name = "Zola Offical", url = "https://getzola.org", type = "url", icon = "fa-solid fa-z" },
@@ -45,7 +45,7 @@ nav = [
 
 nav_ko = [
     { name = "문서", url = "$BASE_URL/introduction", type = "url", icon = "fa-solid fa-book" },
-    { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
+    { name = "Source", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
     { name = "링크", type = "dropdown", icon = "fa-solid fa-link", members = [
         { name = "제작자 블로그", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
         { name = "Zola 공식", url = "https://getzola.org", type = "url", icon = "fa-solid fa-z" },

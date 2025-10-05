@@ -7,34 +7,34 @@ weight = 4
 
 ## 기본 사용법
 
-{{ pretty_link(url="https://github.com/hahwul/goyo") }}
+{{ pretty_link(url="https://codeberg.org/salif/trankwilo") }}
 
 ```jinja2
-{{/* pretty_link(url="https://github.com/hahwul/goyo") */}}
+{{/* pretty_link(url="https://codeberg.org/salif/trankwilo") */}}
 ```
 
 ## 제목 포함
 
-{{ pretty_link(url="https://github.com/hahwul/goyo", title="Goyo 테마") }}
+{{ pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo 테마") }}
 
 ```jinja2
-{{/* pretty_link(url="https://github.com/hahwul/goyo", title="Goyo 테마") */}}
+{{/* pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo 테마") */}}
 ```
 
 ## 제목과 설명 포함
 
-{{ pretty_link(url="https://github.com/hahwul/goyo", title="Goyo 테마", description="고요함과 평온함을 의미하는 한국어에서 영감을 받은 깔끔하고 미니멀한 Zola 테마입니다.") }}
+{{ pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo 테마", description="고요함과 평온함을 의미하는 한국어에서 영감을 받은 깔끔하고 미니멀한 Zola 테마입니다.") }}
 
 ```jinja2
-{{/* pretty_link(url="https://github.com/hahwul/goyo", title="Goyo 테마", description="고요함과 평온함을 의미하는 한국어에서 영감을 받은 깔끔하고 미니멀한 Zola 테마입니다.") */}}
+{{/* pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo 테마", description="고요함과 평온함을 의미하는 한국어에서 영감을 받은 깔끔하고 미니멀한 Zola 테마입니다.") */}}
 ```
 
 ## 이미지 포함
 
-{{ pretty_link(url="https://github.com/hahwul/goyo", title="Goyo 테마", description="고요함과 평온함을 의미하는 한국어에서 영감을 받은 깔끔하고 미니멀한 Zola 테마입니다.", image="/images/goyo.png") }}
+{{ pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo 테마", description="고요함과 평온함을 의미하는 한국어에서 영감을 받은 깔끔하고 미니멀한 Zola 테마입니다.", image="/images/trankwilo.png") }}
 
 ```jinja2
-{{/* pretty_link(url="https://github.com/hahwul/goyo", title="Goyo 테마", description="고요함과 평온함을 의미하는 한국어에서 영감을 받은 깔끔하고 미니멀한 Zola 테마입니다.", image="/images/goyo.png") */}}
+{{/* pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo 테마", description="고요함과 평온함을 의미하는 한국어에서 영감을 받은 깔끔하고 미니멀한 Zola 테마입니다.", image="/images/trankwilo.png") */}}
 ```
 
 ## 매개변수

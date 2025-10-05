@@ -5,7 +5,7 @@ weight = 2 # Assuming "Creating Content" is weight 1
 template = "page.html"
 +++
 
-Writing clear and well-structured content is key to a great website. This guide provides examples of common Markdown elements as rendered by the Goyo theme and offers some tips for effective writing.
+Writing clear and well-structured content is key to a great website. This guide provides examples of common Markdown elements as rendered by the Trankwilo theme and offers some tips for effective writing.
 
 ## Headings
 
@@ -150,14 +150,14 @@ Create inline links or reference-style links.
 Image syntax is similar to links but prefixed with an exclamation mark.
 
 ```markdown
-![Alt text for the image](https://placehold.co/600x100/png?text=Goyo+Placeholder)
+![Alt text for the image](https://placehold.co/600x100/png?text=Trankwilo+Placeholder)
 ```
 
 **Renders as:**
 
-![Alt text for the image](https://placehold.co/600x100/png?text=Goyo+Placeholder)
+![Alt text for the image](https://placehold.co/600x100/png?text=Trankwilo+Placeholder)
 
-*(Note: The Goyo theme ensures images are responsive.)*
+*(Note: The Trankwilo theme ensures images are responsive.)*
 
 ## Blockquotes
 
@@ -198,11 +198,11 @@ Use triple backticks and specify the language for syntax highlighting.
 ````markdown
 ```python
 def hello():
-  print("Hello, Goyo!")
+  print("Hello, Trankwilo!")
 ```
 
 ```javascript
-console.log("Hello, Goyo!");
+console.log("Hello, Trankwilo!");
 ```
 ````
 
@@ -210,11 +210,11 @@ console.log("Hello, Goyo!");
 
 ```python
 def hello():
-  print("Hello, Goyo!")
+  print("Hello, Trankwilo!")
 ```
 
 ```javascript
-console.log("Hello, Goyo!");
+console.log("Hello, Trankwilo!");
 ```
 
 ## Horizontal Rule

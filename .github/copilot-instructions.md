@@ -1,8 +1,8 @@
-# Goyo - Zola Theme Development Instructions
+# Trankwilo - Zola Theme Development Instructions
 
 **ALWAYS follow these instructions first and fallback to additional search and context gathering only when the information here is incomplete or found to be in error.**
 
-Goyo is a Zola theme for static site generation that creates clean, minimalist documentation sites. This repository serves both as the theme itself and as a documentation/demo site showcasing the theme's capabilities.
+Trankwilo is a Zola theme for static site generation that creates clean, minimalist documentation sites. This repository serves both as the theme itself and as a documentation/demo site showcasing the theme's capabilities.
 
 ## Working Effectively
 
@@ -90,7 +90,7 @@ After making any changes to the theme or content:
 1. **Build Validation**: Always run a clean build and verify it completes without errors
 2. **Server Test**: Start the dev server and verify the homepage loads at `http://127.0.0.1:1111`
 3. **Content Check**: Verify key pages render correctly:
-   - Landing page: `http://127.0.0.1:1111` (should show "Welcome to Goyo!")
+   - Landing page: `http://127.0.0.1:1111` (should show "Welcome to Trankwilo!")
    - Documentation: `http://127.0.0.1:1111/introduction/`
    - Korean version: `http://127.0.0.1:1111/ko/`
 4. **Theme Features**: Verify core theme functionality works:
@@ -103,7 +103,7 @@ After making any changes to the theme or content:
 
 ### Repository Structure
 ```
-/home/runner/work/goyo/goyo/
+/home/runner/work/trankwilo/trankwilo/
 ├── .github/workflows/       # GitHub Actions deployment
 ├── content/                 # Markdown content files
 ├── static/                  # Static assets (images, fonts, etc.)
@@ -154,7 +154,7 @@ zola --help
 ### GitHub Actions
 - Automatic deployment configured in `.github/workflows/zola.yml`
 - Builds and deploys to GitHub Pages on push to main branch
-- Target site: https://goyo.hahwul.com
+- Target site: https://salif.github.io/zola-themes-collection/demo/trankwilo/
 
 ## Known Issues and Workarounds
 

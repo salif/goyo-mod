@@ -1,10 +1,10 @@
 +++
 title = "Creating a Content"
-description = "Learn how to create a page with Goyo."
+description = "Learn how to create a page with Trankwilo."
 weight = 2
 +++
 
-Zola creates and manages documents in the `content` subdirectory. Goyo automatically configures the sidebar based on the structure within `content`. Let's create a simple page to get started.
+Zola creates and manages documents in the `content` subdirectory. Trankwilo automatically configures the sidebar based on the structure within `content`. Let's create a simple page to get started.
 
 ## Page
 
