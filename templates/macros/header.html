@@ -8,7 +8,7 @@
     </div>
     <!-- Logo -->
     <div class="flex-1">
-        <a href="{{ get_url(path=``, lang=lang) }}" class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl">
+        <a href="{{ get_url(path=``, lang=lang) }}" class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl" style="background: linear-gradient(135deg, #9ca3af, #6b7280); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; font-size: 1.5rem;">
             {% if config.extra.logo_image_path %}
                 <img src="{{ get_url(path=config.extra.logo_image_path) | safe }}" alt="{{ config.extra.logo_text | default(value=config.title) }}" class="h-18 w-auto" {% if config.extra.logo_image_padding is defined and config.extra.logo_image_padding %}style="padding: {{ config.extra.logo_image_padding }};"{% endif %}/>
             {% else %}
@@ -19,8 +19,15 @@
     <!-- Desktop Menu -->
     <div class="flex-none hidden lg:flex">
         <ul class="menu menu-horizontal px-1 items-center">
-            {% if config.extra.nav %}
-                {% for item in config.extra.nav %}
+            {% set current_nav = config.extra.nav %}
+            {% if lang and lang != config.default_language %}
+                {% set nav_key = "nav_" ~ lang %}
+                {% if config.extra[nav_key] %}
+                    {% set_global current_nav = config.extra[nav_key] %}
+                {% endif %}
+            {% endif %}
+            {% if current_nav %}
+                {% for item in current_nav %}
                     {% if item.type == "dropdown" %}
                         <li class="dropdown dropdown-end">
                             <div tabindex="0" role="button" class="btn btn-ghost">
@@ -62,25 +69,25 @@
                             <path d="M19.1 18h-6.2"></path>
                         </svg>
                     </div>
-                    <ul tabindex="0" class="dropdown-content menu bg-base-100 border border-gray-500/15 rounded-box z-1 p-2 shadow-lg">
+                    <ul tabindex="0" class="dropdown-content menu bg-base-100 border border-gray-500/15 rounded-box z-1 p-2 shadow-lg min-w-max whitespace-nowrap">
                         {% for lang_code, lang_config in config.languages %}
                             {% if lang_code != lang %}
                                 {% if page is defined and page.translations %}
                                 {% set translation = page.translations | filter(attribute="lang", value=lang_code) | first %}
                                 {% if translation %}
-                                    <li><a href="{{ translation.permalink | safe }}">{{ lang_config.name | default(value=lang_code) }}</a></li>
+                                    <li><a href="{{ translation.permalink | safe }}">{% if config.extra.lang_aliases and config.extra.lang_aliases[lang_code] %}{{ config.extra.lang_aliases[lang_code] }}{% else %}{{ lang_config.name | default(value=lang_code) }}{% endif %}</a></li>
                                 {% else %}
-                                    <li><a href="{{ get_url(path="/", lang=lang_code) | safe }}">{{ lang_config.name | default(value=lang_code) }}</a></li>
+                                    <li><a href="{{ get_url(path="/", lang=lang_code) | safe }}">{% if config.extra.lang_aliases and config.extra.lang_aliases[lang_code] %}{{ config.extra.lang_aliases[lang_code] }}{% else %}{{ lang_config.name | default(value=lang_code) }}{% endif %}</a></li>
                                 {% endif %}
                             {% elif section is defined and section.translations %}
                                 {% set translation = section.translations | filter(attribute="lang", value=lang_code) | first %}
                                 {% if translation %}
-                                    <li><a href="{{ translation.permalink | safe }}">{{ lang_config.name | default(value=lang_code) }}</a></li>
+                                    <li><a href="{{ translation.permalink | safe }}">{% if config.extra.lang_aliases and config.extra.lang_aliases[lang_code] %}{{ config.extra.lang_aliases[lang_code] }}{% else %}{{ lang_config.name | default(value=lang_code) }}{% endif %}</a></li>
                                 {% else %}
-                                    <li><a href="{{ get_url(path="/", lang=lang_code) | safe }}">{{ lang_config.name | default(value=lang_code) }}</a></li>
+                                    <li><a href="{{ get_url(path="/", lang=lang_code) | safe }}">{% if config.extra.lang_aliases and config.extra.lang_aliases[lang_code] %}{{ config.extra.lang_aliases[lang_code] }}{% else %}{{ lang_config.name | default(value=lang_code) }}{% endif %}</a></li>
                                 {% endif %}
                             {% else %}
-                                <li><a href="{{ get_url(path="/", lang=lang_code) | safe }}">{{ lang_config.name | default(value=lang_code) }}</a></li>
+                                <li><a href="{{ get_url(path="/", lang=lang_code) | safe }}">{% if config.extra.lang_aliases and config.extra.lang_aliases[lang_code] %}{{ config.extra.lang_aliases[lang_code] }}{% else %}{{ lang_config.name | default(value=lang_code) }}{% endif %}</a></li>
                             {% endif %}
                             {% endif %}
                         {% endfor %}

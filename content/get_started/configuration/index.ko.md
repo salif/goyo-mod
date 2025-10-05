@@ -65,6 +65,24 @@ twitter_creator = "@hahwul"
 default_colorset = "dark"
 ```
 
+## 밝기
+`brightness`
+
+- `brightness`: 테마 전반적인 색상의 밝기를 조절합니다. 옵션:
+  - `"darker"`: 색상을 더 어둡게 - 다크 테마는 완전히 검정색으로, 라이트 테마는 더 어두운 색으로 변경됩니다
+  - `"normal"`: 기본 밝기 (기본값)
+  - `"lighter"`: 색상을 더 밝게 - 두 테마 모두 더 밝아집니다
+
+```toml
+[extra]
+brightness = "normal"  # 옵션: "darker", "normal", "lighter"
+```
+
+예시:
+- 완전히 검정색인 다크 테마를 원하는 경우: `brightness = "darker"`
+- 라이트 테마를 더 어둡게 만들려면: `brightness = "darker"` 와 `default_colorset = "light"` 설정
+- 다크 테마를 더 밝게 만들려면: `brightness = "lighter"`
+
 ## 구글 태그
 `gtag`
 
@@ -86,12 +104,14 @@ sidebar_expand_depth = 2
 ```
 
 ## 네비게이션
-`nav`
+`nav` / `nav_{lang}`
 
 - `nav`: 상단 네비게이션 메뉴입니다. name과 icon 필드는 optional 입니다.
+- `nav_{lang}`: 언어별 네비게이션 메뉴입니다 (예: `nav_ko`는 한국어용). 정의되면 해당 언어에서 기본 `nav` 대신 사용됩니다.
 
 ```toml
 [extra]
+# 기본 네비게이션 (영어 및 폴백용)
 nav = [
     { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
     { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
@@ -99,6 +119,38 @@ nav = [
         { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
     ] },
 ]
+
+# 한국어 네비게이션 (선택사항)
+nav_ko = [
+    { name = "문서", url = "/ko/introduction", type = "url", icon = "fa-solid fa-book" },
+    { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
+    { name = "링크", type = "dropdown", icon = "fa-solid fa-link", members = [
+        { name = "제작자 블로그", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
+    ] },
+]
+```
+
+## 언어 별칭
+`lang_aliases`
+
+- `lang_aliases`: 언어 선택 드롭다운에 표시될 언어의 사용자 정의 이름입니다. 정의하지 않으면 언어 코드가 표시됩니다. 이를 통해 "en" 또는 "ko" 대신 "English" 또는 "한국어"와 같은 사용자 친화적인 이름을 표시할 수 있습니다.
+
+```toml
+[extra]
+# 언어 선택기의 언어 표시 이름
+lang_aliases = { en = "English", ko = "한국어" }
+```
+
+필요한 만큼 언어를 추가할 수 있습니다:
+
+```toml
+[extra]
+lang_aliases = { 
+    en = "English", 
+    ko = "한국어",
+    ja = "日本語",
+    id = "Bahasa Indonesia"
+}
 ```
 
 ## 테마 토글 비활성화

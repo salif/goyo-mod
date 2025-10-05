@@ -7,6 +7,7 @@ version = "v0.1.0"
 
 [extra.hero]
 title = "Welcome to Goyo!"
+badge = "✨ Minimalist Documentation Theme"
 description = "Inspired by the Korean word \"Goyo\" (고요), meaning calm or serene, Goyo is a Zola theme that aims for simplicity and clean documentation. With Goyo, you can easily create beautiful and practical documentation pages."
 image = "$BASE_URL/images/landing.jpg"
 cta_buttons = [
@@ -25,9 +26,9 @@ desc = "A theme that pursues minimalism."
 icon = "fa-solid fa-minimize"
 
 [[extra.features]]
-title = "Fast Speed"
-desc = "Fast, because we don't like slow things."
-icon = "fa-solid fa-bolt"
+title = "Customization and Elegant Landing Page"
+desc = "Highly customizable with a beautiful landing page."
+icon = "fa-solid fa-palette"
 
 [[extra.features]]
 title = "SEO Optimized"
@@ -55,7 +56,7 @@ logos = [
 [extra.social_proof_section]
 title = "What Our Users Say"
 testimonials = [
-    { author = "KSG", role = "Security Developer", quote = "Without extra tools, it includes practical features like search, multilingual support, and comments out of the box", avatar = "resources/ksg.jpg" },
+    { author = "KSG", role = "Security Developer / OWASP Noir", quote = "Without extra tools, it includes practical features like search, multilingual support, and comments out of the box", avatar = "resources/ksg.jpg" },
     { author = "Lina", role = "Security Engineer", quote = "It's so simple and fast, yet I can apply an incredibly beautiful theme, which I absolutely love! I'm ready to embark on a journey to find the calm in my heart with this theme!", avatar = "resources/lina.jpg" },
     { author = "Bori Bae", role = "Security Engineer", quote = "The theme is clean and the settings are intuitive, so even first-time users can easily use it!", avatar = "resources/bori.png" },
 ]

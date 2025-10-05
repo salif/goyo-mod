@@ -36,14 +36,16 @@
 
                     {{ macros_comments::comments(config=config) }}
 
-                    <div class="flex justify-between mt-8">
-                        <div class="prev-link">
-                            {% block prev_link %}{% endblock prev_link %}
+                    <nav class="mt-12 pt-8 border-t border-gray-500/15">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="prev-nav-item">
+                                {% block prev_link %}{% endblock prev_link %}
+                            </div>
+                            <div class="next-nav-item">
+                                {% block next_link %}{% endblock next_link %}
+                            </div>
                         </div>
-                        <div class="next-link">
-                            {% block next_link %}{% endblock next_link %}
-                        </div>
-                    </div>
+                    </nav>
                 </main>
 
                 {% if page is defined %}
@@ -55,21 +57,24 @@
             </div>
 
             <script>
-              // Determine theme: localStorage > extra.default_colorset > night
+              // Determine theme: localStorage > extra.default_colorset > goyo-dark
               // Expose theme config for global use (e.g., goyo.js)
               window.defaultColorset = "{{ config.extra.default_colorset | default(value='dark') }}";
-              window.themeMap = { "dark": "night", "light": "lofi" };
-              window.fallbackTheme = window.themeMap[window.defaultColorset] || "night";
-            </script>
-            <script src="{{ get_url(path="js/mermaid.min.js") | safe }}" defer></script>
-            <script>
+              window.defaultBrightness = "{{ config.extra.brightness | default(value='normal') }}";
+              window.themeMap = { "dark": "goyo-dark", "light": "goyo-light" };
+              window.fallbackTheme = window.themeMap[window.defaultColorset] || "goyo-dark";
+
               document.addEventListener('DOMContentLoaded', async () => {
-                var currentTheme = localStorage.getItem('theme') || window.fallbackTheme;
+                // Theme mapping - maps user-friendly names to actual DaisyUI theme names
+                var themeMapping = { "goyo-dark": "night", "goyo-light": "lofi" };
+                var currentUserTheme = localStorage.getItem('theme') || window.fallbackTheme;
+                var actualTheme = themeMapping[currentUserTheme] || currentUserTheme;
+
                 var mermaidTheme = "dark";
-                if(currentTheme == "lofi") {
+                if(currentUserTheme == "goyo-light") {
                   mermaidTheme = "light";
                 }
-                mermaid.initialize({ startOnLoad: false, theme: mermaidTheme });
+              mermaid.initialize({ startOnLoad: false, theme: mermaidTheme });
                 const mermaidElements = document.querySelectorAll('.mermaid');
 
                 if (mermaidElements.length > 0) {

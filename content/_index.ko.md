@@ -7,6 +7,7 @@ version = "v0.1.0"
 
 [extra.hero]
 title = "Goyo에 오신 것을 환영합니다!"
+badge = "✨ Minimalist Documentation Theme"
 description = "한국어 '고요'에서 영감을 받은 Goyo는 단순함과 깔끔한 문서를 지향하는 Zola 테마입니다. Goyo를 사용하면 아름답고 실용적인 문서 페이지를 쉽게 만들 수 있습니다."
 image = "$BASE_URL/../images/landing.jpg"
 cta_buttons = [
@@ -25,9 +26,9 @@ desc = "미니멀리즘을 추구하는 테마입니다."
 icon = "fa-solid fa-minimize"
 
 [[extra.features]]
-title = "빠른 속도"
-desc = "느린 것을 좋아하지 않기 때문에 빠릅니다."
-icon = "fa-solid fa-bolt"
+title = "커스터마이징과 우아한 랜딩 페이지"
+desc = "높은 커스터마이징성과 아름다운 랜딩 페이지를 제공합니다."
+icon = "fa-solid fa-palette"
 
 [[extra.features]]
 title = "SEO 최적화"
@@ -55,7 +56,7 @@ logos = [
 [extra.social_proof_section]
 title = "사용자들의 평가"
 testimonials = [
-    { author = "KSG", role = "보안 개발자", quote = "복잡한 기술 없이도 검색, 다국어, 댓글 등 실용 기능이 포함된 점이 매우 실용적입니다.", avatar = "../resources/ksg.jpg" },
+    { author = "KSG", role = "보안 개발자 / OWASP Noir", quote = "복잡한 기술 없이도 검색, 다국어, 댓글 등 실용 기능이 포함된 점이 매우 실용적입니다.", avatar = "../resources/ksg.jpg" },
     { author = "Lina", role = "보안 엔지니어", quote = "넘나 간단하고 빠르지만 어마무시하게 이쁜 테마를 적용할 수 있어 너무 좋습니다! 이 테마로 내 마음속 고요를 찾아 떠나보겠습니다~", avatar = "../resources/lina.jpg" },
     { author = "Bori Bae", role = "보안 엔지니어", quote = "테마가 깔끔하고 설정이 직관적이여서 처음쓰는 사람도 쉽게 사용할수있어요!", avatar = "../resources/bori.png" },
 ]
