@@ -1,10 +1,10 @@
 +++
 title = "콘텐츠 생성하기"
-description = "Goyo로 페이지를 만드는 방법을 알아보세요."
+description = "Trankwilo로 페이지를 만드는 방법을 알아보세요."
 weight = 2
 +++
 
-Zola는 `content` 하위 디렉토리에서 문서를 생성하고 관리합니다. Goyo는 `content` 내부 구조에 따라서 Sidebar를 자동으로 구성합니다. 그럼 간단한 페이지를 만들어 문서 작업의 시작을 알려봅시다.
+Zola는 `content` 하위 디렉토리에서 문서를 생성하고 관리합니다. Trankwilo는 `content` 내부 구조에 따라서 Sidebar를 자동으로 구성합니다. 그럼 간단한 페이지를 만들어 문서 작업의 시작을 알려봅시다.
 
 ## Page
 

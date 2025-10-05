@@ -1,13 +1,13 @@
 +++
 title = "Creating a Landing Page"
-description = "Learn how to create a modern, feature-rich landing page with Goyo."
+description = "Learn how to create a modern, feature-rich landing page with Trankwilo."
 weight = 3
 sort_by = "weight"
 
 [extra]
 +++
 
-The landing page is the first page visitors see. In Goyo, it's built using `landing.html` and configured in `content/_index.md`. This allows you to create a rich, engaging entry point for your project.
+The landing page is the first page visitors see. In Trankwilo, it's built using `landing.html` and configured in `content/_index.md`. This allows you to create a rich, engaging entry point for your project.
 
 To create a landing page for another language, simply create a corresponding file, such as `content/_index.ko.md`.
 
@@ -21,12 +21,12 @@ template = "landing.html"
 
 ## Full Configuration Example
 
-The Goyo landing page is highly customizable through the `[extra]` section of your `_index.md`. Below is a full example showcasing all available sections. You can omit any section you don't need, and it won't be rendered.
+The Trankwilo landing page is highly customizable through the `[extra]` section of your `_index.md`. Below is a full example showcasing all available sections. You can omit any section you don't need, and it won't be rendered.
 
 ```toml
 +++
 template = "landing.html"
-title = "Goyo"
+title = "Trankwilo"
 
 [extra]
 version = "v0.1.0"
@@ -34,13 +34,13 @@ version = "v0.1.0"
 # Hero Section
 # The main section at the top of the page.
 [extra.hero]
-title = "Welcome to Goyo!"
+title = "Welcome to Trankwilo!"
 badge = "✨ Minimalist Documentation Theme"
 description = "A simple and clean Zola theme for documentation."
 image = "/images/landing.jpg" # Background image
 cta_buttons = [
-    { text = "Get Started", url = "/get-started/installation/", style = "primary" },
-    { text = "View on GitHub", url = "https://github.com/your/repo", style = "secondary" },
+    { text = "Get Started", url = "$BASE_URL/get-started/installation/", style = "primary" },
+    { text = "View on Codeberg", url = "https://github.com/your/repo", style = "secondary" },
 ]
 
 # Features Section
@@ -72,7 +72,7 @@ testimonials = [
     {
         author = "Jane Doe",
         role = "Developer at TechCorp",
-        quote = "Goyo has transformed our documentation process. It's simple, elegant, and incredibly fast.",
+        quote = "Trankwilo has transformed our documentation process. It's simple, elegant, and incredibly fast.",
         avatar = "/images/avatars/jane.png"
     },
     {
@@ -88,8 +88,8 @@ testimonials = [
 # You can also add an image field to show an image above the CTA text.
 [extra.final_cta_section]
 title = "Ready to Get Started?"
-description = "Begin your journey with Goyo today and create beautiful documentation with ease."
-button = { text = "Start Now", url = "/get-started/installation/" }
+description = "Begin your journey with Trankwilo today and create beautiful documentation with ease."
+button = { text = "Start Now", url = "$BASE_URL/get-started/installation/" }
 image = "/images/contribute.png" # (Optional) Image above the CTA section
 +++
 ```

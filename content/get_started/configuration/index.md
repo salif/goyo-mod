@@ -1,13 +1,13 @@
 +++
 title = "Configuration"
-description = "Learn how to configure Goyo."
+description = "Learn how to configure Trankwilo."
 weight = 4
 sort_by = "weight"
 
 [extra]
 +++
 
-Now let's look at the settings for the Goyo theme. It provides various settings to customize the theme. You can use them in `config.toml`.
+Now let's look at the settings for the Trankwilo theme. It provides various settings to customize the theme. You can use them in `config.toml`.
 
 ## Logo
 `logo_text` / `logo_image_path` / `logo_image_padding`
@@ -18,8 +18,8 @@ Now let's look at the settings for the Goyo theme. It provides various settings 
 
 ```toml
 [extra]
-logo_text = "Goyo"
-logo_image_path = "images/goyo.png"
+logo_text = "Trankwilo"
+logo_image_path = "images/trankwilo.png"
 logo_image_padding = "5px"
 ```
 
@@ -30,7 +30,7 @@ logo_image_padding = "5px"
 
 ```toml
 [extra]
-footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://github.com/hahwul/goyo'>Goyo</a>"
+footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://codeberg.org/salif/trankwilo'>Trankwilo</a>"
 ```
 
 ## Thumbnail
@@ -112,8 +112,8 @@ sidebar_expand_depth = 2
 [extra]
 # Default navigation (used for English and as fallback)
 nav = [
-    { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
-    { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
+    { name = "Documents", url = "$BASE_URL/introduction", type = "url", icon = "fa-solid fa-book" },
+    { name = "Source", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
     { name = "Links", type = "dropdown", icon = "fa-solid fa-link", members = [
         { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
     ] },
@@ -121,8 +121,8 @@ nav = [
 
 # Korean navigation (optional)
 nav_ko = [
-    { name = "문서", url = "/ko/introduction", type = "url", icon = "fa-solid fa-book" },
-    { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
+    { name = "문서", url = "$BASE_URL/introduction", type = "url", icon = "fa-solid fa-book" },
+    { name = "Source", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
     { name = "링크", type = "dropdown", icon = "fa-solid fa-link", members = [
         { name = "제작자 블로그", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
     ] },
@@ -175,7 +175,7 @@ disable_root_sidebar_hide = false
 {{ image_diff(
     src1="/images/side-home.jpg",
     src2="/images/wide-home.jpg",
-    alt="goyo"
+    alt="trankwilo"
 ) }}
 
 ## Comments
@@ -187,7 +187,7 @@ disable_root_sidebar_hide = false
 [extra.comments]
 enabled = true
 system = "giscus"
-repo = "hahwul/goyo"
+repo = "salif/trankwilo"
 repo_id = "R_kgDOPHnqwg"
 category = "General"
 category_id = "DIC_kwDOPHnqws4CspmC"

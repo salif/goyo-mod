@@ -7,34 +7,34 @@ Create beautiful link cards that display URLs with titles, descriptions, and opt
 
 ## Basic Usage
 
-{{ pretty_link(url="https://github.com/hahwul/goyo") }}
+{{ pretty_link(url="https://codeberg.org/salif/trankwilo") }}
 
 ```jinja2
-{{/* pretty_link(url="https://github.com/hahwul/goyo") */}}
+{{/* pretty_link(url="https://codeberg.org/salif/trankwilo") */}}
 ```
 
 ## With Title
 
-{{ pretty_link(url="https://github.com/hahwul/goyo", title="Goyo Theme") }}
+{{ pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme") }}
 
 ```jinja2
-{{/* pretty_link(url="https://github.com/hahwul/goyo", title="Goyo Theme") */}}
+{{/* pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme") */}}
 ```
 
 ## With Title and Description
 
-{{ pretty_link(url="https://github.com/hahwul/goyo", title="Goyo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.") }}
+{{ pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.") }}
 
 ```jinja2
-{{/* pretty_link(url="https://github.com/hahwul/goyo", title="Goyo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.") */}}
+{{/* pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.") */}}
 ```
 
 ## With Image
 
-{{ pretty_link(url="https://github.com/hahwul/goyo", title="Goyo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.", image="/images/goyo.png") }}
+{{ pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.", image="/images/trankwilo.png") }}
 
 ```jinja2
-{{/* pretty_link(url="https://github.com/hahwul/goyo", title="Goyo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.", image="/images/goyo.png") */}}
+{{/* pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.", image="/images/trankwilo.png") */}}
 ```
 
 ## Parameters

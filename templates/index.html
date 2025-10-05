@@ -57,21 +57,21 @@
             </div>
 
             <script>
-              // Determine theme: localStorage > extra.default_colorset > goyo-dark
-              // Expose theme config for global use (e.g., goyo.js)
+              // Determine theme: localStorage > extra.default_colorset > trankwilo-dark
+              // Expose theme config for global use (e.g., trankwilo.js)
               window.defaultColorset = "{{ config.extra.default_colorset | default(value='dark') }}";
               window.defaultBrightness = "{{ config.extra.brightness | default(value='normal') }}";
-              window.themeMap = { "dark": "goyo-dark", "light": "goyo-light" };
-              window.fallbackTheme = window.themeMap[window.defaultColorset] || "goyo-dark";
+              window.themeMap = { "dark": "trankwilo-dark", "light": "trankwilo-light" };
+              window.fallbackTheme = window.themeMap[window.defaultColorset] || "trankwilo-dark";
 
               document.addEventListener('DOMContentLoaded', async () => {
                 // Theme mapping - maps user-friendly names to actual DaisyUI theme names
-                var themeMapping = { "goyo-dark": "night", "goyo-light": "lofi" };
+                var themeMapping = { "trankwilo-dark": "night", "trankwilo-light": "lofi" };
                 var currentUserTheme = localStorage.getItem('theme') || window.fallbackTheme;
                 var actualTheme = themeMapping[currentUserTheme] || currentUserTheme;
 
                 var mermaidTheme = "dark";
-                if(currentUserTheme == "goyo-light") {
+                if(currentUserTheme == "trankwilo-light") {
                   mermaidTheme = "light";
                 }
               mermaid.initialize({ startOnLoad: false, theme: mermaidTheme });
@@ -106,7 +106,7 @@
         <script type="text/javascript" src="{{ get_url(path='fuse.min.js') | safe }}"></script>
         <script type="text/javascript" src="{{ get_url(path='search_index.' ~ lang ~ '.js') | safe }}"></script>
         {% endif %}
-        <script type="text/javascript" src="{{ get_url(path='goyo.js') | safe }}"></script>
+        <script type="text/javascript" src="{{ get_url(path='trankwilo.js') | safe }}"></script>
     {% endblock js_body %}
 </body>
 </html>

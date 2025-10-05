@@ -5,7 +5,7 @@ weight = 2
 template = "page.html"
 +++
 
-이 가이드는 Goyo 테마에서 렌더링되는 일반적인 마크다운 요소의 예시와 효과적인 글쓰기 팁을 제공합니다.
+이 가이드는 Trankwilo 테마에서 렌더링되는 일반적인 마크다운 요소의 예시와 효과적인 글쓰기 팁을 제공합니다.
 
 ## 제목 (Headings)
 
@@ -148,12 +148,12 @@ template = "page.html"
 이미지 구문은 링크와 유사하지만 느낌표(`!`)로 시작합니다.
 
 ```markdown
-![이미지 대체 텍스트](https://placehold.co/600x100/png?text=Goyo+Placeholder)
+![이미지 대체 텍스트](https://placehold.co/600x100/png?text=Trankwilo+Placeholder)
 ```
 
 **렌더링 결과:**
 
-![이미지 대체 텍스트](https://placehold.co/600x100/png?text=Goyo+Placeholder)
+![이미지 대체 텍스트](https://placehold.co/600x100/png?text=Trankwilo+Placeholder)
 
 ## 인용문 (Blockquotes)
 
@@ -194,11 +194,11 @@ template = "page.html"
 ````markdown
 ```python
 def hello():
-  print("안녕하세요, Goyo!")
+  print("안녕하세요, Trankwilo!")
 ```
 
 ```javascript
-console.log("안녕하세요, Goyo!");
+console.log("안녕하세요, Trankwilo!");
 ```
 ````
 
@@ -206,11 +206,11 @@ console.log("안녕하세요, Goyo!");
 
 ```python
 def hello():
-  print("안녕하세요, Goyo!")
+  print("안녕하세요, Trankwilo!")
 ```
 
 ```javascript
-console.log("안녕하세요, Goyo!");
+console.log("안녕하세요, Trankwilo!");
 ```
 
 ## 가로줄 (Horizontal Rule)
