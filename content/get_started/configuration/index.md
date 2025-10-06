@@ -178,6 +178,18 @@ disable_root_sidebar_hide = false
     alt="goyo"
 ) }}
 
+## Edit URL
+`edit_url`
+
+- `edit_url`: Base URL for editing pages. When set, an "Edit this page" link will appear at the bottom of each page/section, linking to the source file in your repository.
+
+```toml
+[extra]
+edit_url = "https://github.com/hahwul/goyo/edit/main"
+```
+
+The link will automatically append the relative path of the content file (e.g., `content/introduction/_index.md`).
+
 ## Comments
 `comments`
 

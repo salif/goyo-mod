@@ -120,6 +120,9 @@ disable_theme_toggle = false  # Hide theme toggle button (true to disable)
 # Sidebar Visibility Configuration
 disable_root_sidebar_hide = false  # Prevent hiding sidebar on root page
 
+# Edit URL Configuration
+edit_url = ""  # Base URL for editing pages (e.g., "https://github.com/user/repo/edit/main")
+
 # Comments Configuration
 [extra.comments]
 enabled = false  # Enable comments
