@@ -5,7 +5,7 @@
 
 {% set not_found_title = "404" %}
 {% set not_found_desc = "Page not found" %}
-{% set not_found_url = get_url(path=``) ~ "/404.html" %}
+{% set not_found_url = get_url(path=``, trailing_slash=false) ~ "/404.html" %}
 
 <!DOCTYPE html>
 <html lang="{{ lang | default(value='en') }}">

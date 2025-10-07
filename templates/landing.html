@@ -12,7 +12,7 @@
                     <div class="absolute top-3/4 right-1/4 w-80 h-80 bg-gradient-to-r from-slate-500/10 to-gray-400/10 rounded-full filter blur-3xl animate-pulse delay-2000"></div>
                 </div>
                 {% if section.extra.hero.image %}
-                <img src="{{ section.extra.hero.image | replace(from=`$BASE_URL`, to=get_url(path=``, lang=lang)) | safe }}" alt="Hero Background" class="w-full h-full rounded-none object-cover object-center opacity-10">
+                <img src="{{ section.extra.hero.image | replace(from=`@/static/`, to=get_url(path=``, trailing_slash=true)) | replace(from=`@/content/`, to=get_url(path=``, trailing_slash=true)) | safe }}" alt="Hero Background" class="w-full h-full rounded-none object-cover object-center opacity-10">
                 {% endif %}
             </div>
             <div class="relative z-10 p-8 max-w-6xl mx-auto">
@@ -32,7 +32,7 @@
                 {% if section.extra.hero.cta_buttons %}
                     <div class="flex justify-center gap-6 flex-wrap">
                         {% for button in section.extra.hero.cta_buttons %}
-                            <a href="{{ button.url | replace(from=`$BASE_URL`, to=get_url(path=``, lang=lang)) | safe }}"
+                            <a href="{{ button.url | replace(from=`@/content/`, to=get_url(path=``, trailing_slash=true)) | safe }}"
                                class="group relative px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105
                                       {% if button.style == 'primary' %}
                                         hero-cta-primary
@@ -96,7 +96,7 @@
                 <div class="flex justify-center items-center gap-16 flex-wrap">
                     {% for logo in section.extra.trust_section.logos %}
                         <div class="group">
-                            <img src="{{ logo.src | safe }}" alt="{{ logo.alt }}"
+                            <img src="{{ logo.src | replace(from=`@/static/`, to=get_url(path=``, trailing_slash=true)) | replace(from=`@/content/`, to=get_url(path=``, trailing_slash=true)) | safe }}" alt="{{ logo.alt }}"
                                  class="h-12 md:h-16 w-auto grayscale opacity-40 transition-all duration-500 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110" />
                         </div>
                     {% endfor %}
@@ -136,7 +136,7 @@
                                     {% if testimonial.avatar %}
                                         <div class="mr-4">
                                             <div class="w-14 h-14 rounded-full testimonial-avatar-border p-0.5">
-                                                <img src="{{ testimonial.avatar | safe }}" class="w-full h-full rounded-full object-cover" />
+                                                <img src="{{ testimonial.avatar | replace(from=`@/static/`, to=get_url(path=``, trailing_slash=true)) | replace(from=`@/content/`, to=get_url(path=``, trailing_slash=true)) | safe }}" class="w-full h-full rounded-full object-cover" />
                                             </div>
                                         </div>
                                     {% endif %}
@@ -173,12 +173,12 @@
                 </p>
                 {% if section.extra.final_cta_section.image %}
                     <div class="mb-12">
-                        <img src="{{ section.extra.final_cta_section.image | replace(from=`$BASE_URL`, to=get_url(path=``, lang=lang)) | safe }}" alt="CTA Image"
+                        <img src="{{ section.extra.final_cta_section.image | replace(from=`@/static/`, to=get_url(path=``, trailing_slash=true)) | replace(from=`@/content/`, to=get_url(path=``, trailing_slash=true)) | safe }}" alt="CTA Image"
                              class="mx-auto max-w-md rounded-xl shadow-2xl border border-slate-600/50" />
                     </div>
                 {% endif %}
                 {% if section.extra.final_cta_section.button %}
-                    <a href="{{ section.extra.final_cta_section.button.url | replace(from=`$BASE_URL`, to=get_url(path=``, lang=lang)) | safe }}"
+                    <a href="{{ section.extra.final_cta_section.button.url | replace(from=`@/content/`, to=get_url(path=``, trailing_slash=true)) | safe }}"
                        class="group relative inline-flex items-center px-12 py-4 text-xl font-bold text-slate-200 bg-gradient-to-r from-slate-600 to-gray-700 rounded-xl shadow-2xl shadow-slate-500/25 transition-all duration-300 transform hover:scale-105 hover:shadow-slate-500/40">
                         <span class="relative z-10">{{ section.extra.final_cta_section.button.text }}</span>
                         <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-slate-500 to-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

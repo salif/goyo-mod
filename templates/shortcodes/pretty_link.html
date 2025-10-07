@@ -3,7 +3,7 @@
     <div class="flex items-start gap-4 p-5">
       {% if image %}
       <div class="flex-shrink-0 pretty-link-image-wrapper">
-        <img src="{{ image }}" alt="{{ title | default(value=url) }}" class="pretty-link-image" />
+        <img src="{{ image | replace(from=`@/static/`, to=get_url(path=``, trailing_slash=true)) | replace(from=`@/content/`, to=get_url(path=``, trailing_slash=true)) }}" alt="{{ title | default(value=url) }}" class="pretty-link-image" />
       </div>
       {% endif %}
       <div class="flex-1 min-w-0">

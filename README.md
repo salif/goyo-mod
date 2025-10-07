@@ -62,18 +62,20 @@ Add extra field in config.toml
 [extra]
 # Logo Configuration
 logo_text = "Trankwilo"  # Text to display if no logo image
-logo_image_path = "images/trankwilo.png"  # Path to logo image
+logo_image_path = "images/trankwilo.webp"  # Path to logo image
 logo_image_padding = "5px"  # Padding for logo image (optional)
 
 # Footer Configuration
-footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://codeberg.org/salif/trankwilo'>Trankwilo</a>"  # Footer HTML content
+footer_html = """
+Powered by <a href="https://www.getzola.org">Zola</a> and <a href="https://codeberg.org/salif/trankwilo">Trankwilo</a>
+"""
 
 # Thumbnail Configuration
-default_thumbnail = "images/default_thumbnail.jpg"  # Default thumbnail image path
+default_thumbnail = "images/default_thumbnail.webp"  # Default thumbnail image path
 
 # Twitter Configuration
-twitter_site = "@hahwul"  # Site Twitter handle
-twitter_creator = "@hahwul"  # Creator Twitter handle
+twitter_site = "@username"  # Site Twitter handle
+twitter_creator = "@username"  # Creator Twitter handle
 
 # Color Configuration
 default_colorset = "dark"  # Default color scheme (dark/light)
@@ -91,7 +93,7 @@ lang_aliases = { en = "English", ko = "한국어" }
 
 # Navigation Configuration
 nav = [
-  { name = "Documents", url = "$BASE_URL/introduction", type = "url", icon = "fa-solid fa-book" },
+  { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
   { name = "Source", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
   { name = "Links", type = "dropdown", icon = "fa-solid fa-link", members = [
     { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" }
@@ -102,8 +104,8 @@ nav = [
 # `nav_{lang}`: Language-specific navigation menu (e.g., `nav_ko` for Korean).
 # If defined, it will be used instead of the default `nav` for that language.
 nav_ko = [
-    { name = "문서", url = "$BASE_URL/introduction", type = "url", icon = "fa-solid fa-book" },
-    { name = "Source", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
+    { name = "문서", url = "/ko/introduction", type = "url", icon = "fa-solid fa-book" },
+    { name = "소스", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
     { name = "링크", type = "dropdown", icon = "fa-solid fa-link", members = [
         { name = "제작자 블로그", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
     ] },

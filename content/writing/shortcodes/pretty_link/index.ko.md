@@ -31,10 +31,10 @@ weight = 4
 
 ## 이미지 포함
 
-{{ pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo 테마", description="고요함과 평온함을 의미하는 한국어에서 영감을 받은 깔끔하고 미니멀한 Zola 테마입니다.", image="/images/trankwilo.png") }}
+{{ pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo 테마", description="고요함과 평온함을 의미하는 한국어에서 영감을 받은 깔끔하고 미니멀한 Zola 테마입니다.", image="@/static/images/trankwilo.webp") }}
 
 ```jinja2
-{{/* pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo 테마", description="고요함과 평온함을 의미하는 한국어에서 영감을 받은 깔끔하고 미니멀한 Zola 테마입니다.", image="/images/trankwilo.png") */}}
+{{/* pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo 테마", description="고요함과 평온함을 의미하는 한국어에서 영감을 받은 깔끔하고 미니멀한 Zola 테마입니다.", image="/images/trankwilo.webp") */}}
 ```
 
 ## 매개변수
