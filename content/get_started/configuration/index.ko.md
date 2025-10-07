@@ -179,6 +179,18 @@ disable_root_sidebar_hide = false
     alt="trankwilo"
 ) }}
 
+## 편집 URL
+`edit_url`
+
+- `edit_url`: 페이지 편집을 위한 기본 URL. 설정하면 각 페이지/섹션 하단에 "Edit this page" 링크가 나타나며, 저장소의 소스 파일로 연결됩니다.
+
+```toml
+[extra]
+edit_url = "https://github.com/user/repo/edit/main"
+```
+
+링크는 자동으로 콘텐츠 파일의 상대 경로를 추가합니다 (예: `content/introduction/_index.md`).
+
 ## 댓글
 `comments`
 

@@ -51,3 +51,6 @@ nav_ko = [
         { name = "Zola 공식", url = "https://getzola.org", type = "url", icon = "fa-solid fa-z" },
     ] },
 ]
+
+# Edit this page Configuration
+edit_url = "https://codeberg.org/salif/trankwilo/_edit/trankwilo"
