@@ -15,10 +15,10 @@ weight = 5
 
 ## 예시
 
-{{ carousel(images=["images/darker.png", "images/normal.png", "images/lighter.png"]) }}
+{{ carousel(images=["@/content/get_started/configuration/images/darker.webp", "@/content/get_started/configuration/images/normal.webp", "@/content/get_started/configuration/images/lighter.webp"]) }}
 
 ```jinja
-{{/* carousel(images=["images/darker.png", "images/normal.png", "images/lighter.png"]) */}}
+{{/* carousel(images=["images/darker.webp", "images/normal.webp", "images/lighter.webp"]) */}}
 ```
 
 ## 기능

@@ -37,9 +37,9 @@ version = "v0.1.0"
 title = "Welcome to Trankwilo!"
 badge = "✨ Minimalist Documentation Theme"
 description = "A simple and clean Zola theme for documentation."
-image = "/images/landing.jpg" # Background image
+image = "/images/landing.webp" # Background image
 cta_buttons = [
-    { text = "Get Started", url = "$BASE_URL/get-started/installation/", style = "primary" },
+    { text = "Get Started", url = "/get-started/installation/", style = "primary" },
     { text = "View on Codeberg", url = "https://github.com/your/repo", style = "secondary" },
 ]
 
@@ -89,7 +89,7 @@ testimonials = [
 [extra.final_cta_section]
 title = "Ready to Get Started?"
 description = "Begin your journey with Trankwilo today and create beautiful documentation with ease."
-button = { text = "Start Now", url = "$BASE_URL/get-started/installation/" }
+button = { text = "Start Now", url = "/get-started/installation/" }
 image = "/images/contribute.png" # (Optional) Image above the CTA section
 +++
 ```

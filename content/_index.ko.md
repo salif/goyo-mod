@@ -9,9 +9,9 @@ version = "v0.1.0"
 title = "Trankwilo에 오신 것을 환영합니다!"
 badge = "✨ Minimalist Documentation Theme"
 description = "한국어 '고요'에서 영감을 받은 Trankwilo는 단순함과 깔끔한 문서를 지향하는 Zola 테마입니다. Trankwilo를 사용하면 아름답고 실용적인 문서 페이지를 쉽게 만들 수 있습니다."
-image = "$BASE_URL/../images/landing.jpg"
+image = "@/static/images/landing.webp"
 cta_buttons = [
-    { text = "시작하기", url = "$BASE_URL/introduction", style = "primary" },
+    { text = "시작하기", url = "@/content/ko/introduction", style = "primary" },
     { text = "Codeberg에서 보기", url = "https://codeberg.org/salif/trankwilo", style = "secondary" },
 ]
 
@@ -48,17 +48,17 @@ icon = "fa-solid fa-circle-half-stroke"
 [extra.trust_section]
 title = "기술 스택"
 logos = [
-    { src = "../resources/zola.svg", alt = "Zola" },
-    { src = "../resources/tailwindcss.svg", alt = "Tailwindcss" },
-    { src = "../resources/daisyui.svg", alt = "DaisyUI"},
+    { src = "@/content/resources/zola.svg", alt = "Zola" },
+    { src = "@/content/resources/tailwindcss.svg", alt = "Tailwindcss" },
+    { src = "@/content/resources/daisyui.svg", alt = "DaisyUI"},
 ]
 
 [extra.social_proof_section]
 title = "사용자들의 평가"
 testimonials = [
-    { author = "KSG", role = "보안 개발자 / OWASP Noir", quote = "복잡한 기술 없이도 검색, 다국어, 댓글 등 실용 기능이 포함된 점이 매우 실용적입니다.", avatar = "../resources/ksg.jpg" },
-    { author = "Lina", role = "보안 엔지니어", quote = "넘나 간단하고 빠르지만 어마무시하게 이쁜 테마를 적용할 수 있어 너무 좋습니다! 이 테마로 내 마음속 고요를 찾아 떠나보겠습니다~", avatar = "../resources/lina.jpg" },
-    { author = "Bori Bae", role = "보안 엔지니어", quote = "테마가 깔끔하고 설정이 직관적이여서 처음쓰는 사람도 쉽게 사용할수있어요!", avatar = "../resources/bori.png" },
+    { author = "KSG", role = "보안 개발자 / OWASP Noir", quote = "복잡한 기술 없이도 검색, 다국어, 댓글 등 실용 기능이 포함된 점이 매우 실용적입니다.", avatar = "@/content/resources/ksg.webp" },
+    { author = "Lina", role = "보안 엔지니어", quote = "넘나 간단하고 빠르지만 어마무시하게 이쁜 테마를 적용할 수 있어 너무 좋습니다! 이 테마로 내 마음속 고요를 찾아 떠나보겠습니다~", avatar = "@/content/resources/lina.webp" },
+    { author = "Bori Bae", role = "보안 엔지니어", quote = "테마가 깔끔하고 설정이 직관적이여서 처음쓰는 사람도 쉽게 사용할수있어요!", avatar = "@/content/resources/bori.webp" },
 ]
 
 [extra.final_cta_section]

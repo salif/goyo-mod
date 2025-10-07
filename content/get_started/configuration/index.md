@@ -19,7 +19,7 @@ Now let's look at the settings for the Trankwilo theme. It provides various sett
 ```toml
 [extra]
 logo_text = "Trankwilo"
-logo_image_path = "images/trankwilo.png"
+logo_image_path = "images/trankwilo.webp"
 logo_image_padding = "5px"
 ```
 
@@ -30,7 +30,9 @@ logo_image_padding = "5px"
 
 ```toml
 [extra]
-footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://codeberg.org/salif/trankwilo'>Trankwilo</a>"
+footer_html = """
+Powered by <a href="https://www.getzola.org">Zola</a> and <a href="https://codeberg.org/salif/trankwilo">Trankwilo</a>
+"""
 ```
 
 ## Thumbnail
@@ -40,7 +42,7 @@ footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href
 
 ```toml
 [extra]
-default_thumbnail = "images/default_thumbnail.jpg"
+default_thumbnail = "images/default_thumbnail.webp"
 ```
 
 ## Twitter
@@ -51,8 +53,8 @@ default_thumbnail = "images/default_thumbnail.jpg"
 
 ```toml
 [extra]
-twitter_site = "@hahwul"
-twitter_creator = "@hahwul"
+twitter_site = "@username"
+twitter_creator = "@username"
 ```
 
 ## Color
@@ -65,7 +67,7 @@ twitter_creator = "@hahwul"
 default_colorset = "dark"
 ```
 
-{{ image_diff(src1="images/dark.png" src2="images/light.png" alt="Dark and Light") }}
+{{ image_diff(src1="images/dark.webp" src2="images/light.webp" alt="Dark and Light") }}
 
 ## Brightness
 `brightness`
@@ -80,7 +82,7 @@ default_colorset = "dark"
 brightness = "normal"  # Options: "darker", "normal", "lighter"
 ```
 
-{{ carousel(images=["images/darker.png", "images/normal.png", "images/lighter.png"]) }}
+{{ carousel(images=["images/darker.webp", "images/normal.webp", "images/lighter.webp"]) }}
 
 ## Google Tag
 `gtag`
@@ -112,7 +114,7 @@ sidebar_expand_depth = 2
 [extra]
 # Default navigation (used for English and as fallback)
 nav = [
-    { name = "Documents", url = "$BASE_URL/introduction", type = "url", icon = "fa-solid fa-book" },
+    { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
     { name = "Source", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
     { name = "Links", type = "dropdown", icon = "fa-solid fa-link", members = [
         { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
@@ -121,8 +123,8 @@ nav = [
 
 # Korean navigation (optional)
 nav_ko = [
-    { name = "문서", url = "$BASE_URL/introduction", type = "url", icon = "fa-solid fa-book" },
-    { name = "Source", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
+    { name = "문서", url = "/ko/introduction", type = "url", icon = "fa-solid fa-book" },
+    { name = "소스", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
     { name = "링크", type = "dropdown", icon = "fa-solid fa-link", members = [
         { name = "제작자 블로그", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
     ] },
@@ -173,8 +175,8 @@ disable_root_sidebar_hide = false
 ```
 
 {{ image_diff(
-    src1="/images/side-home.jpg",
-    src2="/images/wide-home.jpg",
+    src1="@/static/images/side-home.webp",
+    src2="@/static/images/wide-home.webp",
     alt="trankwilo"
 ) }}
 

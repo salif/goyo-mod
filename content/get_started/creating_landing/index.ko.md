@@ -37,9 +37,9 @@ version = "v0.1.0"
 title = "Trankwilo에 오신 것을 환영합니다!"
 badge = "✨ Minimalist Documentation Theme"
 description = "문서화를 위한 간단하고 깔끔한 Zola 테마입니다."
-image = "/images/landing.jpg" # 배경 이미지
+image = "/images/landing.webp" # 배경 이미지
 cta_buttons = [
-    { text = "시작하기", url = "$BASE_URL/get-started/installation/", style = "primary" },
+    { text = "시작하기", url = "/ko/get-started/installation/", style = "primary" },
     { text = "Codeberg에서 보기", url = "https://github.com/your/repo", style = "secondary" },
 ]
 
@@ -88,7 +88,7 @@ testimonials = [
 [extra.final_cta_section]
 title = "시작할 준비가 되셨나요?"
 description = "오늘 Trankwilo와 함께 여정을 시작하고 아름다운 문서를 쉽게 만들어보세요."
-button = { text = "지금 시작하기", url = "$BASE_URL/get-started/installation/" }
+button = { text = "지금 시작하기", url = "/ko/get-started/installation/" }
 image = "/images/contribute.png"
 +++
 ```

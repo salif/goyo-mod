@@ -18,8 +18,8 @@ weight = 3
 ## 예시
 
 {{ image_diff(
-    src1="/images/dark.jpg",
-    src2="/images/light.jpg",
+    src1="@/static/images/dark.webp",
+    src2="@/static/images/light.webp",
     alt="trankwilo"
 ) }}
 

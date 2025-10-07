@@ -8,7 +8,7 @@
     </div>
     <!-- Logo -->
     <div class="flex-1">
-        <a href="{{ get_url(path=``, lang=lang) }}" class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl" style="background: linear-gradient(135deg, #9ca3af, #6b7280); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; font-size: 1.5rem;">
+        <a href="{{ get_url(path=``, lang=lang, trailing_slash=true) }}" class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl" style="background: linear-gradient(135deg, #9ca3af, #6b7280); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; font-size: 1.5rem;">
             {% if config.extra.logo_image_path %}
                 <img src="{{ get_url(path=config.extra.logo_image_path) | safe }}" alt="{{ config.extra.logo_text | default(value=config.title) }}" class="h-18 w-auto" {% if config.extra.logo_image_padding is defined and config.extra.logo_image_padding %}style="padding: {{ config.extra.logo_image_padding }};"{% endif %}/>
             {% else %}
@@ -38,7 +38,7 @@
                             <ul tabindex="0" class="dropdown-content menu bg-base-100 border border-gray-500/15 rounded-box z-1 p-2 shadow-sm">
                                 {% for member in item.members %}
                                     <li>
-                                        <a class="btn btn-ghost hover:no-underline" href="{{ member.url | replace(from=`$BASE_URL`, to=get_url(path=``, lang=lang)) | safe }}">
+                                        <a class="btn btn-ghost hover:no-underline" href="{{ member.url | replace(from=`@/content/`, to=get_url(path=``, trailing_slash=true)) | safe }}">
                                             {% if member.icon %}<i class="{{ member.icon }}"></i>{% endif %}
                                             {{ member.name }}
                                         </a>
@@ -48,7 +48,7 @@
                         </li>
                     {% else %}
                         <li>
-                            <a class="btn btn-ghost hover:no-underline" href="{{ item.url | replace(from=`$BASE_URL`, to=get_url(path=``, lang=lang)) | safe }}">
+                            <a class="btn btn-ghost hover:no-underline" href="{{ item.url | replace(from=`@/content/`, to=get_url(path=``, trailing_slash=true)) | safe }}">
                                 {% if item.icon %}<i class="{{ item.icon }}"></i>{% endif %}
                                 {{ item.name }}
                             </a>

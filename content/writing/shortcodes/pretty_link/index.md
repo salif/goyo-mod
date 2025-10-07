@@ -31,10 +31,10 @@ Create beautiful link cards that display URLs with titles, descriptions, and opt
 
 ## With Image
 
-{{ pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.", image="/images/trankwilo.png") }}
+{{ pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.", image="@/static/images/trankwilo.webp") }}
 
 ```jinja2
-{{/* pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.", image="/images/trankwilo.png") */}}
+{{/* pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.", image="/images/trankwilo.webp") */}}
 ```
 
 ## Parameters
