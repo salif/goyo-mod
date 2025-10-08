@@ -1,14 +1,14 @@
 @import "tailwindcss" source(none);
 @source "../templates/**/*.{html,md}";
 @source "../content/**/*.{html,md}";
-@plugin "./daisyui.js" {
+@plugin "daisyui" {
     themes:
         night --default,
         lofi;
 }
 
 /* Optional for custom themes – Docs: https://daisyui.com/docs/themes/#how-to-add-a-new-custom-theme */
-@plugin "./daisyui-theme.js" {
+@plugin "daisyui/theme" {
 }
 
 /* Ashen Monochromatic Theme Overrides */
