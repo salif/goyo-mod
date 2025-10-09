@@ -49,3 +49,15 @@ update-pretendard-static:
     sed -i "s|./woff/|../fonts/|g" static/css/pretendard-std.css
 
 update-dependencies: update-katex update-mermaid update-fontawesome
+
+update-logo:
+    rsvg-convert -w 512 -h 512 static/images/trankwilo.svg -o /tmp/trankwilo.png
+    cwebp -lossless /tmp/trankwilo.png -o static/images/trankwilo.webp
+    magick -background transparent -define "icon:auto-resize=16,24,32,64" static/images/trankwilo.svg static/favicon.ico
+
+update-screenshot browser="chromium" url="http://127.0.0.1:1111/":
+    {{ browser }} --headless --disable-gpu --screenshot=/tmp/screenshot-dark.png --window-size=1360,846 --hide-scrollbars "{{ url }}"
+    magick /tmp/screenshot-dark.png -gravity north -crop "1360x765+0+0" /tmp/screenshot.png
+    mat2 /tmp/screenshot.png
+    mv /tmp/screenshot.cleaned.png screenshot.png
+    rm -f /tmp/screenshot-dark.png /tmp/screenshot.png

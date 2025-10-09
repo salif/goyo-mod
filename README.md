@@ -94,7 +94,7 @@ lang_aliases = { en = "English", ko = "한국어" }
 # Navigation Configuration
 nav = [
   { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
-  { name = "Source", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
+  { name = "Source", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-git-alt" },
   { name = "Links", type = "dropdown", icon = "fa-solid fa-link", members = [
     { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" }
   ] }
@@ -105,7 +105,7 @@ nav = [
 # If defined, it will be used instead of the default `nav` for that language.
 nav_ko = [
     { name = "문서", url = "/ko/introduction", type = "url", icon = "fa-solid fa-book" },
-    { name = "소스", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
+    { name = "소스", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-git-alt" },
     { name = "링크", type = "dropdown", icon = "fa-solid fa-link", members = [
         { name = "제작자 블로그", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
     ] },
@@ -142,5 +142,12 @@ More information? [Configuration - Trankwilo Documents](https://salif.github.io/
 ```bash
 zola serve
 
-# and open http://localhost:1111 in your browser.
+# and open http://127.0.0.1:1111 in your browser.
 ```
+
+## Other Zola themes
+
+Trankwilo is based on [Goyo](https://github.com/hahwul/goyo) and is one of several Zola themes I maintain. Other themes include:
+
+- [Linkita](https://codeberg.org/salif/linkita) – Multilingual and SEO friendly blog theme.
+- [Tukan](https://codeberg.org/salif/tukan) – Inspired from Toucan theme.

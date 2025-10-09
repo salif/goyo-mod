@@ -115,7 +115,7 @@ sidebar_expand_depth = 2
 # Default navigation (used for English and as fallback)
 nav = [
     { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
-    { name = "Source", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
+    { name = "Source", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-git-alt" },
     { name = "Links", type = "dropdown", icon = "fa-solid fa-link", members = [
         { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
     ] },
@@ -124,7 +124,7 @@ nav = [
 # Korean navigation (optional)
 nav_ko = [
     { name = "문서", url = "/ko/introduction", type = "url", icon = "fa-solid fa-book" },
-    { name = "소스", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-github" },
+    { name = "소스", url = "https://codeberg.org/salif/trankwilo", type = "url", icon = "fa-brands fa-git-alt" },
     { name = "링크", type = "dropdown", icon = "fa-solid fa-link", members = [
         { name = "제작자 블로그", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
     ] },

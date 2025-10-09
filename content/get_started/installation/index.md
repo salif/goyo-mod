@@ -23,7 +23,7 @@ zola init your-docs
 cd docs
 ```
 
-You can then run the local development server with the `zola serve` command and view your site at `http://localhost:1111`.
+You can then run the local development server with the `zola serve` command and view your site at `http://127.0.0.1:1111`.
 
 ## Install the Trankwilo Theme
 

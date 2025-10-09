@@ -8,7 +8,7 @@ version = "v0.1.0"
 [extra.hero]
 title = "Welcome to Trankwilo!"
 badge = "✨ Minimalist Documentation Theme"
-description = "Inspired by the Korean word \"고요\", meaning calm or serene, Trankwilo is a Zola theme that aims for simplicity and clean documentation. With Trankwilo, you can easily create beautiful and practical documentation pages."
+description = "Trankwilo is a Zola theme that aims for simplicity and clean documentation. With Trankwilo, you can easily create beautiful and practical documentation pages."
 image = "@/static/images/landing.webp"
 cta_buttons = [
     { text = "Get Started", url = "@/content/introduction", style = "primary" },

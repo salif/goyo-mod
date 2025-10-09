@@ -23,18 +23,18 @@ Create beautiful link cards that display URLs with titles, descriptions, and opt
 
 ## With Title and Description
 
-{{ pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.") }}
+{{ pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Globasa word for calm and serene.") }}
 
 ```jinja2
-{{/* pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.") */}}
+{{/* pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Globasa word for calm and serene.") */}}
 ```
 
 ## With Image
 
-{{ pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.", image="@/static/images/trankwilo.webp") }}
+{{ pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Globasa word for calm and serene.", image="@/static/images/trankwilo.webp") }}
 
 ```jinja2
-{{/* pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Korean word for calm and serene.", image="/images/trankwilo.webp") */}}
+{{/* pretty_link(url="https://codeberg.org/salif/trankwilo", title="Trankwilo Theme", description="A clean and minimalist Zola theme inspired by the Globasa word for calm and serene.", image="/images/trankwilo.webp") */}}
 ```
 
 ## Parameters
