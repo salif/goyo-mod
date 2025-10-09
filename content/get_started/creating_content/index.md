@@ -22,7 +22,7 @@ sort_by = "weight"
 +++' > ./content/hello_world/index.md
 ```
 
-[http://localhost:1111/hello-world](http://localhost:1111/hello-world)
+[http://127.0.0.1:1111/hello-world](http://127.0.0.1:1111/hello-world)
 
 ## Section
 

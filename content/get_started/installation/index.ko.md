@@ -23,7 +23,7 @@ zola init your-docs
 cd docs
 ```
 
-그리고 이제 `zola serve` 명령을 통해 웹 페이지를 구동할 수 있고 `http://localhost:1111` 로 접근하여 확인할 수 있습니다.
+그리고 이제 `zola serve` 명령을 통해 웹 페이지를 구동할 수 있고 `http://127.0.0.1:1111` 로 접근하여 확인할 수 있습니다.
 
 ## Install Trankwilo Theme
 
